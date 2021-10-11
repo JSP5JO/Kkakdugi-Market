@@ -1,4 +1,4 @@
-package bbs;
+package action;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -8,7 +8,7 @@ import java.util.ArrayList;
 
 public class BbsDAO {
 
-	private Connection conn;	//db¿¡ Á¢±ÙÇÏ´Â °´Ã¼
+	private Connection conn;	//dbï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï´ï¿½ ï¿½ï¿½Ã¼
 	private ResultSet rs;
 	
 	public BbsDAO() {
@@ -33,7 +33,7 @@ public class BbsDAO {
 		}catch(Exception e) {
 			e.printStackTrace();
 		}
-		return ""; //µ¥ÀÌÅÍº£ÀÌ½º ¿À·ù
+		return ""; //ï¿½ï¿½ï¿½ï¿½ï¿½Íºï¿½ï¿½Ì½ï¿½ ï¿½ï¿½ï¿½ï¿½
 	}
 	public int getNext() {
 		String SQL = "SELECT bbsID FROM BBS ORDER BY bbsID DESC";
@@ -46,7 +46,7 @@ public class BbsDAO {
 		}catch(Exception e) {
 			e.printStackTrace();
 		}
-		return 1; //Ã¹¹øÂ° °Ô½Ã¹°ÀÎ °æ¿ì
+		return 1; //Ã¹ï¿½ï¿½Â° ï¿½Ô½Ã¹ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½
 	}
 	
 	public int getCount(int boardID) {
@@ -81,7 +81,7 @@ public class BbsDAO {
 		}catch(Exception e) {
 			e.printStackTrace();
 		}
-		return -1; //µ¥ÀÌÅÍº£ÀÌ½º ¿À·ù
+		return -1; //ï¿½ï¿½ï¿½ï¿½ï¿½Íºï¿½ï¿½Ì½ï¿½ ï¿½ï¿½ï¿½ï¿½
 	}
 	
 	public ArrayList<Bbs> getList(int boardID, int pageNumber){
@@ -94,10 +94,10 @@ public class BbsDAO {
 			rs = pstmt.executeQuery();
 			while (rs.next()) {
 				Bbs bbs = new Bbs();
-				bbs.setBoardID(rs.getInt(1));
-				bbs.setBbsID(rs.getInt(2));
+				bbs.setBoardId(rs.getInt(1));
+				bbs.setWritingIdx(rs.getInt(2));
 				bbs.setBbsTitle(rs.getString(3));
-				bbs.setUserID(rs.getString(4));
+				bbs.setUserId(rs.getString(4));
 				bbs.setBbsDate(rs.getString(5));
 				bbs.setBbsContent(rs.getString(6));
 				bbs.setMap(rs.getString(7));
@@ -107,7 +107,7 @@ public class BbsDAO {
 		}catch(Exception e) {
 			e.printStackTrace();
 		}
-		return list; //µ¥ÀÌÅÍº£ÀÌ½º ¿À·ù
+		return list; //ï¿½ï¿½ï¿½ï¿½ï¿½Íºï¿½ï¿½Ì½ï¿½ ï¿½ï¿½ï¿½ï¿½
 	}
 	public ArrayList<Bbs> searchList(int boardID, int pageNumber, String search){
 		String SQL = "SELECT * FROM BBS WHERE boardID = ? AND bbsID < ? AND (bbsTitle like ? OR bbsContent like ? OR map like ?) AND bbsAvailable = 1 ORDER BY bbsID DESC LIMIT 10"; 
@@ -122,10 +122,10 @@ public class BbsDAO {
 			rs = pstmt.executeQuery();
 			while (rs.next()) {
 				Bbs bbs = new Bbs();
-				bbs.setBoardID(rs.getInt(1));
-				bbs.setBbsID(rs.getInt(2));
+				bbs.setBoardId(rs.getInt(1));
+				bbs.setWritingIdx(rs.getInt(2));
 				bbs.setBbsTitle(rs.getString(3));
-				bbs.setUserID(rs.getString(4));
+				bbs.setUserId(rs.getString(4));
 				bbs.setBbsDate(rs.getString(5));
 				bbs.setBbsContent(rs.getString(6));
 				bbs.setMap(rs.getString(7));
@@ -135,7 +135,7 @@ public class BbsDAO {
 		}catch(Exception e) {
 			e.printStackTrace();
 		}
-		return list; //µ¥ÀÌÅÍº£ÀÌ½º ¿À·ù
+		return list; //ï¿½ï¿½ï¿½ï¿½ï¿½Íºï¿½ï¿½Ì½ï¿½ ï¿½ï¿½ï¿½ï¿½
 	}
 	
 	public boolean nextPage (int boardID, int pageNumber) {
@@ -151,7 +151,7 @@ public class BbsDAO {
 		}catch(Exception e) {
 			e.printStackTrace();
 		}
-		return false; //µ¥ÀÌÅÍº£ÀÌ½º ¿À·ù
+		return false; //ï¿½ï¿½ï¿½ï¿½ï¿½Íºï¿½ï¿½Ì½ï¿½ ï¿½ï¿½ï¿½ï¿½
 	}
 	
 	public boolean searchNextPage (int boardID, int pageNumber, String search) {
@@ -169,7 +169,7 @@ public class BbsDAO {
 		}catch(Exception e) {
 			e.printStackTrace();
 		}
-		return false; //µ¥ÀÌÅÍº£ÀÌ½º ¿À·ù
+		return false; //ï¿½ï¿½ï¿½ï¿½ï¿½Íºï¿½ï¿½Ì½ï¿½ ï¿½ï¿½ï¿½ï¿½
 	}
 	
 	public Bbs getBbs(int bbsID) {
@@ -180,10 +180,10 @@ public class BbsDAO {
 			rs = pstmt.executeQuery();
 			while (rs.next()) {
 				Bbs bbs = new Bbs();
-				bbs.setBoardID(rs.getInt(1));
-				bbs.setBbsID(rs.getInt(2));
+				bbs.setBoardId(rs.getInt(1));
+				bbs.setWritingIdx(rs.getInt(2));
 				bbs.setBbsTitle(rs.getString(3));
-				bbs.setUserID(rs.getString(4));
+				bbs.setUserId(rs.getString(4));
 				bbs.setBbsDate(rs.getString(5));
 				bbs.setBbsContent(rs.getString(6));
 				bbs.setMap(rs.getString(7));
@@ -208,7 +208,7 @@ public class BbsDAO {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		return -1; // µ¥ÀÌÅÍº£ÀÌ½º ¿À·ù
+		return -1; // ï¿½ï¿½ï¿½ï¿½ï¿½Íºï¿½ï¿½Ì½ï¿½ ï¿½ï¿½ï¿½ï¿½
 	}
 	
 	public int delete(int bbsID) {
@@ -220,6 +220,6 @@ public class BbsDAO {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		return -1; // µ¥ÀÌÅÍº£ÀÌ½º ¿À·ù
+		return -1; // ï¿½ï¿½ï¿½ï¿½ï¿½Íºï¿½ï¿½Ì½ï¿½ ï¿½ï¿½ï¿½ï¿½
 	}
 }

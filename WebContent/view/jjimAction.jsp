@@ -1,12 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ page import="bbs.JjimDAO" %>
-<%@ page import="bbs.Jjim" %>
-<%@ page import="bbs.Bbs" %>
+<%@ page import="action.JjimDAO" %>
+<%@ page import="action.Jjim" %>
+<%@ page import="action.Bbs" %>
 <%@ page import="java.io.PrintWriter" %>
 <%@ page import="java.util.ArrayList"%>
 <% request.setCharacterEncoding("UTF-8"); %>
-<jsp:useBean id="bbs" class="bbs.Jjim" scope="page" />
+<jsp:useBean id="bbs" class="action.Jjim" scope="page" />
 <!DOCTYPE html>
 <html>
 <head>
@@ -39,13 +39,13 @@
 		 		script.println("</script>");
 		 	}
 		 	JjimDAO jjimDAO = new JjimDAO();
-			ArrayList<Jjim> list = jjimDAO.getJjim(userID, bbsID);
+			ArrayList<Jjim> list = jjimDAO.getJjim(userID);
 			int result = 0;
 			if (list.isEmpty()){
 				result = jjimDAO.write(userID, bbsID);
 			}
 			else{
-				result = jjimDAO.delete(userID, bbsID);
+				result = jjimDAO.delete(bbsID);
 			}
 	 		if (result == -1){
 		 		PrintWriter script = response.getWriter();
