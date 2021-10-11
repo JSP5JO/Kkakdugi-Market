@@ -39,3 +39,12 @@ create table comment (
 	foreign key(writingIdx) references writing(idx),
 	foreign key(userId) references users(id)
 );
+
+-- 찜 테이블
+create table jjim (
+   userId varchar(20),       -- 유저 아이디
+   writingIdx int,			 -- 글 번호
+   categoryIdx varchar(20),   -- 카테고리 번호
+   foreign key(userId) references users(id)
+);
+
