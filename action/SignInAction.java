@@ -21,21 +21,21 @@ public class SignInAction implements Action {
 		String id = request.getParameter("id");
 		String pw = request.getParameter("pw");  
 		
-		//ÀÎµ¦½º³ª ´Ù¸¥°÷¿¡¼­ ³Ñ¾î¿Ã Á¤º¸µé request ¹ÞÀ»ÀÚ¸® 
+		//ï¿½Îµï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ù¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ñ¾ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ request ï¿½ï¿½ï¿½ï¿½ï¿½Ú¸ï¿½ 
 		
 		Map<String,String> map = new HashMap<>();
 		map.put("id",id);
 		map.put("pw",pw);
 
-		UsersDao dao = UsersDao.getInstance();
+		UsersDAO dao = UsersDAO.getInstance();
 		SessionDto user = dao.login(map);
 		
-		if(user !=null) {//·Î±×ÀÎ ¼º°ø
+		if(user !=null) {//ï¿½Î±ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 			session.setAttribute("user", user);
-			request.setAttribute("message", "·Î±×ÀÎ µÇ¾ú½À´Ï´Ù.");
-			request.setAttribute("url", "index.html"); // index(¸ÞÀÎ) ÆäÀÌÁö·Î °æ·Î¼öÁ¤ 
-		}else {//·Î±×ÀÎ ½ÇÆÐ
-			request.setAttribute("message", "¾ÆÀÌµð³ª ºñ¹Ð¹øÈ£°¡ ¿Ã¹Ù¸£Áö ¾Ê½À´Ï´Ù.");
+			request.setAttribute("message", "ï¿½Î±ï¿½ï¿½ï¿½ ï¿½Ç¾ï¿½ï¿½ï¿½ï¿½Ï´ï¿½.");
+			request.setAttribute("url", "index.html"); // index(ï¿½ï¿½ï¿½ï¿½) ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Î¼ï¿½ï¿½ï¿½ 
+		}else {//ï¿½Î±ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+			request.setAttribute("message", "ï¿½ï¿½ï¿½Ìµï¿½ ï¿½ï¿½Ð¹ï¿½È£ï¿½ï¿½ ï¿½Ã¹Ù¸ï¿½ï¿½ï¿½ ï¿½Ê½ï¿½ï¿½Ï´ï¿½.");
 			request.setAttribute("url", "login.do");
 		}
 		ActionForward foward = new ActionForward();

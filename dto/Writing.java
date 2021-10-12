@@ -8,9 +8,9 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class Writing {
-	private int idx; //±Û¹øÈ£
-	private String categoryIdx; //Ä«Å×°í¸® ¹øÈ£
-	private String userId; //À¯Àú ¾ÆÀÌµð
-	private String subject; //±Û Á¦¸ñ
-	private String content; //±Û ³»¿ë
+	private int idx; //ï¿½Û¹ï¿½È£
+	private String categoryIdx; //Ä«ï¿½×°ï¿½ ï¿½ï¿½È£
+	private String userId; //ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ìµï¿½
+	private String subject; //ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+	private String content; //ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 }

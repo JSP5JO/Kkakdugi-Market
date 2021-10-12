@@ -1,6 +1,6 @@
 package dao;
 
-import action.dto.*;
+import dto.*;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;

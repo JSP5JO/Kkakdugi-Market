@@ -8,7 +8,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class Jjim {
-	private String userId; //À¯Àú ¾ÆÀÌµð
-	private int writingIdx; //±Û ¹øÈ£
-	private String categoryIdx; // Ä«Å×°í¸® ¹øÈ£
+	private String userId; //ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ìµï¿½
+	private int writingIdx; //ï¿½ï¿½ ï¿½ï¿½È£
+	private String categoryIdx; // Ä«ï¿½×°ï¿½ ï¿½ï¿½È£
 }

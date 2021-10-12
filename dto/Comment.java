@@ -8,8 +8,8 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class Comment {
-	private int idx; //´ñ±Û ¹øÈ£
-	private int writingIdx; //±Û ¹øÈ£
-	private String userId; //À¯Àú ¾ÆÀÌµð
-	private String content; //´ñ±Û ³»¿ë
+	private int idx; //ï¿½ï¿½ï¿½ ï¿½ï¿½È£
+	private int writingIdx; //ï¿½ï¿½ ï¿½ï¿½È£
+	private String userId; //ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ìµï¿½
+	private String content; //ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 }

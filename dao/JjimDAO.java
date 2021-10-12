@@ -1,6 +1,6 @@
 package dao;
 
-import action.dto.*;
+import dto.*;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -73,7 +73,7 @@ public class JjimDAO {
 			rs = pstmt.executeQuery();
 			while (rs.next()) {
 				Jjim jjim = new Jjim();
-				jjim.setWrtingIdx(rs.getInt(1));
+				jjim.setWritingIdx(rs.getInt(1));
 				jjim.setUserId(rs.getString(2));
 				list.add(jjim);
 			}

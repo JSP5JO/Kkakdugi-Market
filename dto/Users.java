@@ -8,10 +8,10 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class Users {
-	private int idx; //À¯Àú ¹øÈ£
-	private String name; //ÀÌ¸§
-	private String id; //¾ÆÀÌµð
-	private String pw; //ÆÐ½º¿öµå
-	private String email; //ÀÌ¸ÞÀÏ
-	private String proIdx; //Àü¹®°¡ ¹øÈ£(Ä«Å×°í¸® ¹øÈ£)
+	private int idx; //ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½È£
+	private String name; //ï¿½Ì¸ï¿½
+	private String id; //ï¿½ï¿½ï¿½Ìµï¿½
+	private String pw; //ï¿½Ð½ï¿½ï¿½ï¿½ï¿½ï¿½
+	private String email; //ï¿½Ì¸ï¿½ï¿½ï¿½
+	private String proIdx; //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½È£(Ä«ï¿½×°ï¿½ ï¿½ï¿½È£)
 }

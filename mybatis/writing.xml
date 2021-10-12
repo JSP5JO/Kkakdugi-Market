@@ -5,22 +5,25 @@
 <!-- sql mapper   -->  
 <mapper namespace="writing"> <!-- namespace : 일종의 식별역할의 변수 -->
 	
-	<select id="getList" resultType="Freeboard" parameterType="java.util.Map">
-		select * from writing f order by idx desc limit #{startNo},#{pageSize}
+	<select id="getList" resultType="Wrting" parameterType="java.util.Map">
+		select * from writing order by idx desc limit #{startNo},#{pageSize}
 	</select>
-	<select id="selectByIdx" resultType="Freeboard" parameterType="int">
+	<select id="selectById" resultType="Wrting" parameterType="int">
+		select * from writing where userId=#{userId}
+	</select>
+	<select id="selectByIdx" resultType="Wrting" parameterType="int">
 		select * from writing where idx=#{idx}
 	</select>
 	<select id="getCount" resultType="int" >
 		select count(*) from writing
 	</select>
 	
-	<insert id="insert" parameterType="Freeboard">
+	<insert id="insert" parameterType="Wrting">
 		insert into writing (name,password,subject,content,ip)
 		values (#{name},#{password},#{subject},#{content},#{ip})
 	</insert>
 	
-	<update id="update" parameterType="Freeboard">
+	<update id="update" parameterType="Wrting">
 		update writing set subject =#{subject}, content=#{content}
 		where idx=#{idx}
 	</update>
@@ -29,7 +32,7 @@
 		delete from writing where idx=#{idx} and password =#{password}
 	</delete>
 	
-	<select id="passwordCheck" resultType="Freeboard" parameterType="java.util.Map">
+	<select id="passwordCheck" resultType="Wrting" parameterType="java.util.Map">
 		select * from writing where idx=#{idx} and password =#{password}
 	</select>
 	

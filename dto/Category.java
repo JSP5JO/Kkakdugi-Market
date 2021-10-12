@@ -8,6 +8,6 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class Category {
-	private String idx; //Àü¹®°¡ ¹øÈ£
-	private String name; //Ä«Å×°í¸® ÀÌ¸§
+	private String idx; //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½È£
+	private String name; //Ä«ï¿½×°ï¿½ ï¿½Ì¸ï¿½
 }
