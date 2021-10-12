@@ -52,7 +52,7 @@
 				<c:forEach var = "n" items = "${list }">
 					<tr>
 						<td>${n.id }</td>
-						<td><a href="detail?id=${n.id }">${n.title }</a></td>
+						<td><a href="detail.do?id=${n.id }">${n.title }</a></td>
 						<td>${n.writerId}</td>
 						<td>
 							<fmt:formatDate pattern = "yyyy:MM:dd hh:mm:ss" value="${n.regdate }"/>							

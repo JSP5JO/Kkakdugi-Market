@@ -25,8 +25,8 @@ create table writing (
 	subject varchar(50)	not null,		-- 글 제목
 	content varchar(1500) not null,		-- 글 내용
 	primary key(idx),
-	foreign key(categoryIdx) references category(idx),
-	foreign key(userId) references users(id)
+	foreign key(userId) references users(id),
+	foreign key(categoryIdx) references category(idx)
 );
 
 -- 댓글 테이블
@@ -47,4 +47,12 @@ create table jjim (
    categoryIdx varchar(20),   -- 카테고리 번호
    foreign key(userId) references users(id)
 );
+
+drop table comment;
+drop table writing ;
+
+insert into category values('CATE12', '전자제품');
+insert into users(name, id,pw,email) values('길동', 'user1', 'pass', 'kil@naver.com');
+insert into writing (categoryIdx, userId, subject, content) 
+	values('CATE12', 'user1', '제목', '내용');
 

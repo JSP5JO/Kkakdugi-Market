@@ -10,8 +10,10 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import dao.CommentDAO;
 import dao.WritingDAO;
 import dto.Writing;
+import dto.Comment;
 import dto.PageDto;
 
 public class MypageAction implements Action {
@@ -21,30 +23,23 @@ public class MypageAction implements Action {
 			throws ServletException, IOException {
 		
 		request.setCharacterEncoding("UTF-8");
-		//비지니스 로직을 처리하는 jsp 파일
-		WritingDAO dao = WritingDAO.getInstance();
-		//페이지 번호는 파라미터로 전달됩니다.
-		int pageNo;
-		if(request.getParameter("page")==null) pageNo=1;
-		else pageNo = Integer.parseInt(request.getParameter("page"));   //page=1,2,3,4,.....
-
-		int pageSize =15;		//ui로 변경하도록 구현할 수 있습니다.
-//		int startNo=(pageNo-1)*pageSize;
+		String userId = request.getParameter("userId");
+		WritingDAO wdao = WritingDAO.getInstance();
+		List<Writing> wlist = wdao.selectById(userId);//질문
+		request.setAttribute("wlist", wlist);
 		
-		PageDto pageDto = new PageDto(pageNo,dao.getCount(),pageSize);  //페이지처리에 필요한객체(값) 생성
-
-		Map<String,Integer> map = new HashMap<>();
-		map.put("pageSize",pageSize);
-		map.put("startNo",pageDto.getStartNo());
-		//List<Writing> list = dao.getList(map);
-		List<Writing> list = dao.getListById(map);//질문
-		request.setAttribute("today", LocalDate.now());
-		request.setAttribute("pageDto", pageDto);     //페이지처리에 필요한 값들
-		request.setAttribute("list", list);
-//		pageContext.forward("listView.jsp");
+		CommentDAO cdao = CommentDAO.getInstance();
+		List<Comment> clist = cdao.selectById(userId);//질문
+		request.setAttribute("clist", clist);
+		
+		/*WritingDAO wdao = WritingDAO.getInstance();
+		List<Writing> wlist = wdao.selectById(userId);//질문
+		request.setAttribute("wlist", wlist);*/
+		
+		
 		ActionForward forward = new ActionForward();
 		forward.isRedirect = false;
-		forward.url="list.do";
+		forward.url="view/mypage.jsp?userId="+userId;
 		return forward;
 	}
 
