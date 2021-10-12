@@ -21,7 +21,7 @@ public class SignInAction implements Action {
 		String id = request.getParameter("id");
 		String pw = request.getParameter("pw");  
 		
-		//ÀÎµ¦½º³ª ´Ù¸¥°÷¿¡¼­ ³Ñ¾î¿Ã Á¤º¸µé request ¹ŞÀ»ÀÚ¸® 
+		//request ë°›ì„ê±° ìˆìœ¼ë©´ ë†“ëŠ”ìë¦¬
 		
 		Map<String,String> map = new HashMap<>();
 		map.put("id",id);
@@ -30,17 +30,17 @@ public class SignInAction implements Action {
 		UsersDao dao = UsersDao.getInstance();
 		SessionDto user = dao.login(map);
 		
-		if(user !=null) {//·Î±×ÀÎ ¼º°ø
+		if(user !=null) {//ë¡œê·¸ì¸ ì„±ê³µ
 			session.setAttribute("user", user);
-			request.setAttribute("message", "·Î±×ÀÎ µÇ¾ú½À´Ï´Ù.");
-			request.setAttribute("url", "index.html"); // index(¸ŞÀÎ) ÆäÀÌÁö·Î °æ·Î¼öÁ¤ 
-		}else {//·Î±×ÀÎ ½ÇÆĞ
-			request.setAttribute("message", "¾ÆÀÌµğ³ª ºñ¹Ğ¹øÈ£°¡ ¿Ã¹Ù¸£Áö ¾Ê½À´Ï´Ù.");
+			request.setAttribute("message", "ë¡œê·¸ì¸ ë˜ì—ˆìŠµë‹ˆë‹¤.");
+			request.setAttribute("url", "index.do");  
+		}else {//ë¡œê·¸ì¸ ì‹¤íŒ¨
+			request.setAttribute("message", "ì•„ì´ë””ë‚˜ ë¹„ë°€ë²ˆí˜¸ê°€ ì˜¬ë°”ë¥´ì§€ ì•ŠìŠµë‹ˆë‹¤..");
 			request.setAttribute("url", "login.do");
 		}
 		ActionForward foward = new ActionForward();
 		foward.isRedirect = false;
-		foward.url="error/alert.jsp";   
+		foward.url="../error/alert.jsp";   
 		return foward;
 	}
 

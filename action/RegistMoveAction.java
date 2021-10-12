@@ -6,15 +6,13 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-public class LoginAction implements Action { 
-
+public class RegistMoveAction implements Action { 
 	@Override
 	public ActionForward execute(HttpServletRequest request, HttpServletResponse response)
-			throws ServletException, IOException { //login.jsp·Î ¸®´ÙÀÌ·ºÆ®ÇØÁÖ´Â ¾×¼Ç
-		ActionForward foward = new ActionForward(); //ÄÁÆ®·Ñ·¯¿¡¼­ ÀÌµ¿ÇÊ¿äÇÔ
+			throws ServletException, IOException { //regist.jspë¡œ ë¦¬ë‹¤ì´ë ‰íŠ¸í•˜ê¸° ìœ„í•œ action
+		ActionForward foward = new ActionForward(); 
 		foward.isRedirect = true;
-		foward.url="login.jsp";   
+		foward.url="regist.jsp";   
 		return foward;
 	}
-
 }
