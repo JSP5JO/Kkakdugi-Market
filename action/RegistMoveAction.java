@@ -11,7 +11,7 @@ public class RegistMoveAction implements Action {
 	public ActionForward execute(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException { //regist.jsp로 리다이렉트하기 위한 action
 		ActionForward foward = new ActionForward(); 
-		foward.isRedirect = true;
+		foward.isRedirect = false;
 		foward.url="regist.jsp";   
 		return foward;
 	}
