@@ -9,16 +9,13 @@
 <meta charset="UTF-8">
 <title>Mypage</title>
 <style>
-	body{
-		background:#999;
-	}
 	ul{
 		padding-inline-start:0px; /*목록 들여쓰기 없애기*/
 	}
 	
 	h3{
 		text-align:center;
-		color:#fff;
+		color:#000;
 	}
 	.mypage{
 		display:flex;
@@ -44,11 +41,11 @@
 	}
 	.mycont li{
 		list-style:none;
-		color:#fff;
+		color:#000;
 	}
 	.mycont li a{
 		text-decoration:none;
-		color:#fff;
+		color:#000;
 	}
 </style>
 </head>
