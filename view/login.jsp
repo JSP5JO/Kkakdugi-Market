@@ -11,8 +11,8 @@
 <body>
 <div>
 	<form action="signIn.do" method="post">
-		ID : <input type="text" name="id" placeholder="id를 입력해주세요."><br>
-		PW : <input type="password" name="pw" placeholder="비밀번호를 입력해주세요.">
+		ID : <input type="text" name="id" placeholder="id를 입력해주세요." required><br>
+		PW : <input type="password" name="pw" placeholder="비밀번호를 입력해주세요." required>
 		<input type="submit" value="로그인">
 		<input type="button" value="회원가입" onclick="location.href='regist.do'">
 		<input type="button" value="ID/PW 찾기" onclick="location.href='??'">
