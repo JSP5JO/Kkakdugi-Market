@@ -59,6 +59,7 @@
 </style>
 </head>
 <body>
+<%@ include file="../WebContent/header.jsp"%>
 	<div class="mypage">
 		<div class="mywriting mycont">
 			<h3>내가 작성한 글 목록</h3>
