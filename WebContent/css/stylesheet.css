@@ -38,20 +38,24 @@ a {
     justify-content: space-around;
     list-style: none;
     padding-left: 0px;
+    margin-top: calc(1em - 3px);
 
 }
 
 .navbar__menu li{
     padding: 8px 12px;
+    border-radius: 20px;
+    transition:background 0.3s;
 }
 
 .navbar__menu li:hover{
     background: #f9c07f;
     border-radius: 20px;
+    transition:background 0.3s;
 }
 
 .navbar__icon{
-    margin-right: 20px;
+    margin-right: 24px;
     color:white;
     display: flex;
     padding: 0px;
@@ -101,7 +105,11 @@ a {
         flex-direction: column;
         align-items: center;
         width: 100%;
-        display: none;
+        display: flex;
+	    transition: height 1s, opacity 1s;
+    	height: 0;
+    	opacity: 0;
+    	margin: 0;
     }
 
     .navbar__menu li {
@@ -112,7 +120,11 @@ a {
     .navbar__icon {
         justify-content: center;
         width: 100%;
-        display: none;
+        display: flex;
+        height:0;
+        opacity:0;
+        transition: height 0.05s, opacity 0.05s;
+        margin:0;
     }
 
     .navbar__hamburger {
@@ -121,14 +133,25 @@ a {
 
     .navbar__menu.active {
         display: flex;
+        transition: height 1s, opacity 1s;
+    	height: 148px;
+    	opacity: 1;
+    	margin: 1em 0;
     }
 
     .navbar__icon.active {
         display: flex;
+        height:auto;
+        opacity:1;
+        transition: height 0.05s, opacity 0.05s;
+        margin: 1em 0;
     }
 }
 
 /* 바디 영역 */
+*{
+	letter-spacing: -0.025em;	
+}
 body{
 	padding-top: 120px;
 }
@@ -137,6 +160,19 @@ body{
 	display: flex;
 }
 .main div {
-	margin: 0 auto;
+	flex-basis:33.33%;
+	margin:10px;
+	border-radius:3px;
+	padding:5px 10px;
+	box-sizing:border-box;
 	border: 1px solid black;
+	text-align:center;
+}
+
+.navbar__icon form{
+	display:flex;
+}
+
+.navbar__icon input[type="text"] {
+	margin-right:5px;
 }
