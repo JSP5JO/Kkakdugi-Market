@@ -148,7 +148,7 @@ public class FrontController extends HttpServlet {
 			forward = action.execute(request, response);
 		}else if(spath.equals("/view/mypage.do")) {
 			Action action = new MypageAction();
-			forward = action.execute(request, response);      //여기에 들어갈 코드가 많습니다.-> Action 구현 클래스로 변경.
+			forward = action.execute(request, response);
 			forward.setUrl("view/mypage.jsp?userId="+userId);
 		}
 		if(forward.isRedirect()) {
