@@ -7,6 +7,8 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<link rel="stylesheet" href="../css/header.css">
+<link rel="stylesheet" href="../css/bottom.css">
 <title>Mypage</title>
 <style>
 	ul{
@@ -59,7 +61,7 @@
 </style>
 </head>
 <body>
-<%@ include file="../WebContent/header.jsp"%>
+<%@ include file="../header.jsp"%>
 	<div class="mypage">
 		<div class="mywriting mycont">
 			<h3>내가 작성한 글 목록</h3>
@@ -107,5 +109,6 @@
 		 	</ul>
 		</div>
 	</div>
+<%@ include file="../bottom.jsp"%>
 </body>
 </html>
