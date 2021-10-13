@@ -2,6 +2,7 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <link rel="stylesheet" href="css/header.css">
+<script src="https://kit.fontawesome.com/a9b46edd75.js" crossorigin="anonymous"></script>
 <header>
 	<!-- 메인 로고 -->
 	<nav class="navbar">
