@@ -1,0 +1,30 @@
+/* 바디 영역 */
+*{
+	letter-spacing: -0.025em;	
+}
+body{
+	padding-top: 120px;
+}
+
+.main {
+	display: flex;
+}
+.main div {
+	flex-basis:33.33%;
+	margin:10px;
+	border-radius:3px;
+	padding:5px 10px;
+	box-sizing:border-box;
+	border: 1px solid black;
+	text-align:center;
+}
+
+ 
+@media screen and (max-width: 768px){
+	.main {
+	    flex-direction: column;
+	}
+	.main div {
+		flex-basis:100%;
+	}
+}

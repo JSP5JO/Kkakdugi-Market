@@ -9,6 +9,7 @@
 <script src="https://kit.fontawesome.com/a9b46edd75.js"
 	crossorigin="anonymous"></script>
 <script src="main.js" defer></script>
+<link rel="stylesheet" href="css/contents.css">
 <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 </head>
@@ -54,6 +55,8 @@
 		</div>
 
 	</section>
+	
+	<%@ include file="bottom.jsp"%>
 <script>
   AOS.init();
 </script>

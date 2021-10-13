@@ -2,7 +2,9 @@
 
 * {
 	font-family: 'NanumGothic', '나눔고딕','NanumGothicWeb', '맑은 고딕', 'Malgun Gothic', Dotum;
+	letter-spacing: -0.025em;	
 }
+
 
 /* 헤더 영역 */
 header {
@@ -77,6 +79,14 @@ a {
     padding: 8px 4px;
 }
 
+.navbar__icon form{
+	display:flex;
+}
+
+.navbar__icon input[type="text"] {
+	margin-right:5px;
+}
+
 @media screen and (-webkit-min-device-pixel-ratio:0){ 
 	.navbar__icon li{
  	   line-height:22px !important;
@@ -135,6 +145,7 @@ a {
     padding: 4px 12px;
     margin-top: 20px;
 }
+
 .category {
 	text-align: center;
 }
@@ -165,7 +176,7 @@ a {
         align-items: center;
         width: 100%;
         display: flex;
-	    transition: height 1s, opacity 1s;
+		transition: height 1s, opacity 1s;
     	height: 0;
     	opacity: 0;
     	margin: 0;
@@ -207,7 +218,6 @@ a {
         margin: 1em 0;
     }
 }
-
 /* 바디 영역 */
 *{
 	letter-spacing: -0.025em;	
@@ -236,7 +246,7 @@ body{
 .navbar__icon input[type="text"] {
 	margin-right:5px;
 }
-
+ 
 @media screen and (max-width: 768px){
 	.main {
 	    flex-direction: column;

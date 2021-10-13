@@ -1,0 +1,18 @@
+@charset "UTF-8";
+
+footer {
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	width: 100%;
+	 height: 70px;
+	 background-color: black;
+	 display: block;
+	 padding:0 38px;
+}
+
+footer p{
+	color:#fff;
+	margin: 25px 0;
+}
