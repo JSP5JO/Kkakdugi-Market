@@ -235,3 +235,12 @@ body{
 .navbar__icon input[type="text"] {
 	margin-right:5px;
 }
+
+@media screen and (max-width: 768px){
+	.main {
+	    flex-direction: column;
+	}
+	.main div {
+		flex-basis:100%;
+	}
+}
