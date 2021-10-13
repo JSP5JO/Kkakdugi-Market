@@ -9,6 +9,8 @@
 <script src="https://kit.fontawesome.com/a9b46edd75.js"
 	crossorigin="anonymous"></script>
 <script src="main.js" defer></script>
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 </head>
 
 <body>
@@ -17,7 +19,7 @@
 
 	<!-- 본문 content -->
 	<section class="main">
-		<div>
+		<div data-aos="fade-up" data-aos-duration="1200">
 			<h3>실시간 인기 상품</h3>
 			<p>이곳에 리스트(hotList)를 삽입</p>
 			<ul>
@@ -27,7 +29,7 @@
 			</ul>
 		</div>
 
-		<div>
+		<div data-aos="fade-up" data-aos-duration="1200" data-aos-delay="200">
 			<h3>내 전문분야의 질문 글</h3>
 			<p>이곳에 리스트(myField)를 삽입</p>
 			<c:if test="${sessionScope.user != null}">
@@ -39,7 +41,7 @@
 			</c:if>
 		</div>
 
-		<div>
+		<div data-aos="fade-up" data-aos-duration="1200" data-aos-delay="400">
 			<h3>찜한 상품</h3>
 			<p>이곳에 리스트(jjimList)를 삽입</p>
 			<c:if test="${sessionScope.user != null}">
@@ -52,5 +54,8 @@
 		</div>
 
 	</section>
+<script>
+  AOS.init();
+</script>
 </body>
 </html>
