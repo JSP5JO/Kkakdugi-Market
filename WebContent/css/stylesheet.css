@@ -1,3 +1,9 @@
+@import url(http://api.mobilis.co.kr/webfonts/css/?fontface=NanumGothicWeb); 
+
+* {
+	font-family: 'NanumGothic', '나눔고딕','NanumGothicWeb', '맑은 고딕', 'Malgun Gothic', Dotum;
+}
+
 /* 헤더 영역 */
 header {
 	height: 75px;
@@ -33,12 +39,16 @@ a {
     padding: 0px 4px;
 }
 
+.navbar__logo a {
+    line-height:30px;
+}
+
 .navbar__menu{
     display:flex;
     justify-content: space-around;
     list-style: none;
     padding-left: 0px;
-    margin-top: calc(1em - 3px);
+    margin-top: 0.85em;
 
 }
 
@@ -65,6 +75,54 @@ a {
     list-style: none;
     padding: 8px 4px;
 }
+
+@media screen and (-webkit-min-device-pixel-ratio:0){ 
+	.navbar__icon li{
+ 	   line-height:22px !important;
+	}
+}
+
+ /* IE10+ */
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+	.navbar__icon li{
+ 	   line-height:25px;
+	}
+}
+ 
+/* IE6,7,9,10 */
+@media screen and (min-width: 640px), screen\9 {
+	 .navbar__icon li{
+	   line-height:25px;
+	 }
+}
+ 
+/* IE6,7 */
+@media screen\9 {
+	.navbar__icon li{
+	  line-height:25px;
+	 }
+}
+ 
+/* IE8 */
+@media \0screen {
+ 	.navbar__icon li{
+	   line-height:25px;
+	 }
+}
+ 
+/* IE6,7,8 */
+@media \0screen\,screen\9 {
+	 .navbar__icon li{
+	   line-height:25px;
+	 }
+}
+ 
+/* IE9,10 */
+@media screen and (min-width:0\0){
+ 	.navbar__icon li{
+	   line-height:25px;
+	 }
+} 
 
 .navbar__hamburger{
     position: absolute;
@@ -106,7 +164,7 @@ a {
         align-items: center;
         width: 100%;
         display: flex;
-		transition: height 1s, opacity 1s;
+	    transition: height 1s, opacity 1s;
     	height: 0;
     	opacity: 0;
     	margin: 0;
@@ -129,6 +187,7 @@ a {
 
     .navbar__hamburger {
         display: flex;
+        top:7px;
     }
 
     .navbar__menu.active {
@@ -147,6 +206,7 @@ a {
         margin: 1em 0;
     }
 }
+
 /* 바디 영역 */
 *{
 	letter-spacing: -0.025em;	
