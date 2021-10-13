@@ -109,6 +109,7 @@ public class FrontController extends HttpServlet {
 import action.Action;
 import action.ActionForward;
 import action.LoginMoveAction;
+import action.MypageAction;
 import action.RegistAction;
 import action.RegistMoveAction;
 import action.SignInAction;
@@ -129,6 +130,7 @@ public class FrontController extends HttpServlet {
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		ActionForward forward=null; 
 		String spath = request.getServletPath();
+		String userId="user1";
 		
 		//System.out.println(spath);
 		
@@ -144,8 +146,11 @@ public class FrontController extends HttpServlet {
 		}else if(spath.equals("/view/registSave.do")) {
 			Action action = new RegistAction();
 			forward = action.execute(request, response);
+		}else if(spath.equals("/mypage.do")) {
+			Action action = new MypageAction();
+			forward = action.execute(request, response);      //여기에 들어갈 코드가 많습니다.-> Action 구현 클래스로 변경.
+			forward.setUrl("view/mypage.jsp?userId="+userId);
 		}
-		
 		if(forward.isRedirect()) {
 			response.sendRedirect(forward.getUrl());
 		}else {
