@@ -39,7 +39,7 @@ public class MypageAction implements Action {
 		
 		ActionForward forward = new ActionForward();
 		forward.isRedirect = false;
-		forward.url="view/mypage.jsp?userId="+userId;
+		forward.url="/view/mypage.jsp?userId="+userId;
 		return forward;
 	}
 
