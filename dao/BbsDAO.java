@@ -1,6 +1,5 @@
-package dao;
+package bbs;
 
-import dto.*;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -9,7 +8,7 @@ import java.util.ArrayList;
 
 public class BbsDAO {
 
-	private Connection conn;	//db�� �����ϴ� ��ü
+	private Connection conn;	//db에 접근하는 객체
 	private ResultSet rs;
 	
 	public BbsDAO() {
@@ -34,7 +33,7 @@ public class BbsDAO {
 		}catch(Exception e) {
 			e.printStackTrace();
 		}
-		return ""; //�����ͺ��̽� ����
+		return ""; //데이터베이스 오류
 	}
 	public int getNext() {
 		String SQL = "SELECT bbsID FROM BBS ORDER BY bbsID DESC";
@@ -47,7 +46,7 @@ public class BbsDAO {
 		}catch(Exception e) {
 			e.printStackTrace();
 		}
-		return 1; //ù��° �Խù��� ���
+		return 1; //첫번째 게시물인 경우
 	}
 	
 	public int getCount(int boardID) {
@@ -82,7 +81,7 @@ public class BbsDAO {
 		}catch(Exception e) {
 			e.printStackTrace();
 		}
-		return -1; //�����ͺ��̽� ����
+		return -1; //데이터베이스 오류
 	}
 	
 	public ArrayList<Bbs> getList(int boardID, int pageNumber){
@@ -95,10 +94,10 @@ public class BbsDAO {
 			rs = pstmt.executeQuery();
 			while (rs.next()) {
 				Bbs bbs = new Bbs();
-				bbs.setBoardId(rs.getInt(1));
-				bbs.setWritingIdx(rs.getInt(2));
+				bbs.setBoardID(rs.getInt(1));
+				bbs.setBbsID(rs.getInt(2));
 				bbs.setBbsTitle(rs.getString(3));
-				bbs.setUserId(rs.getString(4));
+				bbs.setUserID(rs.getString(4));
 				bbs.setBbsDate(rs.getString(5));
 				bbs.setBbsContent(rs.getString(6));
 				bbs.setMap(rs.getString(7));
@@ -108,7 +107,7 @@ public class BbsDAO {
 		}catch(Exception e) {
 			e.printStackTrace();
 		}
-		return list; //�����ͺ��̽� ����
+		return list; //데이터베이스 오류
 	}
 	public ArrayList<Bbs> searchList(int boardID, int pageNumber, String search){
 		String SQL = "SELECT * FROM BBS WHERE boardID = ? AND bbsID < ? AND (bbsTitle like ? OR bbsContent like ? OR map like ?) AND bbsAvailable = 1 ORDER BY bbsID DESC LIMIT 10"; 
@@ -123,10 +122,10 @@ public class BbsDAO {
 			rs = pstmt.executeQuery();
 			while (rs.next()) {
 				Bbs bbs = new Bbs();
-				bbs.setBoardId(rs.getInt(1));
-				bbs.setWritingIdx(rs.getInt(2));
+				bbs.setBoardID(rs.getInt(1));
+				bbs.setBbsID(rs.getInt(2));
 				bbs.setBbsTitle(rs.getString(3));
-				bbs.setUserId(rs.getString(4));
+				bbs.setUserID(rs.getString(4));
 				bbs.setBbsDate(rs.getString(5));
 				bbs.setBbsContent(rs.getString(6));
 				bbs.setMap(rs.getString(7));
@@ -136,7 +135,7 @@ public class BbsDAO {
 		}catch(Exception e) {
 			e.printStackTrace();
 		}
-		return list; //�����ͺ��̽� ����
+		return list; //데이터베이스 오류
 	}
 	
 	public boolean nextPage (int boardID, int pageNumber) {
@@ -152,7 +151,7 @@ public class BbsDAO {
 		}catch(Exception e) {
 			e.printStackTrace();
 		}
-		return false; //�����ͺ��̽� ����
+		return false; //데이터베이스 오류
 	}
 	
 	public boolean searchNextPage (int boardID, int pageNumber, String search) {
@@ -170,7 +169,7 @@ public class BbsDAO {
 		}catch(Exception e) {
 			e.printStackTrace();
 		}
-		return false; //�����ͺ��̽� ����
+		return false; //데이터베이스 오류
 	}
 	
 	public Bbs getBbs(int bbsID) {
@@ -181,10 +180,10 @@ public class BbsDAO {
 			rs = pstmt.executeQuery();
 			while (rs.next()) {
 				Bbs bbs = new Bbs();
-				bbs.setBoardId(rs.getInt(1));
-				bbs.setWritingIdx(rs.getInt(2));
+				bbs.setBoardID(rs.getInt(1));
+				bbs.setBbsID(rs.getInt(2));
 				bbs.setBbsTitle(rs.getString(3));
-				bbs.setUserId(rs.getString(4));
+				bbs.setUserID(rs.getString(4));
 				bbs.setBbsDate(rs.getString(5));
 				bbs.setBbsContent(rs.getString(6));
 				bbs.setMap(rs.getString(7));
@@ -209,7 +208,7 @@ public class BbsDAO {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		return -1; // �����ͺ��̽� ����
+		return -1; // 데이터베이스 오류
 	}
 	
 	public int delete(int bbsID) {
@@ -221,6 +220,6 @@ public class BbsDAO {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		return -1; // �����ͺ��̽� ����
+		return -1; // 데이터베이스 오류
 	}
 }
