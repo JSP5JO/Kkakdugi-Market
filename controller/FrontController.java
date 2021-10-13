@@ -130,7 +130,7 @@ public class FrontController extends HttpServlet {
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		ActionForward forward=null; 
 		String spath = request.getServletPath();
-		String userId="user1";
+		String userId = session.getAttribute("userId");
 		
 		//System.out.println(spath);
 		
