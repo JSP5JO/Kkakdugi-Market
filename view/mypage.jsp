@@ -25,7 +25,7 @@
 	.mycont{
 		flex-basis:33.33%;
 		margin:10px;
-		border:2px solid #333;
+		border:1px solid #000;
 		border-radius:3px;
 		padding:5px 10px;
 		box-sizing:border-box;
@@ -47,6 +47,15 @@
 		text-decoration:none;
 		color:#000;
 	}
+	
+@media screen and (max-width: 768px){
+	.mypage {
+	    flex-direction: column;
+	}
+	.mypage>div {
+		flex-basis:100%;
+	}
+}
 </style>
 </head>
 <body>
