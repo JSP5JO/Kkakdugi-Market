@@ -8,7 +8,9 @@ body{
 
 .main {
 	display: flex;
+	padding:0 20px;
 }
+
 .main div {
 	flex-basis:33.33%;
 	margin:10px;
@@ -19,12 +21,13 @@ body{
 	text-align:center;
 }
 
- 
-@media screen and (max-width: 768px){
+@media screen and (max-width:768px){
 	.main {
 	    flex-direction: column;
+	    padding:0;
 	}
 	.main div {
 		flex-basis:100%;
+		min-height:110px;
 	}
 }

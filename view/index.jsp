@@ -5,9 +5,7 @@
 <html>
 <head>
 <title>Kkakdigu-Market__nav</title>
-<link rel="stylesheet" href="./css/stylesheet.css">
-<script src="https://kit.fontawesome.com/a9b46edd75.js"
-	crossorigin="anonymous"></script>
+<link rel="stylesheet" href="./css/content.css">
 <script src="main.js" defer></script>
 <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
@@ -54,6 +52,8 @@
 		</div>
 
 	</section>
+	
+	<%@ include file="bottom.jsp"%>
 <script>
   AOS.init();
 </script>

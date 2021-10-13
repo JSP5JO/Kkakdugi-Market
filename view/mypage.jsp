@@ -8,6 +8,7 @@
 <head>
 <meta charset="UTF-8">
 <link rel="stylesheet" href="../css/header.css">
+<link rel="stylesheet" href="../css/content.css">
 <link rel="stylesheet" href="../css/bottom.css">
 <title>Mypage</title>
 <style>
@@ -57,11 +58,13 @@
 	.mypage>div {
 		flex-basis:100%;
 	}
+	
 }
 </style>
 </head>
 <body>
 <%@ include file="../header.jsp"%>
+<script src="../main.js"></script>
 	<div class="mypage">
 		<div class="mywriting mycont">
 			<h3>내가 작성한 글 목록</h3>

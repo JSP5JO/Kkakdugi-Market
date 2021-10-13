@@ -10,9 +10,17 @@ footer {
 	 background-color: black;
 	 display: block;
 	 padding:0 38px;
+	 box-sizing:border-box;
 }
 
 footer p{
 	color:#fff;
-	margin: 25px 0;
+	margin: 27.5px 0;
+	font-size:12px;
+}
+
+@media screen and (max-width:768px){
+	footer{
+		padding:0 17px;
+	}	
 }

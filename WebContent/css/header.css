@@ -68,7 +68,7 @@ a {
 }
 
 .navbar__icon{
-    margin-right: 24px;
+    margin-right: 23px;
     color:white;
     display: flex;
     padding: 0px;
@@ -186,6 +186,10 @@ a {
         width: 100%;
         text-align: center;
     }
+    
+    .navbar__logo{
+	    margin-left:0px;
+	}
 
     .navbar__icon {
         justify-content: center;
@@ -200,6 +204,7 @@ a {
     .navbar__hamburger {
         display: flex;
         top:7px;
+        right:7px;
     }
 
     .navbar__menu.active {
@@ -217,41 +222,4 @@ a {
         transition: height 0.05s, opacity 0.05s;
         margin: 1em 0;
     }
-}
-/* 바디 영역 */
-*{
-	letter-spacing: -0.025em;	
-}
-body{
-	padding-top: 120px;
-}
-
-.main {
-	display: flex;
-}
-.main div {
-	flex-basis:33.33%;
-	margin:10px;
-	border-radius:3px;
-	padding:5px 10px;
-	box-sizing:border-box;
-	border: 1px solid black;
-	text-align:center;
-}
-
-.navbar__icon form{
-	display:flex;
-}
-
-.navbar__icon input[type="text"] {
-	margin-right:5px;
-}
- 
-@media screen and (max-width: 768px){
-	.main {
-	    flex-direction: column;
-	}
-	.main div {
-		flex-basis:100%;
-	}
 }

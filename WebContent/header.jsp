@@ -46,3 +46,4 @@
 		</a>
 	</nav>
 </header>
+<script src="main.js"></script>
