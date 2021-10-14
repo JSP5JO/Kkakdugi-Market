@@ -7,13 +7,13 @@ import org.apache.ibatis.session.SqlSessionFactory;
 
 import mybatis.SqlSessionBean;
 
-public class WritingDAO {
+public class WritingDao {
 	
-	private WritingDAO() {}
-	public static WritingDAO getInstance() {
+	private WritingDao() {}
+	public static WritingDao getInstance() {
 		return dao;
 	}
-	private static WritingDAO dao = new WritingDAO();
+	private static WritingDao dao = new WritingDao();
 	
 	SqlSessionFactory factory = SqlSessionBean.getSessionFactory();
 	

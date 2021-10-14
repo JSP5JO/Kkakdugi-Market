@@ -8,8 +8,8 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import dao.JjimDAO;
-import dao.WritingDAO;
+import dao.JjimDao;
+import dao.WritingDao;
 import dto.Jjim;
 import dto.Writing;
 
@@ -27,8 +27,8 @@ public class IndexActioin implements Action {
 		 */
 		
 		String userId = "user1"; // user(dto)에서 받기로 수정
-		JjimDAO jjimDao = JjimDAO.getInstance(); 
-		WritingDAO wdao = WritingDAO.getInstance();
+		JjimDao jjimDao = JjimDao.getInstance(); 
+		WritingDao wdao = WritingDao.getInstance();
 		
 		
 		// 찜 리스트 전달 로직

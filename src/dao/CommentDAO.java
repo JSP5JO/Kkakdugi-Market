@@ -10,13 +10,13 @@ import org.apache.ibatis.session.SqlSessionFactory;
 
 import mybatis.SqlSessionBean;
 
-public class CommentDAO {
+public class CommentDao {
 	
 	SqlSessionFactory factory = SqlSessionBean.getSessionFactory();
-	private static CommentDAO dao = new CommentDAO();
+	private static CommentDao dao = new CommentDao();
 	
-	private CommentDAO() { }
-	public static CommentDAO getInstance() {
+	private CommentDao() { }
+	public static CommentDao getInstance() {
 		return dao;
 	}
 	//getList

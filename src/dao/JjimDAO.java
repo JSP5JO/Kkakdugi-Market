@@ -9,15 +9,15 @@ import org.apache.ibatis.session.SqlSessionFactory;
 
 import mybatis.SqlSessionBean;
 
-public class JjimDAO {
+public class JjimDao {
 
-	private JjimDAO() {}
+	private JjimDao() {}
 
-	public static JjimDAO getInstance() {
+	public static JjimDao getInstance() {
 		return dao;
 	}
 
-	private static JjimDAO dao = new JjimDAO();
+	private static JjimDao dao = new JjimDao();
 
 	SqlSessionFactory factory = SqlSessionBean.getSessionFactory();
 
