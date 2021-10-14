@@ -5,7 +5,6 @@
 	letter-spacing: -0.025em;	
 }
 
-
 /* 헤더 영역 */
 header {
 	height: 75px;
@@ -221,19 +220,11 @@ a {
         opacity: 1;
         transition:opacity 1s;
         height: 148px;
-        
-        /*transition: height 1s, opacity 1s;
-    	height: 148px;
-    	
-    	margin: 1em 0;*/
     }
 
     .navbar__icon.active {
         display: flex;
         opacity:1;
         transition: opacity 3s;
-        /*
-        transition: height 0.05s, opacity 0.05s;
-        margin: 1em 0;*/
     }
 }
