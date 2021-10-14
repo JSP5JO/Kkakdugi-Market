@@ -13,15 +13,16 @@ import controller.action.Action;
 import controller.action.ActionForward;
 import controller.action.IndexActioin;
 import controller.action.MyFieldAction;
+import controller.action.MypageAction;
 
 /**
  * Servlet implementation class controller
  */
 @WebServlet("*.do") 
-public class Controller extends HttpServlet {  
+public class FrontController extends HttpServlet {  
 	private static final long serialVersionUID = 1L;
        
-    public Controller() {
+    public FrontController() {
         super();
     }
 
@@ -30,8 +31,6 @@ public class Controller extends HttpServlet {
 		ActionForward forward = new ActionForward();
 		String spath = request.getServletPath();
 		
-		System.out.println(spath);
-		
 		// url Action
 		if(spath.equals("/index.do")) {
 			Action action = new IndexActioin();
@@ -39,7 +38,10 @@ public class Controller extends HttpServlet {
 		} else if(spath.equals("/myField.do")) {
 			Action action = new MyFieldAction();
 			forward = action.execute(request, response);
-		}
+		}  else if(spath.equals("/mypage.do")) {
+			Action action = new MypageAction();
+			forward = action.execute(request, response);
+		} 
 
 		
 		// request 변경 여부

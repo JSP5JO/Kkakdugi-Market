@@ -2,6 +2,10 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <link rel="stylesheet" href="css/header.css?v=3">
+<link rel="stylesheet" href="css/content.css?v=3">
+
+<script src="https://kit.fontawesome.com/a9b46edd75.js" crossorigin="anonymous"></script>
+<script src="main.js" defer></script>
 <header>
 	<!-- 메인 로고 -->
 	<nav class="navbar">
@@ -41,13 +45,13 @@
 			<c:if test="${sessionScope.user == null}">
 				<li><a href="login.do"><i class="fas fa-sign-in-alt"></i></a></li>
 			</c:if>
-			<c:if test="${sessionScope.user != null}">
+<%-- 			<c:if test="${sessionScope.user != null}"> --%>
 				<!-- 로그인 상태 -->
 				<li>${user.name}(${user.email})님
 				<li>
 				<li id="mypage"><a href="mypage.do">마이페이지</a></li>
 				<li><a href="logout.do"><i class="fas fa-sign-out-alt"></i></a></li>
-			</c:if>
+<%-- 			</c:if> --%>
 		</ul>
 
 		<!-- 반응형 햄버거 로고 -->

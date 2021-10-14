@@ -7,49 +7,15 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<link rel="stylesheet" href="css/mypage.css?v=3"></link>
+
+
 <title>Mypage</title>
-<style>
-	ul{
-		padding-inline-start:0px; /*목록 들여쓰기 없애기*/
-	}
-	
-	h3{
-		text-align:center;
-		color:#000;
-	}
-	.mypage{
-		display:flex;
-		list-style:none;
-		justify-content:space-between;
-	}
-	.mycont{
-		flex-basis:33.33%;
-		margin:10px;
-		border:2px solid #333;
-		border-radius:3px;
-		padding:5px 10px;
-		box-sizing:border-box;
-	}
-	.row{
-		display:flex;
-		list-style:none;
-		justify-content:space-between;
-	}
-	.row>li{
-		flex-basis:33.33%;
-		text-align:center;
-	}
-	.mycont li{
-		list-style:none;
-		color:#000;
-	}
-	.mycont li a{
-		text-decoration:none;
-		color:#000;
-	}
-</style>
+
 </head>
 <body>
+<%@ include file="../header.jsp"%>
+
 	<div class="mypage">
 		<div class="mywriting mycont">
 			<h3>내가 작성한 글 목록</h3>
@@ -60,7 +26,6 @@
 							<li>${vo.idx }</li>
 							<li><a href="detail.do?idx=${vo.idx}&page=${pno}" class="title">${vo.subject }</a>
 						 	</li>
-							<li>${vo.userId }</li>			
 						</ul>
 					</li>
 			 	</c:forEach>
@@ -97,5 +62,6 @@
 		 	</ul>
 		</div>
 	</div>
+<%@ include file="../bottom.jsp"%>
 </body>
 </html>
