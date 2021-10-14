@@ -3,7 +3,10 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <link rel="stylesheet" href="${pageContext.request.contextPath}/css/header.css?v=3">
 <link rel="stylesheet" href="${pageContext.request.contextPath}/css/content.css?v=3">
+<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+<script src="${pageContext.request.contextPath}/main.js" defer></script>
 <script src="https://kit.fontawesome.com/a9b46edd75.js" crossorigin="anonymous"></script>
+<script src="main.js"></script>
 <header>
 	<!-- 메인 로고 -->
 	<nav class="navbar">
@@ -27,7 +30,25 @@
 			<!-- 종합 검색 -->
 			<li>
 				<form action="search.do" method="get">
-					<input type="text"> <input type="submit" value="검색">
+					<select id="searchOption" name="searchOption">
+						<option value="subject" selected>제목</option>
+		       			<option value="userId">작성자</option>
+						<option value="content">내용</option>
+						<!--<c:if test="${map.search_option == 'user_id'}">selected</c:if>
+						   >작성자</option>
+						
+						        <option value="title" 
+						<c:if test="${map.search_option == 'title'}">selected</c:if>
+						        >제목</option>
+						
+						        <option value="content" 
+						<c:if test="${map.search_option == 'content'}">selected</c:if>
+						        >내용</option>-->
+				    </select>
+					<input id="subject" type="text" name="subject">
+					<input id="userId" type="text" name="userId" style="display:none;">
+					<input id="content" type="text" name="content" style="display:none;">
+					<input type="submit" value="검색">
 				</form>
 			</li>
 			<c:if test="${sessionScope.user == null}">
@@ -47,4 +68,21 @@
 		</a>
 	</nav>
 </header>
-<script src="main.js"></script>
+<script>
+	$("#searchOption").on('change',function(){
+		let state = $("#searchOption option:selected").val();
+		if(state == "subject"){
+			$("#subject").css("display","block");
+			$("#userId").css("display","none");
+			$("#content").css("display","none");
+		}else if(state == "userId"){
+			$("#subject").css("display","none");
+			$("#userId").css("display","block");
+			$("#content").css("display","none");
+		}else if(state == "content"){
+			$("#subject").css("display","none");
+			$("#userId").css("display","none");
+			$("#content").css("display","block");
+		}	
+	});
+</script>

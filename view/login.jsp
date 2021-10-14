@@ -1,40 +1,39 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=EUC-KR"
+    pageEncoding="EUC-KR"%>
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
-<title>ë¡œê·¸ì¸</title>
-<!-- ì¹´ì¹´ì˜¤ ìŠ¤í¬ë¦½íŠ¸ -->
+<meta charset="EUC-KR">
+<title>±ïµÎ±â¸¶ÄÏ ·Î±×ÀÎ</title>
+<!-- Ä«Ä«¿À ½ºÅ©¸³Æ® -->
 <script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
 </head>
 <body>
 <div>
-	<form action="signIn.do" method="post">
-		ID : <input type="text" name="id" placeholder="idë¥¼ ì…ë ¥í•´ì£¼ì„¸ìš”." required><br>
-		PW : <input type="password" name="pw" placeholder="ë¹„ë°€ë²ˆí˜¸ë¥¼ ì…ë ¥í•´ì£¼ì„¸ìš”." required>
-		<input type="submit" value="ë¡œê·¸ì¸">
-		<input type="button" value="íšŒì›ê°€ì…" onclick="location.href='regist.do'">
-		<input type="button" value="ID/PW ì°¾ê¸°" onclick="location.href='??'">
-		<!-- id/pwì°¾ê¸° jsp,do,action ë§Œë“¤ê³  ê²½ë¡œì„¤ì • í•„ìš”í•¨ -->
+	<form action="loginAction.do" method="post">
+		ID : <input type="text" name="id" placeholder="id¸¦ ÀÔ·ÂÇØÁÖ¼¼¿ä."><br>
+		PW : <input type="password" name="pw" placeholder="ºñ¹Ğ¹øÈ£¸¦ ÀÔ·ÂÇØÁÖ¼¼¿ä.">
+		<input type="submit" value="·Î±×ÀÎ">
+		<input type="button" value="È¸¿ø°¡ÀÔ" onclick="location.href='regist.do'">
+		<input type="button" value="ID/PW Ã£±â" onclick="location.href='??'"><!-- id/pwÃ£±â jsp,do,action ¸¸µé°í °æ·Î¼³Á¤ ÇÊ¿äÇÔ -->
 	</form>
 </div>
-<ul>
+<ul><!-- Ä«Ä«¿À api ¹Ì¿Ï¼º -->
 	<li onclick="kakaoLogin();">
       <a href="javascript:void(0)">
-          <span>ì¹´ì¹´ì˜¤ ë¡œê·¸ì¸</span>
+          <span>Ä«Ä«¿À ·Î±×ÀÎ</span>
       </a>
 	</li>
-	<li onclick="kakaoLogout();">
+<!-- 	<li onclick="kakaoLogout();">
       <a href="javascript:void(0)">
-          <span>ì¹´ì¹´ì˜¤ ë¡œê·¸ì•„ì›ƒ</span>
+          <span>Ä«Ä«¿À ·Î±×¾Æ¿ô</span>
       </a>
 	</li>
-</ul> 
+</ul> -->
 <script>
-Kakao.init('2c5411db0d0516f5e9b440357100e504'); //ë°œê¸‰ë°›ì€ í‚¤ ì¤‘ javascriptí‚¤ë¥¼ ì‚¬ìš©í•´ì¤€ë‹¤.
-console.log(Kakao.isInitialized()); // sdkì´ˆê¸°í™”ì—¬ë¶€íŒë‹¨
-	//ì¹´ì¹´ì˜¤ë¡œê·¸ì¸
+Kakao.init('2c5411db0d0516f5e9b440357100e504'); //¹ß±Ş¹ŞÀº Å° Áß javascriptÅ°¸¦ »ç¿ëÇØÁØ´Ù.
+console.log(Kakao.isInitialized()); // sdkÃÊ±âÈ­¿©ºÎÆÇ´Ü
+	//Ä«Ä«¿À·Î±×ÀÎ
 	function kakaoLogin() {
 	    Kakao.Auth.login({
 	      success: function (response) {
@@ -53,7 +52,7 @@ console.log(Kakao.isInitialized()); // sdkì´ˆê¸°í™”ì—¬ë¶€íŒë‹¨
 	      },
 	    })
 	  }
-	//ì¹´ì¹´ì˜¤ë¡œê·¸ì•„ì›ƒ  
+	//Ä«Ä«¿À·Î±×¾Æ¿ô  
 	function kakaoLogout() {
 	    if (Kakao.Auth.getAccessToken()) {
 	      Kakao.API.request({

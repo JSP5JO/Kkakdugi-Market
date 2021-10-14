@@ -13,6 +13,7 @@ import javax.servlet.http.HttpServletResponse;
 import controller.action.Action;
 import controller.action.ActionForward;
 import controller.action.MypageAction;
+import controller.action.SearchAction;
 
 
 @WebServlet("*.do")
@@ -31,7 +32,10 @@ public class FrontController extends HttpServlet {
 		ActionForward forward=null; 
 		String spath = request.getServletPath();
 		//String userId = session.getAttribute("userId");
+		String searchOption = "subject";
+		String subject = "subject";
 		String userId = "user1";
+		String content = "content";
 		
 		//System.out.println(spath);
 		
@@ -39,7 +43,12 @@ public class FrontController extends HttpServlet {
 			Action action = new MypageAction();
 			forward = action.execute(request, response);
 			forward.setUrl("/view/mypage.jsp?userId="+userId);
+		}else if(spath.equals("/view/search.do")) {
+			Action action = new SearchAction();
+			forward = action.execute(request, response);
+			forward.setUrl("/view/search.jsp?searchOption"+searchOption+"&userId="+userId+"&subject="+subject+"&content="+content);
 		}
+		
 		if(forward.isRedirect()) {
 			response.sendRedirect(forward.getUrl());
 		}else {

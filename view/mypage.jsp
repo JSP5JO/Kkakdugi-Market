@@ -14,7 +14,6 @@
 </head>
 <body>
 <%@ include file="../header.jsp"%>
-<script src="../main.js"></script>
 	<div class="mypage">
 		<div class="mywriting mycont">
 			<h3>내가 작성한 글 목록</h3>
@@ -25,7 +24,6 @@
 							<li>${vo.idx }</li>
 							<li><a href="detail.do?idx=${vo.idx}&page=${pno}" class="title">${vo.subject }</a>
 						 	</li>
-							<li>${vo.userId }</li>			
 						</ul>
 					</li>
 			 	</c:forEach>
@@ -39,7 +37,6 @@
 						<ul class="row">
 							<li>${cm.idx }</li>
 							<li><a href="detail.do?idx=${cm.writingIdx}&page=${pno}" class="title">${cm.content }</a></li>
-							<li>${cm.userId }
 						 	</li>	
 						</ul>
 					</li>
@@ -52,8 +49,7 @@
 				<c:forEach var="jj" items="${jlist}"> 
 					<li>
 						<ul class="row">
-							<LI>${jj.categoryIdx }</LI>
-							<li>${jj.userId }</li>
+							<li>${jj.categoryIdx }</li>
 							<li><a href="detail.do?idx=${jj.wrtingIdx}&page=${pno}" class="title">제목</a>
 						 	</li>
 						</ul>

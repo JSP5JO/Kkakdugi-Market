@@ -14,6 +14,15 @@
 	<select id="selectByIdx" resultType="Writing" parameterType="int">
 		select * from writing where idx=#{idx}
 	</select>
+	<select id="searchBySubject" resultType="Writing" parameterType="String">
+		select * from writing where subject like CONCAT('%', #{subject}, '%')
+	</select>
+	<select id="searchById" resultType="Writing" parameterType="String">
+		select * from writing where userId like CONCAT('%', #{userId}, '%')
+	</select>
+	<select id="searchByContent" resultType="Writing" parameterType="String">
+		select * from writing where content like CONCAT('%', #{content}, '%')
+	</select>
 	<!-- <select id="getCount" resultType="int" >
 		select count(*) from writing
 	</select>

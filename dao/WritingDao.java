@@ -8,13 +8,13 @@ import org.apache.ibatis.session.SqlSessionFactory;
 
 import mybatis.SqlSessionBean;
 
-public class WritingDAO {
+public class WritingDao {
 	
 	SqlSessionFactory factory = SqlSessionBean.getSessionFactory();
-	private static WritingDAO dao = new WritingDAO();
+	private static WritingDao dao = new WritingDao();
 	
-	private WritingDAO() { }
-	public static WritingDAO getInstance() {
+	private WritingDao() { }
+	public static WritingDao getInstance() {
 		return dao;
 	}
 	//getList
@@ -34,7 +34,31 @@ public class WritingDAO {
 		return list;
 	}
 	
-	//idx로 한개 행 조회
+	public List<Writing> searchBySubject(String subject) {
+		List<Writing> list = null;
+		SqlSession mapper = factory.openSession();
+		list = mapper.selectList("writing.searchBySubject",subject);
+		mapper.close();
+		return list;
+	}
+	
+	public List<Writing> searchById(String userId) {
+		List<Writing> list = null;
+		SqlSession mapper = factory.openSession();
+		list = mapper.selectList("writing.searchById",userId);
+		mapper.close();
+		return list;
+	}
+	
+	public List<Writing> searchByContent(String content) {
+		List<Writing> list = null;
+		SqlSession mapper = factory.openSession();
+		list = mapper.selectList("writing.searchByContent",content);
+		mapper.close();
+		return list;
+	}
+	
+	/*//idx로 한개 행 조회
 	public Writing getOne(int idx) {
 		SqlSession mapper = factory.openSession();
 		Writing dto = mapper.selectOne("selectByIdx", idx);  
@@ -84,6 +108,6 @@ public class WritingDAO {
 		mapper.update("readCount", idx);
 		mapper.commit();
 		mapper.close();
-	}
+	}*/
 	
 }

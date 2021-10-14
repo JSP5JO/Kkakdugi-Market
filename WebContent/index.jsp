@@ -6,7 +6,6 @@
 <head>
 <title>Kkakdigu-Market__nav</title>
 <link rel="stylesheet" href="./css/content.css">
-<script src="main.js" defer></script>
 <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 </head>
