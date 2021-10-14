@@ -174,9 +174,10 @@ a {
     }
 	
 	.navbar.active{
-	 	height:324px;
-        transition:height 1s;
+		height:324px;
+		transition:height 1s;
 	}
+	
     .navbar__menu {
         flex-direction: column;
         align-items: center;
