@@ -8,6 +8,7 @@ h3{
 }
 .mypage{
 	display:flex;
+	padding: 0 20px;
 	list-style:none;
 	justify-content:space-between;
 }
@@ -47,6 +48,7 @@ h3{
 @media screen and (max-width: 768px){
 	.mypage {
 	    flex-direction: column;
+	    padding: 0;
 	}
 	.mycont {
 		flex-basis:100%;
