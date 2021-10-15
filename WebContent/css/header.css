@@ -5,15 +5,6 @@
 	letter-spacing: -0.025em;	
 }
 
-body{
-	margin:0;
-}
-
-.mypage, .main{
-	min-height:500px;
-	padding-bottom:20px !important;
-}
-
 /* 헤더 영역 */
 header {
 	height: 75px;
@@ -186,7 +177,6 @@ header button {
 .navbar__menu > li:hover .category__list {
 	display: block;
 }
-
 
 @media screen and (max-width: 768px){ /*@media media type and (media rule)*/
 
