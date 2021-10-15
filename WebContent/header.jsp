@@ -6,7 +6,6 @@
 <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
 <script src="${pageContext.request.contextPath}/main.js" defer></script>
 <script src="https://kit.fontawesome.com/a9b46edd75.js" crossorigin="anonymous"></script>
-<script src="main.js"></script>
 <header>
 	<!-- 메인 로고 -->
 	<nav class="navbar">
@@ -29,7 +28,7 @@
 		<ul class="navbar__icon">
 			<!-- 종합 검색 -->
 			<li>
-				<form action="search.do" method="get">
+				<form action="${pageContext.request.contextPath}/view/search.do" method="get">
 					<select id="searchOption" name="searchOption">
 						<option value="subject" selected>제목</option>
 		       			<option value="userId">작성자</option>
@@ -52,7 +51,7 @@
 		</ul>
 
 		<!-- 반응형 햄버거 로고 -->
-		<a href="#" class="navbar__hamburger"> <i class="fas fa-bars"></i>
+		<a href="javascript:void(0)" class="navbar__hamburger"> <i class="fas fa-bars"></i>
 		</a>
 	</nav>
 </header>

@@ -89,11 +89,6 @@
 				 	</c:forEach>
 				</ul>
 			</c:if>
-			<div style="margin:auto;">
-			 	Go!<a class="button" href="insert.do">글쓰기</a>&nbsp;&nbsp;
-			 	<a class="button" href="${pageContext.request.contextPath }">홈 : ${pageContext.request.contextPath }
-			 	</a>&nbsp;&nbsp;&nbsp;작성글 총 개수 : ${pageDto.totalCount }
-			</div>
 			<!-- 글목록 페이지 처리 : pagination -->
 			<div style="text-align: center;">
 				<hr>
