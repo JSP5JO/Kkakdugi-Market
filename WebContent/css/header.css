@@ -9,6 +9,11 @@ body{
 	margin:0;
 }
 
+.mypage, .main{
+	min-height:500px;
+	padding-bottom:20px !important;
+}
+
 /* 헤더 영역 */
 header {
 	height: 75px;
@@ -67,7 +72,7 @@ header button {
 }
 
 .navbar__menu li{
-    padding: 8px 12px;
+    padding: 8px 15px;
     border-radius: 20px;
     transition:background 0.3s;
 }
