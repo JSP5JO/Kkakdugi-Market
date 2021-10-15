@@ -55,9 +55,3 @@
 		</a>
 	</nav>
 </header>
-<script>
-	$("#searchOption").on('change',function(){
-		let state = $("#searchOption option:selected").val();
-		$("#testbox").attr("name", state);
-	});
-</script>

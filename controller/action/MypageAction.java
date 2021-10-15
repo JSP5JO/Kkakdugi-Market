@@ -11,9 +11,11 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import dao.CommentDao;
+import dao.JjimDao;
 import dao.WritingDao;
 import dto.Writing;
 import dto.Comment;
+import dto.Jjim;
 import dto.PageDto;
 
 public class MypageAction implements Action {
@@ -32,14 +34,15 @@ public class MypageAction implements Action {
 		List<Comment> clist = cdao.selectById(userId);//질문
 		request.setAttribute("clist", clist);
 		
-		/*WritingDAO wdao = WritingDAO.getInstance();
-		List<Writing> wlist = wdao.selectById(userId);//질문
-		request.setAttribute("wlist", wlist);*/
-		
+		/*추가된 내용 - STRAT*/
+		JjimDao jdao = JjimDao.getInstance();
+		List<Jjim> jlist = jdao.selectById(userId);//질문
+		request.setAttribute("jlist", jlist);
+		/*추가된 내용 - END*/
 		
 		ActionForward forward = new ActionForward();
 		forward.isRedirect = false;
-		forward.url="/view/mypage.jsp?userId="+userId;
+		forward.url="view/mypage.jsp?userId="+userId;
 		return forward;
 	}
 

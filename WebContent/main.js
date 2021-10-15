@@ -13,3 +13,9 @@ function showBtn() {
 /*햄버거 버튼 클릭 이벤트*/
 hamburgerBtn.addEventListener('click', showBtn);
 
+
+$("#searchOption").on('change',function(){
+	let state = $("#searchOption option:selected").val();
+	$("#testbox").attr("name", state);
+});
+

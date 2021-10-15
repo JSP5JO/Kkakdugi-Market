@@ -49,8 +49,9 @@
 				<c:forEach var="jj" items="${jlist}"> 
 					<li>
 						<ul class="row">
-							<li>${jj.categoryIdx }</li>
-							<li><a href="detail.do?idx=${jj.wrtingIdx}&page=${pno}" class="title">제목</a>
+							<li>${jj.writingIdx}</a>
+						 	</li>
+							<li><a href="detail.do?idx=${jj.writingIdx}&page=${pno}" class="title">${jj.subject}</a>
 						 	</li>
 						</ul>
 					</li>
