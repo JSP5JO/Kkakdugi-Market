@@ -13,12 +13,13 @@ public class JjimDao {
 
 	private JjimDao() {}
 
-	public static JjimDao getInstance() {
-		return dao;
-	}
 
 	private static JjimDao dao = new JjimDao();
 
+	public static JjimDao getInstance() {
+		return dao;
+	}
+	
 	SqlSessionFactory factory = SqlSessionBean.getSessionFactory();
 
 	public List<Jjim> selectById(String userId) {
