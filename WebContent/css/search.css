@@ -15,6 +15,9 @@ hr{
 ul{
 	padding-left:0;
 }
+.s-main{
+	margin-bottom:60px;
+}
 ul.row{
 	display:flex;
 	list-style:none;
