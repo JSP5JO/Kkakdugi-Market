@@ -22,7 +22,7 @@ footer {
     -webkit-filter:grayscale(100%);
     filter: gray;
     justify-content: center;
-    padding:2em 0 1.5em;
+    padding:2.5em 0 1.5em;
     margin-bottom:0;
 }
 
@@ -55,7 +55,7 @@ footer {
 }
 
 .footer__menu li{
-    padding: 8px 15px;
+    padding: 8px 12px;
     border-radius: 20px;
     transition:background 0.3s;
 }
@@ -113,5 +113,8 @@ footer p{
 @media screen and (max-width:768px){
 	footer{
 		padding:0 17px;
-	}	
+	}
+	.footer__menu li{
+	    padding: 8px;
+	}
 }
