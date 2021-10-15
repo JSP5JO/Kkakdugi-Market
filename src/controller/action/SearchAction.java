@@ -15,34 +15,32 @@ public class SearchAction implements Action {
 	@Override
 	public ActionForward execute(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-
-//		String searchOption = "subject";
+		
+		// 검색 조건에 따른 파라미터 가져오기
 		String searchOption = request.getParameter("searchOption");
-//		String subject = "subject";
 		String subject = request.getParameter("subject");
-//		String userId = "user1";
 		String userId = request.getParameter("userId");
-//		String content = "content";
 		String content = request.getParameter("content");
 
+		// 검색 주제 별 글 리스트 생성 후 요청 전달
 		if (searchOption.equals("subject")) {
 			WritingDao wdao = WritingDao.getInstance();
-			List<Writing> slist = wdao.searchBySubject(subject);
-			request.setAttribute("slist", slist);
+			List<Writing> list = wdao.searchBySubject(subject);
+			request.setAttribute("list", list);
 		} else if (searchOption.equals("userId")) {
 			WritingDao wdao = WritingDao.getInstance();
-			List<Writing> dlist = wdao.searchById(userId);
-			request.setAttribute("dlist", dlist);
+			List<Writing> list = wdao.searchById(userId);
+			request.setAttribute("list", list);
 		} else if (searchOption.equals("content")) {
 			WritingDao wdao = WritingDao.getInstance();
-			List<Writing> clist = wdao.searchByContent(content);
-			request.setAttribute("clist", clist);
+			List<Writing> list = wdao.searchByContent(content);
+			request.setAttribute("list", list);
 		}
 
 		ActionForward forward = new ActionForward();
 
 		forward.isRedirect = false;
-		forward.setUrl("view/search.jsp?searchOption"+searchOption+"&userId="+userId+"&subject="+subject+"&content="+content);
+		forward.setUrl("view/search.jsp");
 
 		return forward;
 	}

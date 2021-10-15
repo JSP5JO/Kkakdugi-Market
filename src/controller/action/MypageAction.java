@@ -22,11 +22,11 @@ public class MypageAction implements Action {
 //		String userId = request.getParameter("userId");
 		String userId = "user1";
 		WritingDao wdao = WritingDao.getInstance();
-		List<Writing> wlist = wdao.selectById(userId);//질문
+		List<Writing> wlist = wdao.selectById(userId);
 		request.setAttribute("wlist", wlist);
 		
 		CommentDao cdao = CommentDao.getInstance();
-		List<Comment> clist = cdao.selectById(userId);//질문
+		List<Comment> clist = cdao.selectById(userId);
 		request.setAttribute("clist", clist);
 		
 		/*WritingDAO wdao = WritingDAO.getInstance();

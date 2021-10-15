@@ -9,6 +9,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public class SessionDto { 
 	private int idx;
-	private String name;
+	private String id;
 	private String email;
+	private String proIdx;
 }

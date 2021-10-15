@@ -17,7 +17,6 @@
 		<hr>
 		<div style="margin:auto;">
 			<c:set var="pno" value="${pageDto.currentPage}"/>
-			<c:if test="${param.searchOption == 'subject'}">
 				<ul	class="s-main search-sbj">
 					<li>
 						<ul  class="row">
@@ -27,68 +26,22 @@
 							<li>작성자</li>
 						</ul>
 					</li>
-				 	<c:forEach var="sbj" items="${slist}"> 
+					
+					<!-- searchAction에서 전달 받은 list 출력 불러오기 -->
+				 	<c:forEach var="vo" items="${list}"> 
 						<li>
 							<ul  class="row">
-								<li>${sbj.idx }</li>
-								<li>${sbj.categoryIdx }</li>
+								<li>${vo.idx }</li>
+								<li>${vo.categoryIdx }</li>
 								<li>
-									<a href="detail.do?idx=${sbj.idx}&page=${pno}" class="title">${sbj.subject }</a>
+									<a href="detail.do?idx=${vo.idx}&page=${pno}" class="title">${vo.subject }</a>
 							 	</li>
-								<li>${sbj.userId }</li>
+								<li>${vo.userId }</li>
 							</ul>
 						</li>
 				 	</c:forEach>
 				</ul>
-			</c:if>
-			<c:if test="${param.searchOption == 'userId'}">
-				<ul class="s-main search-id">
-					<li>
-						<ul class="row">
-							<li>번호</li>
-							<li>카테고리</li>
-							<li>제목</li>
-							<li>작성자</li>
-						</ul>
-					</li>
-				 	<c:forEach var="cont" items="${dlist}"> 
-						<li>
-							<ul  class="row">
-								<li>${cont.idx }</li>
-								<li>${cont.categoryIdx }</li>
-								<li>
-									<a href="detail.do?idx=${cont.idx}&page=${pno}" class="title">${cont.subject }</a>
-							 	</li>
-								<li>${cont.userId }</li>
-							</ul>
-						</li>
-				 	</c:forEach>
-				</ul>
-			</c:if>
-			<c:if test="${param.searchOption == 'content'}">
-				<ul class="s-main search-cont">
-					<li>
-						<ul class="row">
-							<li>번호</li>
-							<li>카테고리</li>
-							<li>제목</li>
-							<li>작성자</li>
-						</ul>
-					</li>
-				 	<c:forEach var="cont" items="${clist}"> 
-						<li>
-							<ul  class="row">
-								<li>${cont.idx }</li>
-								<li>${cont.categoryIdx }</li>
-								<li>
-									<a href="detail.do?idx=${cont.idx}&page=${pno}" class="title">${cont.subject }</a>
-							 	</li>
-								<li>${cont.userId }</li>
-							</ul>
-						</li>
-				 	</c:forEach>
-				</ul>
-			</c:if>
+			
 			<!-- 글목록 페이지 처리 : pagination -->
 			<div style="text-align: center;">
 				<hr>

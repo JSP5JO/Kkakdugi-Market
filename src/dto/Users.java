@@ -14,6 +14,7 @@ public class Users {
 	private String pw; 
 	private String email;
 	private String proIdx;
+	private long kakaoId;
 	
 	public Users(String name, String id, String pw, String email) {
 		this.name = name;
