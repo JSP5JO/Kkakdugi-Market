@@ -83,11 +83,15 @@ header a {
 }
 
 .navbar__icon input[type="text"] {
-	margin-right:5px;
+	margin-right:3px;
 }
 
 .fas{
 	color:#fff;
+}
+
+#searchOption{
+	margin-right:4px;
 }
 
 @media screen and (-webkit-min-device-pixel-ratio:0){ 

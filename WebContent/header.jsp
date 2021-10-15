@@ -34,20 +34,8 @@
 						<option value="subject" selected>제목</option>
 		       			<option value="userId">작성자</option>
 						<option value="content">내용</option>
-						<!--<c:if test="${map.search_option == 'user_id'}">selected</c:if>
-						   >작성자</option>
-						
-						        <option value="title" 
-						<c:if test="${map.search_option == 'title'}">selected</c:if>
-						        >제목</option>
-						
-						        <option value="content" 
-						<c:if test="${map.search_option == 'content'}">selected</c:if>
-						        >내용</option>-->
 				    </select>
-					<input id="subject" type="text" name="subject">
-					<input id="userId" type="text" name="userId" style="display:none;">
-					<input id="content" type="text" name="content" style="display:none;">
+					<input id="testbox" type="text" name="subject">
 					<input type="submit" value="검색">
 				</form>
 			</li>
@@ -71,18 +59,6 @@
 <script>
 	$("#searchOption").on('change',function(){
 		let state = $("#searchOption option:selected").val();
-		if(state == "subject"){
-			$("#subject").css("display","block");
-			$("#userId").css("display","none");
-			$("#content").css("display","none");
-		}else if(state == "userId"){
-			$("#subject").css("display","none");
-			$("#userId").css("display","block");
-			$("#content").css("display","none");
-		}else if(state == "content"){
-			$("#subject").css("display","none");
-			$("#userId").css("display","none");
-			$("#content").css("display","block");
-		}	
+		$("#testbox").attr("name", state);
 	});
 </script>
