@@ -12,9 +12,13 @@ import javax.servlet.http.HttpServletResponse;
 import controller.action.Action;
 import controller.action.ActionForward;
 import controller.action.IndexActioin;
+import controller.action.LoginMoveAction;
 import controller.action.MyFieldAction;
 import controller.action.MypageAction;
+import controller.action.RegistAction;
+import controller.action.RegistMoveAction;
 import controller.action.SearchAction;
+import controller.action.SignInAction;
 
 /**
  * Servlet implementation class controller
@@ -45,7 +49,19 @@ public class FrontController extends HttpServlet {
 		} else if(spath.equals("/search.do")) {
 			Action action = new SearchAction();
 			forward = action.execute(request, response);
-		} 
+		} else if(spath.equals("/login.do")) {
+			Action action = new LoginMoveAction();
+			forward = action.execute(request, response);   
+		}else if(spath.equals("/signIn.do")) {
+			Action action = new SignInAction();
+			forward = action.execute(request, response);
+		}else if(spath.equals("/regist.do")) {
+			Action action = new RegistMoveAction();
+			forward = action.execute(request, response);
+		}else if(spath.equals("/registSave.do")) {
+			Action action = new RegistAction();
+			forward = action.execute(request, response);
+		}
 
 		
 		// request 변경 여부

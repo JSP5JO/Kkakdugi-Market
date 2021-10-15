@@ -12,6 +12,7 @@
   	<typeAlias type="dto.Jjim" alias = "Jjim"/>
   	<typeAlias type="dto.Writing" alias = "Writing"/>
   	<typeAlias type="dto.Comment" alias = "Comment"/>
+  	<typeAlias type="dto.Users" alias = "Users"/>
   </typeAliases>
   
   <!--  db 연결정보 -->
@@ -30,6 +31,7 @@
     <mapper resource="mybatis/jjim.xml"/>
     <mapper resource="mybatis/writing.xml"/>
     <mapper resource="mybatis/comment.xml"/>
+    <mapper resource="mybatis/users.xml"/>
   </mappers>
 </configuration>
 

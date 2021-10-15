@@ -4,9 +4,12 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>alert</title>
 </head>
 <body>
-
+<script type="text/javascript">
+	alert('${message}');
+	location.href = '${url}';
+</script>
 </body>
 </html>

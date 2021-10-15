@@ -21,7 +21,6 @@ public class UsersDao {
 		SessionDto dto = null;
 		SqlSession mapper = sqlFactory.openSession();
 		dto = mapper.selectOne("users.loginCheck", map);
-		mapper.commit();
 		mapper.close();
 		return dto;
 	}

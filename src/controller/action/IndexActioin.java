@@ -22,12 +22,6 @@ public class IndexActioin implements Action {
 
 		ActionForward forward = new ActionForward();
 
-		/*
-		 * 내가 쓴 글 리스트 가져와서 요청 넘기기 String userId = "user1"; // // WritingDAO wdao =
-		 * WritingDAO.getInstance(); List<Writing> myList = wdao.selectById(userId); //
-		 * // request.setAttribute("myList", myList);
-		 */
-
 		HttpSession session = request.getSession();
 		SessionDto user = (SessionDto) session.getAttribute("user");
 
@@ -47,7 +41,7 @@ public class IndexActioin implements Action {
 			}
 
 			// 내 전문분야의 글 가져오기
-			String myFieldIdx = "CATE20"; // user(dto)에서 받기로 수정
+			String myFieldIdx = user.getProIdx(); // user(dto)에서 받기로 수정
 			List<Writing> myFieldList = wdao.selectByCategoryIdx(myFieldIdx);
 
 			// 요청 넘겨주기

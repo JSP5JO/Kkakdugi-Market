@@ -27,25 +27,34 @@
 		<div>
 			<h3>내 전문분야의 질문 글</h3>
 			<p>이곳에 리스트(myField)를 삽입</p>
-			<%-- 			<c:if test="${sessionScope.user != null}"> --%>
-			<ol>
-				<c:forEach var="vo" items="${myFieldList}">
-					<li><a href="#">${vo.subject}</a></li>
-				</c:forEach>
-			</ol>
-			<%-- 			</c:if> --%>
+			<c:if test="${sessionScope.user != null}">
+				<ol>
+					<c:forEach var="vo" items="${myFieldList}">
+						<li><a href="#">${vo.subject}</a></li>
+					</c:forEach>
+				</ol>
+			</c:if>
+				<!-- 비 로그인 상태 -->
+			<c:if test="${sessionScope.user == null}">
+				<p>로그인 후에 이용 가능 합니다.</p>
+			</c:if>
 		</div>
 
 		<div>
 			<h3>찜한 상품</h3>
+			<!-- 로그인 상태 -->
 			<p>이곳에 리스트(jjimWritingList)를 삽입</p>
-<%-- 			<c:if test="${sessionScope.user != null}"> --%>
+			<c:if test="${sessionScope.user != null}">
 				<ol>
 					<c:forEach var="vo" items="${jjimWritingList}">
 						<li><a href="#">${vo.subject}</a></li>
 					</c:forEach>
 				</ol>
-<%-- 			</c:if> --%>
+			</c:if>
+			<!-- 비 로그인 상태 -->
+			<c:if test="${sessionScope.user == null}">
+				<p>로그인 후에 이용 가능 합니다.</p>
+			</c:if>
 		</div>
 	</section>
 
