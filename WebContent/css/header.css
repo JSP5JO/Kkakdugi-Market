@@ -5,6 +5,10 @@
 	letter-spacing: -0.025em;	
 }
 
+body{
+	margin:0;
+}
+
 /* 헤더 영역 */
 header {
 	height: 75px;

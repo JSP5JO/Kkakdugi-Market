@@ -1,7 +1,7 @@
 @charset "UTF-8";
 
 footer {
-	position: fixed;
+	position: relative;
 	bottom: 0;
 	left: 0;
 	right: 0;
@@ -22,7 +22,8 @@ footer {
     -webkit-filter:grayscale(100%);
     filter: gray;
     justify-content: center;
-    margin:2em 0 1.5em;
+    padding:2em 0 1.5em;
+    margin-bottom:0;
 }
 
 .footer__logo li {
@@ -76,6 +77,7 @@ footer {
     list-style: none;
     padding-left: 0px;
     margin-top: 0.85em;
+    margin-bottom:0;
     justify-content: center;
   
 }
@@ -89,7 +91,7 @@ footer {
     justify-content: center;
     border:1px solid #999;
     text-decoration: none;
-    margin:0 4px;
+    margin:0 3px;
 }
 
 .footer__sns li a:hover{
@@ -102,9 +104,10 @@ footer {
 }
 footer p{
 	color:#999;
-	margin: 43px 0 43px;
+	padding: 43px 0 43px;
     font-size: 11px;
     text-align: center;
+    margin:0;
 }
 
 @media screen and (max-width:768px){
