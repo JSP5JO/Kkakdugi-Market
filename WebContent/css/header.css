@@ -20,6 +20,13 @@ header a {
     color: white;
 }
 
+header button {
+	background-color:transparent;  
+	border:0px transparent solid;
+	color: white;
+	cursor: pointer;
+}
+
 .navbar{
     background: black;
     display: flex;
@@ -43,6 +50,7 @@ header a {
 
 .navbar__logo a {
     line-height:30px;
+    font-weight:700;
 }
 
 .navbar__menu{

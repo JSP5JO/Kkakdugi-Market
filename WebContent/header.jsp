@@ -11,7 +11,7 @@
 	<nav class="navbar">
 		<ul class="navbar__logo">
 			<!-- <li><i class="fab fa-apple"></i></li> -->
-			<li><img src="/Kkakdugi-Market/img/logo.png" alt="logo" width="30px"></li>
+			<li><img src="${pageContext.request.contextPath}/img/logo.png" alt="logo" width="30px"></li>
 			<li><a href="index.do">Kkakdugi-Market</a></li>
 		</ul>
 
