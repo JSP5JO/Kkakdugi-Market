@@ -47,7 +47,6 @@ li.rowli:last-child ul{
 .row > li:nth-child(5){
 	flex-basis:20%;
 }
-
 .row li {
 	padding : 5px  10px;
 	margin : 5px 0px;
