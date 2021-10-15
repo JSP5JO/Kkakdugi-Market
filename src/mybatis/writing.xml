@@ -14,5 +14,14 @@
 	<select id="selectByCategoryIdx" resultType="Writing" parameterType="String">
 		select * from writing where categoryIdx = #{idx} order by idx desc
 	</select>
+	<select id="searchBySubject" resultType="Writing" parameterType="String">
+		select * from writing where subject like CONCAT('%', #{subject}, '%')
+	</select>
+	<select id="searchById" resultType="Writing" parameterType="String">
+		select * from writing where userId like CONCAT('%', #{userId}, '%')
+	</select>
+	<select id="searchByContent" resultType="Writing" parameterType="String">
+		select * from writing where content like CONCAT('%', #{content}, '%')
+	</select>
 </mapper>
 

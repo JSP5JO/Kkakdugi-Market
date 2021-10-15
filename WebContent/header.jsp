@@ -67,21 +67,3 @@
 		</a>
 	</nav>
 </header>
-<script>
-	$("#searchOption").on('change',function(){
-		let state = $("#searchOption option:selected").val();
-		if(state == "subject"){
-			$("#subject").css("display","block");
-			$("#userId").css("display","none");
-			$("#content").css("display","none");
-		}else if(state == "userId"){
-			$("#subject").css("display","none");
-			$("#userId").css("display","block");
-			$("#content").css("display","none");
-		}else if(state == "content"){
-			$("#subject").css("display","none");
-			$("#userId").css("display","none");
-			$("#content").css("display","block");
-		}	
-	});
-</script>

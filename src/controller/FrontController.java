@@ -14,6 +14,7 @@ import controller.action.ActionForward;
 import controller.action.IndexActioin;
 import controller.action.MyFieldAction;
 import controller.action.MypageAction;
+import controller.action.SearchAction;
 
 /**
  * Servlet implementation class controller
@@ -40,6 +41,9 @@ public class FrontController extends HttpServlet {
 			forward = action.execute(request, response);
 		}  else if(spath.equals("/mypage.do")) {
 			Action action = new MypageAction();
+			forward = action.execute(request, response);
+		} else if(spath.equals("/search.do")) {
+			Action action = new SearchAction();
 			forward = action.execute(request, response);
 		} 
 

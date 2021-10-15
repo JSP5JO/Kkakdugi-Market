@@ -44,4 +44,32 @@ public class WritingDao {
 		return list;
 	}
 	
+	// 글 제목을 인자로 글 목록 리턴
+	public List<Writing> searchBySubject(String subject) {
+		List<Writing> list = null;
+		SqlSession mapper = factory.openSession();
+		list = mapper.selectList("writing.searchBySubject",subject);
+		mapper.close();
+		return list;
+	}
+
+	// 글쓴이를 인자로 글 목록 리턴
+	public List<Writing> searchById(String userId) {
+		List<Writing> list = null;
+		SqlSession mapper = factory.openSession();
+		list = mapper.selectList("writing.searchById",userId);
+		mapper.close();
+		return list;
+	}
+	
+	// 글 내용을 인자로 글 목록 리턴
+	public List<Writing> searchByContent(String content) {
+		List<Writing> list = null;
+		SqlSession mapper = factory.openSession();
+		list = mapper.selectList("writing.searchByContent",content);
+		mapper.close();
+		return list;
+	}
+	
+	
 }
