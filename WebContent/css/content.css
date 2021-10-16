@@ -20,7 +20,7 @@ section{
 
 .main {
 	display: flex;
-	padding:0 20px;
+	padding:0 28px;
 }
 
 .main div {
@@ -41,10 +41,13 @@ section{
 	
 	.main {
 	    flex-direction: column;
-	    padding:0;
+	    padding:0 8px;
 	}
 	.main div {
 		flex-basis:100%;
 		min-height:110px;
+	}
+	.mypage{
+		padding:0 10px;
 	}
 }
