@@ -22,7 +22,7 @@ footer {
     -webkit-filter:grayscale(100%);
     filter: gray;
     justify-content: center;
-    padding:50px 0 24px;
+    padding:40px 0 15px;
     margin-bottom:0;
 }
 
@@ -104,7 +104,7 @@ footer {
 }
 footer p{
 	color:#999;
-	padding: 43px 0 43px;
+	padding: 33px 0 43px;
     font-size: 11px;
     text-align: center;
     margin:0;
