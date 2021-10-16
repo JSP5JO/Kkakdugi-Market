@@ -1,18 +1,18 @@
 @import url(http://api.mobilis.co.kr/webfonts/css/?fontface=NanumGothicWeb); 
 
 * {
-	font-family: 'NanumGothic', '나눔고딕','NanumGothicWeb', '맑은 고딕', 'Malgun Gothic', Dotum;
-	letter-spacing: -0.025em;	
+   font-family: 'NanumGothic', '나눔고딕','NanumGothicWeb', '맑은 고딕', 'Malgun Gothic', Dotum;
+   letter-spacing: -0.025em;   
 }
 
 /* 헤더 영역 */
 header {
-	height: 75px;
-	position: fixed;
-	top: 0;
-	left:0;
-	right:0;
-	z-index:99999;
+   height: 75px;
+   position: fixed;
+   top: 0;
+   left:0;
+   right:0;
+   z-index:99999;
 }
 
 header a {
@@ -25,6 +25,13 @@ header button {
 	border:0px transparent solid;
 	color: white;
 	cursor: pointer;
+} 
+
+header button {
+   background-color:transparent;  
+   border:0px transparent solid;
+   color: white;
+   cursor: pointer;
 }
 
 .navbar{
@@ -50,7 +57,6 @@ header button {
 
 .navbar__logo a {
     line-height:30px;
-    font-weight:700;
 }
 
 .navbar__menu{
@@ -63,7 +69,7 @@ header button {
 }
 
 .navbar__menu li{
-    padding: 8px 15px;
+    padding: 8px 12px;
     border-radius: 20px;
     transition:background 0.3s;
 }
@@ -87,67 +93,67 @@ header button {
 }
 
 .navbar__icon form{
-	display:flex;
+   display:flex;
 }
 
 .navbar__icon input[type="text"] {
-	margin-right:3px;
+   margin-right:3px;
 }
 
 .fas{
-	color:#fff;
+   color:#fff;
 }
 
 #searchOption{
-	margin-right:4px;
+   margin-right:4px;
 }
 
 @media screen and (-webkit-min-device-pixel-ratio:0){ 
-	.navbar__icon li{
- 	   line-height:22px !important;
-	}
+   .navbar__icon li{
+       line-height:22px !important;
+   }
 }
 
  /* IE10+ */
 @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
-	.navbar__icon li{
- 	   line-height:25px;
-	}
+   .navbar__icon li{
+       line-height:25px;
+   }
 }
  
 /* IE6,7,9,10 */
 @media screen and (min-width: 640px), screen\9 {
-	 .navbar__icon li{
-	   line-height:25px;
-	 }
+    .navbar__icon li{
+      line-height:25px;
+    }
 }
  
 /* IE6,7 */
 @media screen\9 {
-	.navbar__icon li{
-	  line-height:25px;
-	 }
+   .navbar__icon li{
+     line-height:25px;
+    }
 }
  
 /* IE8 */
 @media \0screen {
- 	.navbar__icon li{
-	   line-height:25px;
-	 }
+    .navbar__icon li{
+      line-height:25px;
+    }
 }
  
 /* IE6,7,8 */
 @media \0screen\,screen\9 {
-	 .navbar__icon li{
-	   line-height:25px;
-	 }
+    .navbar__icon li{
+      line-height:25px;
+    }
 }
  
 /* IE9,10 */
 @media screen and (min-width:0\0){
- 	.navbar__icon li{
-	   line-height:25px;
-	 }
+    .navbar__icon li{
+      line-height:25px;
+    }
 } 
 
 .navbar__hamburger{
@@ -162,21 +168,22 @@ header button {
 }
 
 .category {
-	text-align: center;
+   text-align: center;
 }
 .category__list{
-	display: none;
-	list-style: none;
-	text-align: center;
-	padding: 0 0;
+   display: none;
+   list-style: none;
+   text-align: center;
+   padding: 0 0;
 }
 .category__list  li {
-	text-align: center;
-	padding: 10px 0px;
+   text-align: center;
+   padding: 10px 0px;
 }
 .navbar__menu > li:hover .category__list {
-	display: block;
+   display: block;
 }
+
 
 @media screen and (max-width: 768px){ /*@media media type and (media rule)*/
 
@@ -187,23 +194,23 @@ header button {
         transition:height 1s;
         box-sizing: border-box;
     }
-	
-	.navbar.active{
-		height:324px;
-		transition:height 1s;
-	}
-	
+   
+   .navbar.active{
+      height:324px;
+      transition:height 1s;
+   }
+   
     .navbar__menu {
         flex-direction: column;
         align-items: center;
         width: 100%;
         display: flex;
-		transition: height 1s, opacity 1s;
-    	height: 0;
-    	opacity: 0;
-    	margin: 0;
-    	padding: 0px 18px;
-		box-sizing: border-box;
+      transition: height 1s, opacity 1s;
+       height: 0;
+       opacity: 0;
+       margin: 0;
+       padding: 0px 18px;
+      box-sizing: border-box;
     }
 
     .navbar__menu li {
@@ -212,8 +219,8 @@ header button {
     }
     
     .navbar__logo{
-	    margin-left:0px;
-	}
+       margin-left:0px;
+   }
 
     .navbar__icon {
         justify-content: center;
