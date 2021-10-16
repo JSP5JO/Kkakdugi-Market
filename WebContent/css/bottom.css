@@ -35,7 +35,7 @@ footer {
 .footer__logo li a {
 	text-decoration:none;
     line-height:30px;
-    color:#999;
+    color:#fff;
     font-size:17px;
     font-weight:700;
 }
@@ -68,7 +68,7 @@ footer {
 
 .footer__menu li a{
 	text-decoration: none;
-	color:#999;
+	color:#fff;
 	font-size:14px;
 }
 
@@ -89,7 +89,7 @@ footer {
     display:flex;
     align-items:center;
     justify-content: center;
-    border:1px solid #999;
+    border:1px solid #fff;
     text-decoration: none;
     margin:0 4px;
 }
@@ -100,10 +100,10 @@ footer {
 }
 
 .footer__sns li i{
-	color:#999;
+	color:#fff;
 }
 footer p{
-	color:#999;
+	color:#fff;
 	padding: 33px 0 43px;
     font-size: 11px;
     text-align: center;
