@@ -35,7 +35,9 @@
 						<option value="content">내용</option>
 				    </select>
 					<input id="testbox" type="text" name="subject">
-					<input type="submit" value="검색">
+					<button type="submit" class="search_button">
+						<i class="fas fa-search"></i>
+					</button>
 				</form>
 			</li>
 			<c:if test="${sessionScope.user == null}">
