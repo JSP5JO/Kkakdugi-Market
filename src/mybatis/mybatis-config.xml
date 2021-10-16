@@ -13,6 +13,7 @@
   	<typeAlias type="dto.Writing" alias = "Writing"/>
   	<typeAlias type="dto.Comment" alias = "Comment"/>
   	<typeAlias type="dto.Users" alias = "Users"/>
+  	<typeAlias type="dto.SessionDto" alias = "SessionDto"/>
   </typeAliases>
   
   <!--  db 연결정보 -->

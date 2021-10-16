@@ -1,44 +1,40 @@
 @charset "UTF-8";
-*{
+* {
   margin: 0px;
   padding: 0px;
   text-decoration: none;
   font-family:sans-serif;
+
 }
 
 body {
-  background-color: #ffabc7;
+  background-color:#8994f5;
 }
 
-.loginForm {
+.joinForm {
   position:absolute;
-  width:350px;
-  height:450px;
+  width:400px;
+  height:600px;
   padding: 30px, 20px;
   background-color:#FFFFFF;
   text-align:center;
-  top:50%;
+  top:40%;
   left:50%;
   transform: translate(-50%,-50%);
   border-radius: 15px;
 }
 
-.loginForm h2{
+.joinForm h2 {
   text-align: center;
   margin: 30px;
 }
 
-.idForm{
+.textForm {
   border-bottom: 2px solid #adadad;
   margin: 30px;
   padding: 10px 10px;
 }
 
-.passForm{
-  border-bottom: 2px solid #adadad;
-  margin: 30px;
-  padding: 10px 10px;
-}
 
 .id {
   width: 100%;
@@ -60,13 +56,53 @@ body {
   background: none;
 }
 
+.name {
+  width: 100%;
+  border:none;
+  outline:none;
+  color: #636e72;
+  font-size:16px;
+  height:25px;
+  background: none;
+}
+
+.email {
+  width: 100%;
+  border:none;
+  outline:none;
+  color: #636e72;
+  font-size:16px;
+  height:25px;
+  background: none;
+}
+
+.nickname {
+  width: 100%;
+  border:none;
+  outline:none;
+  color: #636e72;
+  font-size:16px;
+  height:25px;
+  background: none;
+}
+
+.cellphoneNo {
+  width: 100%;
+  border:none;
+  outline:none;
+  color: #636e72;
+  font-size:16px;
+  height:25px;
+  background: none;
+}
+
 .btn {
   position:relative;
   left:40%;
   transform: translateX(-50%);
-  margin-bottom: 40px;
-  width:80%;
-  height:40px;
+/*   margin-bottom: 40px; */
+/*   width: 80%; */
+/*   height: 40px; */
   background: linear-gradient(125deg,#81ecec,#6c5ce7,#81ecec);
   background-position: left;
   background-size: 200%;
@@ -82,13 +118,8 @@ body {
   background-position: right;
 }
 
-.bottomText {
-  text-align: center;
-}
-#btnText{
-	clear: both;
-    height: 42px;
-    line-height: 47px;
-    font-size: 12px;
-    text-align: center;
+#pwText{
+	font-size: 9px;
+	color: grey;
+	text-align: left;
 }
