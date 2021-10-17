@@ -18,6 +18,7 @@ header {
 header a {
     text-decoration: none;
     color: white;
+    transition:color 0.3s;
 }
 
 header button {
@@ -72,6 +73,11 @@ header button {
     background: #f9c07f;
     border-radius: 20px;
     transition:background 0.3s;
+}
+
+.navbar__menu li:hover a{
+	color:#000;
+	transition:color 0.3s;
 }
 
 .navbar__icon{

@@ -70,6 +70,12 @@ footer {
 	text-decoration: none;
 	color:#fff;
 	font-size:14px;
+	transition:color 0.3s;
+}
+
+.footer__menu li:hover a{
+	color:#000;
+	transition:color 0.3s;
 }
 
 .footer__sns{
@@ -85,23 +91,23 @@ footer {
 	width:37px;
 	height:37px;
     border-radius: 37px;
-    transition:background 0.3s;
+    transition:all 0.3s;
     display:flex;
     align-items:center;
     justify-content: center;
     border:1px solid #fff;
     text-decoration: none;
     margin:0 4px;
+    color:#fff;
 }
 
 .footer__sns li a:hover{
     background: #f9c07f;
-    transition:background 0.3s;
+    color:#000;
+    border:1px solid #f9c07f;
+    transition:all 0.3s;
 }
 
-.footer__sns li i{
-	color:#fff;
-}
 footer p{
 	color:#fff;
 	padding: 33px 0 43px;
@@ -116,5 +122,12 @@ footer p{
 	}
 	.footer__menu li{
 	    padding: 8px;
+	}
+}
+
+
+@media screen and (max-width:330px){
+	.footer__menu li a {
+	    font-size: 13px;
 	}
 }
