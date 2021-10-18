@@ -13,7 +13,7 @@ public class MyFieldAction implements Action {
 	public ActionForward execute(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		
-		HttpSession session = (HttpSession) request.getAttribute("user");
+		HttpSession session = request.getSession();
 		
 		// 비 로그인 시 경고 후 돌아가기
 		if(session == null) {

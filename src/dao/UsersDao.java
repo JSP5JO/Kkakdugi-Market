@@ -32,6 +32,14 @@ public class UsersDao {
 		mapper.close();
 	}
 	
+	// 회원가입 시 id 중복 검사
+	public int idCheck(String id) { 
+		SqlSession mapper = sqlFactory.openSession();
+		int result = mapper.selectOne("users.idCheck", id);
+		mapper.close();
+		return result;
+	}
+	
 	public Users userInfo(String id) { //로그인한 유저정보 받기
 		SqlSession mapper = sqlFactory.openSession();
 		Users dto = mapper.selectOne("users.loginUserInfo", id);

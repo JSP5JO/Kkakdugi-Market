@@ -4,71 +4,32 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<link rel="stylesheet" href="css/login.css">
 <title>로그인</title>
 <!-- 카카오 스크립트 -->
 <script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
+<link rel="stylesheet" type="text/css" href="css/login.css?v=3">
 </head>
 <body>
-<div>
-	<form action="signIn.do" method="post">
-		ID : <input type="text" name="id" placeholder="id를 입력해주세요." required><br>
-		PW : <input type="password" name="pw" placeholder="비밀번호를 입력해주세요." required>
-		<input type="submit" value="로그인">
-		<input type="button" value="회원가입" onclick="location.href='regist.do'">
-		<input type="button" value="ID/PW 찾기" onclick="location.href='??'">
-		<!-- id/pw찾기 jsp,do,action 만들고 경로설정 필요함 -->
-	</form>
-</div>
-<ul>
-	<li onclick="kakaoLogin();">
-      <a href="javascript:void(0)">
-          <span>카카오 로그인</span>
-      </a>
-	</li>
-	<li onclick="kakaoLogout();">
-      <a href="javascript:void(0)">
-          <span>카카오 로그아웃</span>
-      </a>
-	</li>
-</ul> 
-<script>
-Kakao.init('2c5411db0d0516f5e9b440357100e504'); //발급받은 키 중 javascript키를 사용해준다.
-console.log(Kakao.isInitialized()); // sdk초기화여부판단
-	//카카오로그인
-	function kakaoLogin() {
-	    Kakao.Auth.login({
-	      success: function (response) {
-	        Kakao.API.request({
-	          url: '/v2/user/me',
-	          success: function (response) {
-	        	  console.log(response)
-	          },
-	          fail: function (error) {
-	            console.log(error)
-	          },
-	        })
-	      },
-	      fail: function (error) {
-	        console.log(error)
-	      },
-	    })
-	  }
-	//카카오로그아웃  
-	function kakaoLogout() {
-	    if (Kakao.Auth.getAccessToken()) {
-	      Kakao.API.request({
-	        url: '/v1/user/unlink',
-	        success: function (response) {
-	        	console.log(response)
-	        },
-	        fail: function (error) {
-	          console.log(error)
-	        },
-	      })
-	      Kakao.Auth.setAccessToken(undefined)
-	    }
-	  }  
-</script>
+	<!-- 기본 로그인 form 태그 -->
+ <form action="signIn.do" method="post" class="loginForm">
+      <h2>Login</h2>
+      <div class="idForm">
+        <input type="text" name="id" class="id" placeholder="아이디" required>
+      </div>
+      <div class="passForm">
+        <input type="password" name="pw" class="pw" placeholder="비밀번호" required>
+      </div>
+      <input type="submit" class="btn" value="로그인">
+      <div class="bottomText">
+       	<a href="regist.do" style="color: grey;">회원 가입   |</a><a href="#" style="color: grey;">   ID/PW 찾기</a>
+      </div>
+	      <!-- 카카오 로그인 -->
+	  <div>
+	      <a href="https://kauth.kakao.com/oauth/authorize?client_id=d2b3ba824e744e5c470824907863b20b&redirect_uri=http://localhost:8087/backup/kakaoLogin.do&response_type=code">
+	      <img src="img/login_btn_ka.png" alt="카카오톡" >
+	      	</a>
+	  </div>
+	      <!-- <a href="logout.do">로그아웃</a> -->
+    </form>
 </body>
 </html>

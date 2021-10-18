@@ -23,5 +23,9 @@
 	<select id="searchByContent" resultType="Writing" parameterType="String">
 		select * from writing where content like CONCAT('%', #{content}, '%')
 	</select>
+	<insert id="insert" parameterType="Writing">
+		insert into writing(categoryIdx, userId, subject, content) 
+			values (#{categoryIdx}, #{userId}, #{subject}, #{content})
+	</insert>
 </mapper>
 

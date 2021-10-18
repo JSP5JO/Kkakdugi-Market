@@ -1,48 +1,58 @@
 @charset "UTF-8";
-	ul{
-		padding-inline-start:0px; /*목록 들여쓰기 없애기*/
-	}
-	
-	h3{
-		text-align:center;
-		color:#000;
-	}
-	.mypage{
-		display:flex;
-		list-style:none;
-		justify-content:space-between;
-	}
-	.mycont{
-		flex-basis:33.33%;
-		margin:10px;
-		border:1px solid #000;
-		border-radius:3px;
-		padding:5px 10px;
-		box-sizing:border-box;
-	}
-	.row{
-		display:flex;
-		list-style:none;
-		justify-content:space-between;
-	}
-	.row>li{
-		flex-basis:33.33%;
-		text-align:center;
-	}
-	.mycont li{
-		list-style:none;
-		color:#000;
-	}
-	.mycont li a{
-		text-decoration:none;
-		color:#000;
-	}
-	
-@media screen and (max-width: 768px){
+
+ul {
+	list-style: none;
+}
+
+ul .row {
+		display: flex;
+		flex-direction: row;     /* 기본값 */
+}
+.row > li{
+	padding: 3px 0px;
+}
+.row > li:nth-child(1){  /* .row 의 자식태그 중 li 그리고 그 li의 n번째 위치(자식요소)로 select  */
+	flex-basis:10%;
+}	
+.row > li:nth-child(2){
+	flex-basis:35%;
+}
+.row > li:nth-child(3){
+	flex-basis:25%;
+}
+.row > li:nth-child(4){
+	flex-basis:10%;
+}
+.row > li:nth-child(5){
+	flex-basis:20%;
+}
+
+.mypage {
+	display: flex;
+	padding:0 28px;
+}
+
+.mypage div {
+	flex-basis:33.33%;
+	margin:10px;
+	border-radius:3px;
+	padding:5px 10px;
+	box-sizing:border-box;
+	border: 1px solid black;
+	text-align:center;
+}
+
+li{
+	list-style:none;
+}
+
+@media screen and (max-width:768px){
 	.mypage {
 	    flex-direction: column;
+	    padding:0;
 	}
-	.mypage>div {
+	.mypage div {
 		flex-basis:100%;
+		min-height:110px;
 	}
 }

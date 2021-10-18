@@ -17,6 +17,15 @@ public class WritingDao {
 	
 	SqlSessionFactory factory = SqlSessionBean.getSessionFactory();
 	
+	//글 저장
+	public void insert(Writing dto) {
+		SqlSession mapper = factory.openSession();
+		mapper.insert("writing.insert",dto);
+		mapper.commit();
+		mapper.close();
+	}
+	
+	
 	// user id를 인자로 user가 쓴 글 목록을 가져오는 메소드
 	public List<Writing> selectById(String userId) {
 		List<Writing> list = null;

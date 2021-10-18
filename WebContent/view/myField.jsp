@@ -72,16 +72,16 @@ let email = true
 			<table>
 				<tr>
 					<td><input type="text" placeholder="회사 이메일을 입력하세요"></td>
-					<td><input type="button" value="전송"></td>
+					<td class="ml"><input type="button" value="전송"></td>
 				</tr>
 				
 				<tr>
 					<td><input type="text" placeholder="인증번호 입력"></td>
-					<td><input type="button" value="확인"></td>
+					<td class="ml"><input type="button" value="확인"></td>
 				</tr>
 			</table>
 
-			<input type=submit>
+			<input type=submit value="제출">
 		</form>
 	</div>
 	
