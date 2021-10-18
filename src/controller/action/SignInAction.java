@@ -32,6 +32,7 @@ public class SignInAction implements Action {
 		Users userDto = dao.userInfo(id); 
 		SessionDto userSession = dao.login(map);
 		
+		
 		if(userSession !=null) {//로그인 성공
 			session.setAttribute("user", userSession); //로그인 유저 세션
 			request.setAttribute("userDto",userDto); //로그인한 유저 정보

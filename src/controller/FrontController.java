@@ -15,6 +15,7 @@ import controller.action.IndexActioin;
 import controller.action.LoginMoveAction;
 import controller.action.LogoutAction;
 import controller.action.MyFieldAction;
+import controller.action.MyFieldRegistAction;
 import controller.action.MypageAction;
 import controller.action.RegistAction;
 import controller.action.RegistMoveAction;
@@ -45,6 +46,9 @@ public class FrontController extends HttpServlet {
 		} else if (spath.equals("/myField.do")) {
 			Action action = new MyFieldAction();
 			forward = action.execute(request, response);
+		} else if (spath.equals("/myFieldRegist.do")) {
+			Action action = new MyFieldRegistAction();
+			forward = action.execute(request, response);
 		} else if (spath.equals("/mypage.do")) {
 			Action action = new MypageAction();
 			forward = action.execute(request, response);
@@ -69,7 +73,7 @@ public class FrontController extends HttpServlet {
 		}
 
 		// request 변경 여부
-		if (!forward.isRedirect()) { // 타입이 boolean이면 getter가 isXXX
+		if (!forward.isRedirect()) {
 			RequestDispatcher rd = request.getRequestDispatcher(forward.getUrl());
 			rd.forward(request, response);
 		} else {

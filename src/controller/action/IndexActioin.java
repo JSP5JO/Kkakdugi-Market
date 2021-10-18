@@ -27,7 +27,6 @@ public class IndexActioin implements Action {
 
 		// 로그인이 되어 session이 not null 일때만 작용
 		if (user != null) {
-//		String userId = "user1"; // user(dto)에서 받기로 수정
 			String userId = user.getId();
 			JjimDao jjimDao = JjimDao.getInstance();
 			WritingDao wdao = WritingDao.getInstance();

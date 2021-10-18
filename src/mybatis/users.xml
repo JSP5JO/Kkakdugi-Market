@@ -14,7 +14,11 @@
 	</insert>
 	
 	<select id="loginUserInfo" parameterType="String" resultType="Users">
-		select * from users where id=#{id};
+		select * from users where id=#{id}
 	</select>	
 	
+	<!-- 전문가 번호 등록 -->
+	<update id="registMyField" parameterType="SessionDto">
+		update users set proIdx = #{proIdx} where id = #{id}
+	</update>
   </mapper>

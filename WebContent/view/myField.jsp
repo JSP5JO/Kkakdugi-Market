@@ -10,7 +10,8 @@
 	crossorigin="anonymous"></script>
 <script src="main.js" defer></script>
 <script>
-let email = false
+//let email = false
+let email = true
 
 /* form 전송 체크 */
 	function validCheck() {
@@ -45,7 +46,7 @@ let email = false
 	<%@ include file="../header.jsp"%>
 
 	<div class="field">
-		<form action="" method="post" name="fieldRegist" 
+		<form action="myFieldRegist.do" method="post" name="fieldRegist" 
 			onsubmit="return validCheck()">
 			<!-- 본문 content -->
 			<table>

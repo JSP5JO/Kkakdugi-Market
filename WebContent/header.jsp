@@ -20,7 +20,7 @@
 		<!-- 네비게이션 항목 -->
 		<ul class="navbar__menu">
 			<li><a href="category.do">카테고리</a></li>
-			<li><a href="">전문분야 등록</a></li>
+			<li><a href="myField.do">전문분야 등록</a></li>
 			<li><a href="write.do">글쓰기</a></li>
 			<li><a href="">고객센터</a></li>
 

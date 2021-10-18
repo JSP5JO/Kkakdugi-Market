@@ -5,8 +5,6 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import controller.action.Action;
-import controller.action.ActionForward;
 
 public class LoginMoveAction implements Action {
 
