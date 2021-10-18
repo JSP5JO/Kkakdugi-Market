@@ -269,7 +269,7 @@ header button {
     .navbar__menu.active {
         display: flex;
         opacity: 1;
-        height:284px;
+        height:300px;
         transition:height 0.3s, opacity 0.3s;
     }
     .navbar__icon.active {
