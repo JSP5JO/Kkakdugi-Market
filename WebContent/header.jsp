@@ -2,6 +2,7 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <link rel="stylesheet" href="${pageContext.request.contextPath}/css/header.css?v=3">
+
 <link rel="stylesheet" href="${pageContext.request.contextPath}/css/content.css?v=3">
 <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
 <script src="${pageContext.request.contextPath}/main.js" defer></script>
@@ -17,7 +18,15 @@
 
 		<!-- 네비게이션 항목 -->
 		<ul class="navbar__menu">
-			<li><a href="category.do">카테고리</a></li>
+			<li class="cate">
+				<a href="${pageContext.request.contextPath}/category.do">카테고리</a>
+				<ul class="navbar__submenu">
+					<li><a href="#">주방/가전</a></li>
+					<li><a href="#">IT/전자</a></li>
+					<li><a href="#">패션/의류</a></li>
+					<li><a href="#">세면/욕실</a></li>
+				</ul>
+			</li>
 			<li><a href="">전문분야 등록</a></li>
 			<li><a href="write.do">글쓰기</a></li>
 			<li><a href="">고객센터</a></li>
@@ -28,7 +37,7 @@
 		<ul class="navbar__icon">
 			<!-- 종합 검색 -->
 			<li>
-				<form action="${pageContext.request.contextPath}/view/search.do" method="get">
+				<form action="${pageContext.request.contextPath}/search.do" method="get">
 					<select id="searchOption" name="searchOption">
 						<option value="subject" selected>제목</option>
 		       			<option value="userId">작성자</option>
@@ -41,13 +50,13 @@
 				</form>
 			</li>
 			<c:if test="${sessionScope.user == null}">
-				<li><a href="login.do"><i class="fas fa-sign-in-alt"></i></a></li>
+				<li><a href="${pageContext.request.contextPath}/login.do"><i class="fas fa-sign-in-alt"></i></a></li>
 			</c:if>
 			<c:if test="${sessionScope.user != null}">
 				<!-- 로그인 상태 -->
 				<li>${user.name}(${user.email})님
 				<li>
-				<li id="mypage"><a href="mypage.do">마이페이지</a></li>
+				<li id="mypage"><a href="${pageContext.request.contextPath}/mypage.do">마이페이지</a></li>
 				<li><a href="logout.do"><i class="fas fa-sign-out-alt"></i></a></li>
 			</c:if>
 		</ul>
