@@ -1,0 +1,247 @@
+@import url(http://api.mobilis.co.kr/webfonts/css/?fontface=NanumGothicWeb); 
+
+* {
+	font-family: 'NanumGothic', '나눔고딕','NanumGothicWeb', '맑은 고딕', 'Malgun Gothic', Dotum;
+}
+
+/* 헤더 영역 */
+header {
+	height: 75px;
+	position: fixed;
+	top: 0;
+	left:0;
+	right:0;
+	z-index:99999;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+.navbar{
+    background: black;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 4px 12px;
+}
+
+.navbar__logo{
+    list-style: none;
+    display: flex;
+    margin-left: 20px;
+    font-size: 20px;
+    padding-left: 0px;
+    color:white;
+}
+
+.navbar__logo li {
+    padding: 0px 4px;
+}
+
+.navbar__logo a {
+    line-height:30px;
+}
+
+.navbar__menu{
+    display:flex;
+    justify-content: space-around;
+    list-style: none;
+    padding-left: 0px;
+    margin-top: 0.85em;
+
+}
+
+.navbar__menu li{
+    padding: 8px 12px;
+    border-radius: 20px;
+    transition:background 0.3s;
+}
+
+.navbar__menu li:hover{
+    background: #f9c07f;
+    border-radius: 20px;
+    transition:background 0.3s;
+}
+
+.navbar__icon{
+    margin-right: 24px;
+    color:white;
+    display: flex;
+    padding: 0px;
+}
+
+.navbar__icon li{
+    list-style: none;
+    padding: 8px 4px;
+}
+
+@media screen and (-webkit-min-device-pixel-ratio:0){ 
+	.navbar__icon li{
+ 	   line-height:22px !important;
+	}
+}
+
+ /* IE10+ */
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+	.navbar__icon li{
+ 	   line-height:25px;
+	}
+}
+ 
+/* IE6,7,9,10 */
+@media screen and (min-width: 640px), screen\9 {
+	 .navbar__icon li{
+	   line-height:25px;
+	 }
+}
+ 
+/* IE6,7 */
+@media screen\9 {
+	.navbar__icon li{
+	  line-height:25px;
+	 }
+}
+ 
+/* IE8 */
+@media \0screen {
+ 	.navbar__icon li{
+	   line-height:25px;
+	 }
+}
+ 
+/* IE6,7,8 */
+@media \0screen\,screen\9 {
+	 .navbar__icon li{
+	   line-height:25px;
+	 }
+}
+ 
+/* IE9,10 */
+@media screen and (min-width:0\0){
+ 	.navbar__icon li{
+	   line-height:25px;
+	 }
+} 
+
+.navbar__hamburger{
+    position: absolute;
+    list-style: none;
+    color: white;
+    right: 20px;
+    display: none;
+    font-size: 20px;
+    padding: 4px 12px;
+    margin-top: 20px;
+}
+.category {
+	text-align: center;
+}
+.category__list{
+	display: none;
+	list-style: none;
+	text-align: center;
+	padding: 0 0;
+}
+.category__list  li {
+	text-align: center;
+	padding: 10px 0px;
+}
+.navbar__menu > li:hover .category__list {
+	display: block;
+}
+
+
+@media screen and (max-width: 768px){ /*@media media type and (media rule)*/
+
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .navbar__menu {
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        display: flex;
+	    transition: height 1s, opacity 1s;
+    	height: 0;
+    	opacity: 0;
+    	margin: 0;
+    }
+
+    .navbar__menu li {
+        width: 100%;
+        text-align: center;
+    }
+
+    .navbar__icon {
+        justify-content: center;
+        width: 100%;
+        display: flex;
+        height:0;
+        opacity:0;
+        transition: height 0.05s, opacity 0.05s;
+        margin:0;
+    }
+
+    .navbar__hamburger {
+        display: flex;
+        top:7px;
+    }
+
+    .navbar__menu.active {
+        display: flex;
+        transition: height 1s, opacity 1s;
+    	height: 148px;
+    	opacity: 1;
+    	margin: 1em 0;
+    }
+
+    .navbar__icon.active {
+        display: flex;
+        height:auto;
+        opacity:1;
+        transition: height 0.05s, opacity 0.05s;
+        margin: 1em 0;
+    }
+}
+
+/* 바디 영역 */
+*{
+	letter-spacing: -0.025em;	
+}
+body{
+	padding-top: 120px;
+}
+
+.main {
+	display: flex;
+}
+.main div {
+	flex-basis:33.33%;
+	margin:10px;
+	border-radius:3px;
+	padding:5px 10px;
+	box-sizing:border-box;
+	border: 1px solid black;
+	text-align:center;
+}
+
+.navbar__icon form{
+	display:flex;
+}
+
+.navbar__icon input[type="text"] {
+	margin-right:5px;
+}
+
+@media screen and (max-width: 768px){
+	.main {
+	    flex-direction: column;
+	}
+	.main div {
+		flex-basis:100%;
+	}
+}
