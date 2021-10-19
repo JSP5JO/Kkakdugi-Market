@@ -1,7 +1,7 @@
 @charset "UTF-8";
 
 footer {
-	position: relative;
+	position: fixed;
 	bottom: 0;
 	left: 0;
 	right: 0;
@@ -23,7 +23,7 @@ footer {
     filter: gray;
     justify-content: center;
     padding:40px 0 15px;
-    margin-bottom:0;
+    margin:0;
 }
 
 .footer__logo li {
@@ -76,6 +76,7 @@ footer {
 .footer__menu li:hover a{
 	color:#000;
 	transition:color 0.3s;
+	font-weight:500;
 }
 
 .footer__sns{
@@ -111,13 +112,14 @@ footer {
 footer p{
 	color:#fff;
 	padding: 33px 0 43px;
-    font-size: 11px;
+    font-size: 11px; 
     text-align: center;
     margin:0;
 }
 
 @media screen and (max-width:768px){
 	footer{
+		position:relative;
 		padding:0 17px;
 	}
 	.footer__menu li{
@@ -126,7 +128,7 @@ footer p{
 }
 
 
-@media screen and (max-width:330px){
+@media screen and (max-width:400px){
 	.footer__menu li a {
 	    font-size: 13px;
 	}
