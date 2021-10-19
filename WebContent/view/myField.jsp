@@ -6,39 +6,9 @@
 <meta charset="UTF-8">
 <title>MyField</title>
 <link rel="stylesheet" href="css/myField.css?v=3">
-<script src="https://kit.fontawesome.com/a9b46edd75.js"
-	crossorigin="anonymous"></script>
+<script src="https://kit.fontawesome.com/a9b46edd75.js" crossorigin="anonymous"></script>
 <script src="main.js" defer></script>
-<script>
-//let email = false
-let email = true
-
-/* form 전송 체크 */
-	function validCheck() {
-		const frm = document.fieldRegist;
-		if (frm.field.value == "") {
-			alert('전문분야를 선택해주세요.');
-			return false;
-		} else if (frm.field.value == "기타") {
-			if (frm.etc.value == "") {
-				alert('기타 입력 칸을 채워주세요.');
-				return false
-			}
-		}
-		
-		if(email == false) {
-			alert('이메일 인증을 먼저 해주세요.')
-			return false;
-		}
-		return true;
-	}
-	
-// 	이메일 인증 여부
-	function emailCheck() {
-		return false
-	}
-	
-</script>
+<script src="js/myField.js" defer></script>
 </head>
 <body>
 
@@ -88,14 +58,4 @@ let email = true
 	<%@ include file="../bottom.jsp"%>
 </body>
 
-<script type="text/javascript">
-	document.fieldRegist.field.addEventListener("click", function() {
-		if (this.value == "기타") {
-			document.fieldRegist.etc.disabled = false;
-		} else {
-			document.fieldRegist.etc.disabled = true;
-		}
-		console.log(this);
-	});
-</script>
 </html>

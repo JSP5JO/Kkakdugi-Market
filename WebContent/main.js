@@ -18,3 +18,10 @@ $("#searchOption").on('change',function(){
 	let state = $("#searchOption option:selected").val();
 	$("#testbox").attr("name", state);
 });
+
+$('.cate').mouseover(function() {
+	$('.navbar').addClass("height");
+});
+$('.cate').mouseleave(function() {
+	$('.navbar').removeClass("height");
+});

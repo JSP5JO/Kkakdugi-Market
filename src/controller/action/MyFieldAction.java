@@ -14,9 +14,10 @@ public class MyFieldAction implements Action {
 			throws ServletException, IOException {
 		
 		HttpSession session = request.getSession();
+		Object user = session.getAttribute("user");
 		
 		// 비 로그인 시 경고 후 돌아가기
-		if(session == null) {
+		if(user == null) {
 			request.setAttribute("message", "로그인 후 이용해주세요");
 			request.setAttribute("url", "index.do");
 			return new ActionForward(false, "/error/alert.jsp");

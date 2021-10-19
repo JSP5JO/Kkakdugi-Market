@@ -6,7 +6,9 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<link rel="stylesheet" href="css/idCheck.css?v=3">
 <script type="text/javascript" src="js/idCheck.js"></script>
+
 </head>
 <body>
 	<div style="text-align: center">

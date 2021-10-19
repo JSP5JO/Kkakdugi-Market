@@ -13,7 +13,6 @@ import controller.action.Action;
 import controller.action.ActionForward;
 import controller.action.IdCheckAction;
 import controller.action.IndexActioin;
-import controller.action.LoginMoveAction;
 import controller.action.LogoutAction;
 import controller.action.MyFieldAction;
 import controller.action.MyFieldRegistAction;
@@ -56,8 +55,8 @@ public class FrontController extends HttpServlet {
 			Action action = new SearchAction();
 			forward = action.execute(request, response);
 		} else if (spath.equals("/login.do")) {
-			Action action = new LoginMoveAction();
-			forward = action.execute(request, response);
+			forward.setRedirect(false);
+			forward.setUrl("view/login.jsp");
 		} else if (spath.equals("/signIn.do")) {
 			Action action = new SignInAction();
 			forward = action.execute(request, response);

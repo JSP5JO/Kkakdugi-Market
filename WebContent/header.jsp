@@ -13,19 +13,29 @@
 	<!-- 메인 로고 -->
 	<nav class="navbar">
 		<ul class="navbar__logo">
+			<!-- <li><i class="fab fa-apple"></i></li> -->
 			<li><img src="img/logo.png" alt="logo" width="30px"></li>
 			<li><a href="index.do">Kkakdugi-Market</a></li>
 		</ul>
 
 		<!-- 네비게이션 항목 -->
 		<ul class="navbar__menu">
-			<li><a href="category.do">카테고리</a></li>
+			<li class="cate">
+				<a href="category.do">카테고리</a>
+				<ul class="navbar__submenu">
+					<li><a href="#">주방/가전</a></li>
+					<li><a href="#">IT/전자</a></li>
+					<li><a href="#">패션/의류</a></li>
+					<li><a href="#">세면/욕실</a></li>
+				</ul>
+			</li>
 			<li><a href="myField.do">전문분야 등록</a></li>
 			<li><a href="write.do">글쓰기</a></li>
 			<li><a href="help.do">고객센터</a></li>
+
 		</ul>
 
-		<!-- 로그인 및 마이페이지 아이콘 -->
+	<!-- 로그인 및 마이페이지 아이콘 -->
 		<ul class="navbar__icon">
 			<!-- 종합 검색 -->
 			<li>
