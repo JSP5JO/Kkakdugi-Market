@@ -27,25 +27,27 @@ input {
     font-size: 13px;
     border: 0;
     border-radius: 30px;
-    background: #efefef;
+}
+input[type=text]{
+	border-bottom: 2px solid #adadad;
+	border-radius: 0;
 }
 input[type=text]:focus {
-    background: #f8f8f8;
+	border: 0;
+    border-bottom: 2px solid #adadad;
+    outline: none;
 }
 input[type=submit] {
-	width:88px;
-    background: #3a3a3a;
-    color: #fff;
+	width: 88px;
+    color: #adadad;
+    border: 2px solid #adadad;
     border-radius: 30px;
     transition: all 0.3s;
     line-height: 36px;
     box-sizing: border-box;
-    font-weight:700;
+    font-weight: 700;
+    background: #fff;
 }
-
-/*input[type=submit]:hover {
-}*/
-
 input[type=button] {
 	width:200px;
     background: linear-gradient(
