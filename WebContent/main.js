@@ -19,3 +19,9 @@ $("#searchOption").on('change',function(){
 	$("#testbox").attr("name", state);
 });
 
+$('.cate').mouseover(function() {
+	$('.navbar').addClass("height");
+});
+$('.cate').mouseleave(function() {
+	$('.navbar').removeClass("height");
+});
