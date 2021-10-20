@@ -11,7 +11,7 @@
 <body>
 <section>
 
- <%-- <c:if test="${sessionScope.userId==null }">
+ <%-- <c:if test="${sessionScope.user.id==null }">
 	 <script type="text/javascript">
 		alert('로그인을 해주세요.');
 		location.href='login.do';
@@ -32,10 +32,10 @@
 			<option value="세면/욕실">세면/욕실</option>
 			<option value="기타" selected>기타</option>
 		</select>
-		 
+		 <br>
 		<span>
-		<input type="text" id="category_etc" name="category_etc" disabled="disabled" placeholder="원하시는 분류 항목을 입력해주세요.">
-		</span> 
+		<input type="text" id="category_etc" name="category_etc" placeholder="원하시는 분류 항목을 입력해주세요.">
+		</span>
 	</div>
  
 	<div class="subject_c">
@@ -43,7 +43,7 @@
 	</div>
 	
 	<div class="userId_c">
- 		<input id="userId" type="text" name="userId" readonly value="${sessionScope.userId}" placeholder="작성자">
+ 		<input id="userId" type="text" name="userId" readonly value="${sessionScope.user.id}" placeholder="작성자">
 	</div>
 	
 	<div class="content_c">
@@ -61,17 +61,15 @@
 
 
 
-
 </div>
 </form> 
 <script type="text/javascript">
 	document.getElementById("Category").addEventListener("change",function(){
 		if(this.value=="기타"){
 			document.getElementById("category_etc").style.display="inline-block";   //화면에 보임
-			document.category_etc.disabled=false;
+			
 		}else {
 			document.getElementById("category_etc").style.display="none";   //화면에 안보임
-			document.category_etc.disabled=true;
 		}
 		
 	});
