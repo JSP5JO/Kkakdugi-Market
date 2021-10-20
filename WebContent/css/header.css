@@ -207,7 +207,7 @@ header button {
 	display: block;
 }
 
-@media screen and (max-width: 768px){ /*@media media type and (media rule)*/
+@media screen and (max-width: 950px){ /*@media media type and (media rule)*/
     .navbar {
         flex-direction: column;
         align-items: flex-start;
