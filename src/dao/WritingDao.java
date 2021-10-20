@@ -7,16 +7,16 @@ import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 
 
-import dto.KkakdugiMarket;
+import dto.Writing;
 import mybatis.SqlSessionBean;
 
-public class KkakdugiMarketDao {
+public class WritingDao {
 
 	SqlSessionFactory factory = SqlSessionBean.getSessionFactory();
-	private static KkakdugiMarketDao dao = new KkakdugiMarketDao();
+	private static WritingDao dao = new WritingDao();
 	
-	private KkakdugiMarketDao() {}
-		public static KkakdugiMarketDao getInstance() {
+	private WritingDao() {}
+		public static WritingDao getInstance() {
 			return dao;
 		}
 		
@@ -28,24 +28,24 @@ public class KkakdugiMarketDao {
 			return cnt;
 		}
 	//getList
-	public List<KkakdugiMarket> getList(Map<String, Integer>map){
-		List<KkakdugiMarket> list = null;
+	public List<Writing> getList(Map<String, Integer>map){
+		List<Writing> list = null;
 		SqlSession mapper = factory.openSession();
 		list = mapper.selectList("getList",map);
 		mapper.close();
 		return list;
 	}
 	//1개 행 조회
-		public KkakdugiMarket getOne(int idx) {
+		public Writing getOne(int idx) {
 			SqlSession mapper = factory.openSession();
-			KkakdugiMarket dto = mapper.selectOne("selectByIdx", idx);
+			Writing dto = mapper.selectOne("selectByIdx", idx);
 			mapper.close();
 			return dto;
 		}
 	//insert문 추가
-	public void insert(KkakdugiMarket dto) {
+	public void insert(Writing dto) {
 		SqlSession mapper = factory.openSession();
-		mapper.insert("writing.insert",dto);
+		mapper.insert("comment.insert",dto);
 		mapper.commit();
 		mapper.close();
 	}

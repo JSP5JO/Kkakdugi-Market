@@ -10,7 +10,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @Data
 
-public class KkakdugiMarket {
+public class Writing {
 
 	private int idx;
 	private String categoryIdx;

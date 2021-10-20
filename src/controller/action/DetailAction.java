@@ -9,9 +9,9 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import dao.CommentDao;
-import dao.KkakdugiMarketDao;
+import dao.WritingDao;
 import dto.Comment;
-import dto.KkakdugiMarket;
+import dto.Writing;
 
 
 public class DetailAction implements Action{
@@ -25,7 +25,7 @@ public class DetailAction implements Action{
 		int idx = Integer.parseInt(request.getParameter("idx"));
 		int pageNo = Integer.parseInt(request.getParameter("page"));
 		
-		KkakdugiMarketDao dao = KkakdugiMarketDao.getInstance();
+		WritingDao dao = WritingDao.getInstance();
 		if(session.getAttribute("readIdx")!=null) {
 			StringBuilder Idx = (StringBuilder)session.getAttribute("readIdx");
 			boolean status = Idx.toString().contains("/"+idx+"/");
@@ -37,7 +37,7 @@ public class DetailAction implements Action{
 				StringBuilder Idx = new StringBuilder("/");
 				session.setAttribute("Idx", Idx);
 			}
-		KkakdugiMarket bean = dao.getOne(idx);
+		Writing bean = dao.getOne(idx);
 		
 		CommentDao cdao = CommentDao.getInstance();
 		cdao.updateCountAll(idx);
