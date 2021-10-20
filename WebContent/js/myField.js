@@ -33,5 +33,4 @@ document.fieldRegist.field.addEventListener("click", function() {
 	} else {
 		document.fieldRegist.etc.disabled = true;
 	}
-	console.log(this);
 });

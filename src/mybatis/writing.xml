@@ -15,13 +15,19 @@
 		select * from writing where categoryIdx = #{idx} order by idx desc
 	</select>
 	<select id="searchBySubject" resultType="Writing" parameterType="String">
-		select * from writing where subject like CONCAT('%', #{subject}, '%')
+		select w.idx, userId, subject, content, c.name 
+			from writing w join category c on w.categoryIdx = c.idx 
+				where w.subject like CONCAT('%', #{subject}, '%');
 	</select>
 	<select id="searchById" resultType="Writing" parameterType="String">
-		select * from writing where userId like CONCAT('%', #{userId}, '%')
+		select w.idx, userId, subject, content, c.name 
+			from writing w join category c on w.categoryIdx = c.idx 
+				where w.userId like CONCAT('%', #{userId}, '%');
 	</select>
 	<select id="searchByContent" resultType="Writing" parameterType="String">
-		select * from writing where content like CONCAT('%', #{content}, '%')
+		select w.idx, userId, subject, content, c.name 
+			from writing w join category c on w.categoryIdx = c.idx 
+				where w.content like CONCAT('%', #{content}, '%');
 	</select>
 	<insert id="insert" parameterType="Writing">
 		insert into writing(categoryIdx, userId, subject, content) 

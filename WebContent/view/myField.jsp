@@ -26,7 +26,7 @@
 							<!-- option 태그 안에 문자열 : 화면, value : 서버 전송 값 -->
 							<!-- selected 옵션은 기본선택 -->
 							<option value="" selected>분야 선택</option>
-							<option value="예시1">예시1</option>
+							<option value="CATE20">주방/가전</option>
 							<option value="예시2">예시2</option>
 							<option value="기타">기타</option>
 					</select></td>

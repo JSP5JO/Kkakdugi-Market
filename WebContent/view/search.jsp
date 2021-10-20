@@ -32,7 +32,7 @@
 						<li>
 							<ul  class="row">
 								<li>${vo.idx }</li>
-								<li>${vo.categoryIdx }</li>
+								<li>${vo.name}</li>
 								<li>
 									<a href="detail.do?idx=${vo.idx}&page=${pno}" class="title">${vo.subject }</a>
 							 	</li>

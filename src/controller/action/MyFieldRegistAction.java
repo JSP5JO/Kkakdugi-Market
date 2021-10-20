@@ -1,6 +1,8 @@
 package controller.action;
 
 import java.io.IOException;
+import java.util.HashMap;
+import java.util.Map;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
@@ -16,6 +18,8 @@ public class MyFieldRegistAction implements Action {
 	public ActionForward execute(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		
+		request.setCharacterEncoding("UTF-8");
+		
 		ActionForward forward = new ActionForward();
 		String field = request.getParameter("field");
 		
@@ -28,20 +32,20 @@ public class MyFieldRegistAction implements Action {
 		HttpSession session = request.getSession();
 		SessionDto dto = (SessionDto) session.getAttribute("user");
 		dto.setProIdx(field);
+		
 		UsersDao dao = UsersDao.getInstance();
 		int result = dao.registMyField(dto);
-		
 		
 		// update 실패 시, 경고
 		if(result == 0) {
 			request.setAttribute("message", "잘못된 입력 입니다.");
 			request.setAttribute("url", "myField.do");
-			forward.setUrl("/error/alert.jsp");   
 			forward.setRedirect(false);
+			forward.setUrl("/error/alert.jsp");   
 			return forward;
 		} 
 		
-		// update 성공 시
+		// update 성공 시, index로 이동
 		forward.setRedirect(false);
 		forward.setUrl("/index.do");
 		return forward;

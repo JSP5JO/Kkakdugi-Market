@@ -1,7 +1,5 @@
 package dao;
 import dto.Comment;
-import dto.Writing;
-
 import java.util.List;
 import java.util.Map;
 
@@ -25,6 +23,7 @@ public class CommentDao {
 		List<Comment> list = null;
 		SqlSession mapper = factory.openSession();
 		list = mapper.selectList("getList",map);
+		mapper.close();
 		return list;
 	}
 	

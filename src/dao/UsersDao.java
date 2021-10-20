@@ -51,7 +51,7 @@ public class UsersDao {
 	// 전문가번호 등록
 	public int registMyField(SessionDto dto) {
 		SqlSession mapper = sqlFactory.openSession();
-		int result = mapper.update("users.registMyField", "dto");
+		int result = mapper.update("users.registMyField", dto);
 		mapper.commit();
 		mapper.close();
 		return result;

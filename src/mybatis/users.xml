@@ -24,7 +24,7 @@
 		select * from users where id=#{id}
 	</select>	
 	
-	<!-- 전문가 번호 등록 -->
+	<!-- 전문가 번호 등록, 업데이트-->
 	<update id="registMyField" parameterType="SessionDto">
 		update users set proIdx = #{proIdx} where id = #{id}
 	</update>
