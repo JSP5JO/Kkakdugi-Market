@@ -4,6 +4,10 @@ ul {
 	list-style: none;
 	padding:0;
 }
+a{
+	text-decoration:none;
+	color:#000;
+}
 
 ul .row {
 		display: flex;
@@ -48,7 +52,6 @@ ul .row {
 	border: 1px solid #d1d1d1;
 	text-align:center;
 }
-
 li{
 	list-style:none;
 }
