@@ -51,3 +51,10 @@ create table jjim(
 	categoryIdx varchar(20),
 	foreign key(userId) references users(id)
 );
+
+
+
+-- -------------- 예시문
+select w.idx, userId, subject, content, w.categoryIdx, c.name, w.wdate 
+			from writing w join category c on w.categoryIdx = c.idx 
+				where w.categoryIdx = 'CATE12' order by idx desc limit 0, 10;

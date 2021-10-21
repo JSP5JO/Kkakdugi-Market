@@ -12,7 +12,7 @@
 		select * from writing where idx=#{idx}
 	</select>
 	<select id="selectByCategoryIdx" resultType="Writing" parameterType="java.util.Map">
-		select w.idx, userId, subject, content, c.name, w.wdate 
+		select w.idx, userId, subject, content, w.categoryIdx, c.name, w.wdate 
 			from writing w join category c on w.categoryIdx = c.idx 
 				where w.categoryIdx = #{idx} order by idx desc limit #{startNo}, #{pageSize}
 	</select>
