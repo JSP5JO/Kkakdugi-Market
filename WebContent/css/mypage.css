@@ -31,7 +31,11 @@ ul .row {
 	padding:0 28px;
 }
 .mypage>p{
-	padding:0 10px;
+	padding: 20px;
+    background: #ebebeb;
+    margin: 0 10px 10px;
+    border-radius: 3px;
+    color: #000;
 }
 .mlist_con {
 	display: flex;
