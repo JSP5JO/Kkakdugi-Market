@@ -27,7 +27,7 @@ create table writing (
 	content varchar(1500) not null,		-- 글 내용
 	readCount int default 0,			-- 글 조회수
 	commentCount smallint default 0,	-- 댓글 수
-	wdate datetime default sysdate,		-- 작성 시간
+	wdate datetime default current_timestamp,		-- 작성 시간
 	primary key(idx),
 	foreign key(categoryIdx) references category(idx),
 	foreign key(userId) references users(id)
