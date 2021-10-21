@@ -73,6 +73,11 @@ li.th li{
 li.contents li{
 	font-size:14px;
 }
+.row span {
+	padding : 1px 5px;
+	font-size:12px;
+	color: tomato;
+}
 .button-con{
 	margin:0 auto 50px;
 }

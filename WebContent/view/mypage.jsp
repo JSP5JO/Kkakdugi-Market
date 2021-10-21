@@ -7,56 +7,59 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<link rel="stylesheet" href="../css/content.css">
-<link rel="stylesheet" href="../css/mypage.css">
+<link rel="stylesheet" href="${pageContext.request.contextPath}/css/content.css">
+<link rel="stylesheet" href="${pageContext.request.contextPath}/css/mypage.css">
 <title>Mypage</title>
 
 </head>
 <body>
 <%@ include file="../header.jsp"%>
 	<div class="mypage">
-		<div class="mywriting mycont">
-			<h3>내가 작성한 글 목록</h3>
-			<ul>
-				<c:forEach var="vo" items="${wlist}"> 
-					<li>
-						<ul class="row">
-							<li>${vo.idx }</li>
-							<li><a href="detail.do?idx=${vo.idx}&page=${pno}" class="title">${vo.subject }</a>
-						 	</li>
-						</ul>
-					</li>
-			 	</c:forEach>
-		 	</ul>
-	 	</div>
-		<div class="myreply mycont">
-		<h3>내가 답변한 글 목록</h3>
-			<ul>
-				<c:forEach var="cm" items="${clist}"> 
-					<li>
-						<ul class="row">
-							<li>${cm.idx }</li>
-							<li><a href="detail.do?idx=${cm.writingIdx}&page=${pno}" class="title">${cm.content }</a></li>
-						 	</li>	
-						</ul>
-					</li>
-			 	</c:forEach>
-			 </ul>
-		</div>
-		<div class="myjjim mycont">
-			<h3>내가 찜한 상품 목록</h3>
-			<ul>
-				<c:forEach var="jj" items="${jlist}"> 
-					<li>
-						<ul class="row">
-							<li>${jj.writingIdx}</a>
-						 	</li>
-							<li><a href="detail.do?idx=${jj.writingIdx}&page=${pno}" class="title">${jj.subject}</a>
-						 	</li>
-						</ul>
-					</li>
-			 	</c:forEach>
-		 	</ul>
+		<p>나의 전문가번호 : 	<c:forEach var="pr" items="${ulist}">${pr.idx}(${pr.name})</c:forEach></p>
+		<div class="mlist_con">
+			<div class="mywriting mycont">
+				<h3>내가 작성한 글 목록</h3>
+				<ul>
+					<c:forEach var="vo" items="${wlist}"> 
+						<li>
+							<ul class="row">
+								<li>${vo.idx }</li>
+								<li><a href="detail.do?idx=${vo.idx}&page=${pno}" class="title">${vo.subject }</a>
+							 	</li>
+							</ul>
+						</li>
+				 	</c:forEach>
+			 	</ul>
+		 	</div>
+			<div class="myreply mycont">
+			<h3>내가 답변한 글 목록</h3>
+				<ul>
+					<c:forEach var="cm" items="${clist}"> 
+						<li>
+							<ul class="row">
+								<li>${cm.idx }</li>
+								<li><a href="detail.do?idx=${cm.writingIdx}&page=${pno}" class="title">${cm.content }</a></li>
+							 	</li>	
+							</ul>
+						</li>
+				 	</c:forEach>
+				 </ul>
+			</div>
+			<div class="myjjim mycont">
+				<h3>내가 찜한 상품 목록</h3>
+				<ul>
+					<c:forEach var="jj" items="${jlist}"> 
+						<li>
+							<ul class="row">
+								<li>${jj.writingIdx}</a>
+							 	</li>
+								<li><a href="detail.do?idx=${jj.writingIdx}&page=${pno}" class="title">${jj.subject}</a>
+							 	</li>
+							</ul>
+						</li>
+				 	</c:forEach>
+			 	</ul>
+			</div>
 		</div>
 	</div>
 <%@ include file="../bottom.jsp"%>

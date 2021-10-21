@@ -25,6 +25,8 @@
 							<li>카테고리</li>
 							<li>제목</li>
 							<li>작성자</li>
+							<li>날짜</li>
+							<li>조회수</li>
 						</ul>
 					</li>
 					
@@ -35,9 +37,11 @@
 								<li>${vo.idx }</li>
 								<li>${vo.name}</li>
 								<li>
-									<a href="detail.do?idx=${vo.idx}&page=${pno}" class="title">${vo.subject }</a>
+									<a href="detail.do?idx=${vo.idx}&page=${pno}" class="title">${vo.subject }<span>(${vo.commentCount})</span></a>
 							 	</li>
 								<li>${vo.userId }</li>
+								<li>${vo.wdate}</li>
+								<li>${vo.readCount}</li>
 							</ul>
 						</li>
 				 	</c:forEach>

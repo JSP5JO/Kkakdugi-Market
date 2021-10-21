@@ -11,6 +11,7 @@
   		<typeAlias type="dto.Comment" alias="Comment" />
   		<typeAlias type="dto.Jjim" alias="Jjim" />
   		<typeAlias type="dto.SessionDto" alias="SessionDto" />
+  		<typeAlias type="dto.Users" alias="Users" />
   </typeAliases>
   <!--  db 연결정보 -->
   <environments default="development">
@@ -31,6 +32,7 @@
     <mapper resource="mybatis/writing.xml"/>
     <mapper resource="mybatis/comment.xml"/>
     <mapper resource="mybatis/jjim.xml"/>
+    <mapper resource="mybatis/users.xml"/>
     <!-- sql mapper 파일은 여러개 사용될 수 있습니다. -->
   </mappers>
 </configuration>

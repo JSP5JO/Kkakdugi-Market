@@ -28,11 +28,16 @@ ul .row {
 }
 
 .mypage {
-	display: flex;
 	padding:0 28px;
 }
+.mypage>p{
+	padding:0 10px;
+}
+.mlist_con {
+	display: flex;
+}
 
-.mypage div {
+.mlist_con div {
 	flex-basis:33.33%;
 	margin:10px;
 	border-radius:3px;
@@ -46,12 +51,14 @@ li{
 	list-style:none;
 }
 
-@media screen and (max-width:768px){
-	.mypage {
-	    flex-direction: column;
-	    padding:0;
+@media screen and (max-width:950px){
+	.mypage{
+		padding:0;
 	}
-	.mypage div {
+	.mlist_con {
+	    flex-direction: column;
+	}
+	.mlist_con div {
 		flex-basis:100%;
 		min-height:110px;
 	}
