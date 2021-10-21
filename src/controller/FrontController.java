@@ -11,6 +11,8 @@ import javax.servlet.http.HttpServletResponse;
 
 import controller.action.Action;
 import controller.action.ActionForward;
+import controller.action.HelpSaveAction;
+import controller.action.HelpWriteAction;
 import controller.action.IdCheckAction;
 import controller.action.IndexActioin;
 import controller.action.ListAction;
@@ -66,7 +68,7 @@ public class FrontController extends HttpServlet {
 		} else if (spath.equals("/regist.do")) {
 			forward.setRedirect(false);
 			forward.setUrl("view/regist.jsp");
-		} else if(spath.equals("/idCheck.do")) {
+		} else if (spath.equals("/idCheck.do")) {
 			Action action = new IdCheckAction();
 			forward = action.execute(request, response);
 		} else if (spath.equals("/registSave.do")) {
@@ -78,21 +80,23 @@ public class FrontController extends HttpServlet {
 		} else if (spath.equals("/help.do")) {
 			forward.setRedirect(false);
 			forward.setUrl("view/help.jsp");
-		}else if (spath.equals("/helpWrite.do")) {
-			forward.setRedirect(false);
-			forward.setUrl("view/helpWrite.jsp");
-		}else if (spath.equals("/write.do")) {
+		} else if (spath.equals("/helpWrite.do")) {
+			Action action = new HelpWriteAction();
+			forward = action.execute(request, response);
+		} else if (spath.equals("/helpSave.do")) {
+			Action action = new HelpSaveAction();
+			forward = action.execute(request, response);
+		} else if (spath.equals("/write.do")) {
 			Action action = new WriteAction();
 			forward = action.execute(request, response);
-		}else if (spath.equals("/save.do")) {
+		} else if (spath.equals("/save.do")) {
 			Action action = new WriteSaveAction();
 			forward = action.execute(request, response);
-		}else if (spath.equals("/category.do")) {
+		} else if (spath.equals("/category.do")) {
 			Action action = new ListAction();
 			forward = action.execute(request, response);
 		}
 
-		
 		// request 변경 여부
 		if (!forward.isRedirect()) {
 			RequestDispatcher rd = request.getRequestDispatcher(forward.getUrl());

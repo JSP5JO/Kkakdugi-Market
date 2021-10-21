@@ -14,9 +14,12 @@ function checkByte(obj) {
 }
 
 function validCheck() {
+	text_len = document.frm.content.value.length;
 	if (text_len <= MAX_LEN) {
 		alert('제출되었습니다.');
+		return true;
 	} else {
 		alert('글자수 초과되었습니다.')
+		return false;
 	}
 }
