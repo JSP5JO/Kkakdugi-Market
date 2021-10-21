@@ -62,15 +62,15 @@ li{
 	.mypage{
 		padding:0;
 	}
+}
+@media screen and (max-width:700px){
 	.mlist_con {
 	    flex-direction: column;
 	}
 	.mlist_con div {
 		flex-basis:auto !important;
 	}
-	
 }
-
 @media screen and (max-width:500px){
 	.mypage>p{
 		flex-direction:column;
