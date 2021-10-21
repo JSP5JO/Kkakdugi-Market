@@ -23,8 +23,8 @@ public class MypageAction implements Action {
 			throws ServletException, IOException {
 		
 		request.setCharacterEncoding("UTF-8");
-//		String userId = request.getParameter("userId");
-		String userId = "user1";
+		String userId = request.getParameter("userId");
+//		String userId = "user1";
 		WritingDao wdao = WritingDao.getInstance();
 		List<Writing> wlist = wdao.selectById(userId);
 		request.setAttribute("wlist", wlist);
@@ -33,15 +33,19 @@ public class MypageAction implements Action {
 		List<Comment> clist = cdao.selectById(userId);
 		request.setAttribute("clist", clist);
 		
-		/*추가된 내용 - STRAT*/
 		JjimDao jdao = JjimDao.getInstance();
-		List<Jjim> jlist = jdao.selectById(userId);//질문
+		List<Jjim> jlist = jdao.selectById(userId);
 		request.setAttribute("jlist", jlist);
-		/*추가된 내용 - END*/
 		
 		UsersDao udao = UsersDao.getInstance();
-		List<Users> ulist = udao.proIdxInfo(userId);//질문
+		List<Users> ulist = udao.proIdxInfo(userId);
 		request.setAttribute("ulist", ulist);
+		
+		WritingDao hdao = WritingDao.getInstance();
+		List<Writing> hlist = hdao.selectHelpById(userId);
+		request.setAttribute("hlist", hlist);
+		
+		request.setAttribute("userId", userId);
 		
 		ActionForward forward = new ActionForward();
 		forward.isRedirect = false;

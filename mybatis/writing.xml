@@ -17,17 +17,20 @@
 	<select id="searchBySubject" resultType="Writing" parameterType="String">
 		select w.idx, userId, subject, content, c.name, w.commentCount, w.wdate, w.readCount
 			from writing w join category c on w.categoryIdx = c.idx
-				where w.subject like CONCAT('%', #{subject}, '%');
+				where w.subject like CONCAT('%', #{subject}, '%')
 	</select>
 	<select id="searchById" resultType="Writing" parameterType="String">
 		select w.idx, userId, subject, content, c.name, w.commentCount, w.wdate, w.readCount
 			from writing w join category c on w.categoryIdx = c.idx 
-				where w.userId like CONCAT('%', #{userId}, '%');
+				where w.userId like CONCAT('%', #{userId}, '%')
 	</select>
 	<select id="searchByContent" resultType="Writing" parameterType="String">
 		select w.idx, userId, subject, content, c.name, w.commentCount, w.wdate, w.readCount
 			from writing w join category c on w.categoryIdx = c.idx 
-				where w.content like CONCAT('%', #{content}, '%');
+				where w.content like CONCAT('%', #{content}, '%')
+	</select>
+	<select id="selectHelpById" resultType="Writing" parameterType="String">
+		select * from writing where categoryIdx = 'HELP' and userId = #{userId}
 	</select>
 	<insert id="insert" parameterType="Writing">
 		insert into writing(categoryIdx, userId, subject, content) 
