@@ -63,7 +63,7 @@ li{
 		padding:0;
 	}
 }
-@media screen and (max-width:700px){
+@media screen and (max-width:750px){
 	.mlist_con {
 	    flex-direction: column;
 	}

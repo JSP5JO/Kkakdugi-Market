@@ -4,15 +4,20 @@
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <!-- sql mapper   -->  
 <mapper namespace="writing"> <!-- namespace : 일종의 식별역할의 변수 -->
-	
+	<insert id="insert" parameterType="Writing">
+		insert into writing(categoryIdx, userId, subject, content) 
+			values (#{categoryIdx}, #{userId}, #{subject}, #{content})
+	</insert>
 	<select id="selectById" resultType="Writing" parameterType="String">
 		select * from writing where userId = #{userId}
 	</select>
 	<select id="selectByIdx" resultType="Writing" parameterType="int">
 		select * from writing where idx=#{idx}
 	</select>
-	<select id="selectByCategoryIdx" resultType="Writing" parameterType="String">
-		select * from writing where categoryIdx = #{idx} order by idx desc
+	<select id="selectByCategoryIdx" resultType="Writing" parameterType="java.util.Map">
+		select w.idx, userId, subject, content, w.categoryIdx, c.name, w.wdate 
+			from writing w join category c on w.categoryIdx = c.idx 
+				where w.categoryIdx = #{idx} order by idx desc limit #{startNo}, #{pageSize}
 	</select>
 	<select id="searchBySubject" resultType="Writing" parameterType="String">
 		select w.idx, userId, subject, content, c.name, w.commentCount, w.wdate, w.readCount
@@ -24,16 +29,18 @@
 			from writing w join category c on w.categoryIdx = c.idx 
 				where w.userId like CONCAT('%', #{userId}, '%')
 	</select>
+	
 	<select id="searchByContent" resultType="Writing" parameterType="String">
 		select w.idx, userId, subject, content, c.name, w.commentCount, w.wdate, w.readCount
 			from writing w join category c on w.categoryIdx = c.idx 
 				where w.content like CONCAT('%', #{content}, '%')
 	</select>
+	
+	<select id="getCount" resultType="int">
+		select count(*) from writing
+	</select>
+	
 	<select id="selectHelpById" resultType="Writing" parameterType="String">
 		select * from writing where categoryIdx = 'HELP' and userId = #{userId}
 	</select>
-	<insert id="insert" parameterType="Writing">
-		insert into writing(categoryIdx, userId, subject, content) 
-			values (#{categoryIdx}, #{userId}, #{subject}, #{content})
-	</insert>
 </mapper>

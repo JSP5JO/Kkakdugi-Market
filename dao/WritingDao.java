@@ -1,7 +1,6 @@
 package dao;
 import dto.Writing;
 import java.util.List;
-import java.util.Map;
 
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
@@ -10,22 +9,24 @@ import mybatis.SqlSessionBean;
 
 public class WritingDao {
 	
-	SqlSessionFactory factory = SqlSessionBean.getSessionFactory();
-	private static WritingDao dao = new WritingDao();
-	
-	private WritingDao() { }
+	private WritingDao() {}
 	public static WritingDao getInstance() {
 		return dao;
 	}
-	//getList
-	public List<Writing> getList(Map<String, Integer> map){   
-							//key(변수명처럼 이해) String, value  는 int
-		List<Writing> list = null;
+	private static WritingDao dao = new WritingDao();
+	
+	SqlSessionFactory factory = SqlSessionBean.getSessionFactory();
+	
+	//글 저장
+	public void insert(Writing dto) {
 		SqlSession mapper = factory.openSession();
-		list = mapper.selectList("getList",map);
-		return list;
+		mapper.insert("writing.insert",dto);
+		mapper.commit();
+		mapper.close();
 	}
 	
+	
+	// user id를 인자로 user가 쓴 글 목록을 가져오는 메소드
 	public List<Writing> selectById(String userId) {
 		List<Writing> list = null;
 		SqlSession mapper = factory.openSession();
@@ -34,6 +35,25 @@ public class WritingDao {
 		return list;
 	}
 	
+	// 글 번호를 이용해서 글 하나를 가져오는 메소드 => 유저가 찜한 글을 가져올 때 사용
+	public Writing selectByIdx(int idx) {
+		Writing dto = null;
+		SqlSession mapper = factory.openSession();
+		dto = mapper.selectOne("writing.selectByIdx", idx);
+		mapper.close();
+		return dto;
+	}
+	
+	// 카테고리 번호인자로 해당 카테고리의 글의 리스트를 가져오는 메소드 => 내 전문분야의 글을 가져올 때 사용
+	public List<Writing> selectByCategoryIdx(String idx) {
+		List<Writing> list = null;
+		SqlSession mapper = factory.openSession();
+		list = mapper.selectList("writing.selectByCategoryIdx", idx);
+		mapper.close();
+		return list;
+	}
+	
+	// 글 제목을 인자로 글 목록 리턴
 	public List<Writing> searchBySubject(String subject) {
 		List<Writing> list = null;
 		SqlSession mapper = factory.openSession();
@@ -41,7 +61,8 @@ public class WritingDao {
 		mapper.close();
 		return list;
 	}
-	
+
+	// 글쓴이를 인자로 글 목록 리턴
 	public List<Writing> searchById(String userId) {
 		List<Writing> list = null;
 		SqlSession mapper = factory.openSession();
@@ -50,6 +71,7 @@ public class WritingDao {
 		return list;
 	}
 	
+	// 글 내용을 인자로 글 목록 리턴
 	public List<Writing> searchByContent(String content) {
 		List<Writing> list = null;
 		SqlSession mapper = factory.openSession();
@@ -58,56 +80,21 @@ public class WritingDao {
 		return list;
 	}
 	
-	/*//idx로 한개 행 조회
-	public Writing getOne(int idx) {
-		SqlSession mapper = factory.openSession();
-		Writing dto = mapper.selectOne("selectByIdx", idx);  
-		mapper.close();
-		return dto;
-	}
-	
-	//테이블 데이터 행의 개수 조회
+	// 글 내용을 인자로 글 목록 리턴
 	public int getCount() {
 		SqlSession mapper = factory.openSession();
-		int cnt = mapper.selectOne("getCount");  
-		mapper.close();     
-		return cnt;
+		int result = mapper.selectOne("writing.getCount");
+		mapper.close();
+		return result ;
 	}
 	
-	public void insert(Writing dto) {
+	// 1:1문의 - 아이디를 인자로 글 목록 리턴
+	public List<Writing> selectHelpById(String userId) {
+		List<Writing> list = null;
 		SqlSession mapper = factory.openSession();
-		mapper.insert("freeboard.insert",dto);
-		mapper.commit();
+		list = mapper.selectList("writing.selectHelpById",userId);
 		mapper.close();
+		return list;
 	}
-	
-	public void update(Writing dto) {
-		SqlSession mapper = factory.openSession();
-		mapper.update("update",dto);
-		mapper.commit();
-		mapper.close();
-	}
-	
-	public int delete(Map<String,Object> map) {
-		SqlSession mapper = factory.openSession();
-		int n = mapper.delete("freeboard.delete",map);
-		mapper.commit();
-		mapper.close();
-		return n;
-	}
-	
-	public Writing passwordCheck(Map<String,Object> map) {
-		SqlSession mapper = factory.openSession();
-		Writing dto = mapper.selectOne("passwordCheck", map);
-		mapper.close();
-		return dto;
-	}
-	
-	public void readCount(int idx) {
-		SqlSession mapper =factory.openSession();
-		mapper.update("readCount", idx);
-		mapper.commit();
-		mapper.close();
-	}*/
 	
 }

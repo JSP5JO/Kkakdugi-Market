@@ -31,6 +31,6 @@
 	
 	<!-- 전문가 번호 가져오기 -->
 	<select id="proIdxInfo" parameterType="String" resultType="Users">
-		select c.idx, c.name from users u join category c on u.proIdx = c.idx where id=#{id}
-	</select>	
+		select u.proIdx, c.name from users u join category c on u.proIdx = c.idx where id=#{id}
+	</select>
   </mapper>
