@@ -15,7 +15,7 @@
 <body>
 <%@ include file="../header.jsp"%>
 	<div class="mypage">
-		<p><span><strong>${userId}</strong> 님의 Mypage</span><span class="pronum"><strong>나의 전문가번호</strong> : <c:forEach var="pr" items="${ulist}">${pr.idx}(${pr.name})</c:forEach></span></p>
+		<p><span><i class="far fa-user"></i>&nbsp;<strong>${userId}</strong> 님의 Mypage</span><span class="pronum"><strong>나의 전문가번호</strong> : <c:forEach var="pr" items="${ulist}">${pr.idx}(${pr.name})</c:forEach></span></p>
 		<div class="mlist_con">
 			<div class="mywriting mycont">
 				<h3>내가 작성한 글 목록</h3>
