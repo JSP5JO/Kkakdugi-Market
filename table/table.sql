@@ -46,7 +46,7 @@ create table comment (
 
 -- 찜 테이블
 create table jjim(
-	userId = varchar(20),
+	userId varchar(20),
 	writingIdx int,
 	categoryIdx varchar(20),
 	foreign key(userId) references users(id)
