@@ -11,8 +11,8 @@ footer {
 	 display: block;
 	 padding:0 38px;
 	 box-sizing:border-box;
+     margin-top:50px;
 }
-
 .footer__logo{
     list-style: none;
     display: flex;
@@ -23,15 +23,13 @@ footer {
     filter: gray;
     justify-content: center;
     padding:40px 0 15px;
-    margin-bottom:0;
+    margin:0;
 }
-
 .footer__logo li {
     padding: 0px 4px;
     display: flex;
     align-items: center;
 }
-
 .footer__logo li a {
 	text-decoration:none;
     line-height:30px;
@@ -39,11 +37,9 @@ footer {
     font-size:17px;
     font-weight:700;
 }
-
 .footer__logo li img{
 	width:25px;
 }
-
 .footer__menu{
     display:flex;
     list-style: none;
@@ -53,31 +49,27 @@ footer {
     justify-content: center;
 
 }
-
 .footer__menu li{
     padding: 8px 12px;
     border-radius: 20px;
     transition:background 0.3s;
 }
-
 .footer__menu li:hover{
     background: #f9c07f;
     border-radius: 20px;
     transition:background 0.3s;
 }
-
 .footer__menu li a{
 	text-decoration: none;
 	color:#fff;
 	font-size:14px;
 	transition:color 0.3s;
 }
-
 .footer__menu li:hover a{
 	color:#000;
 	transition:color 0.3s;
+	font-weight:500;
 }
-
 .footer__sns{
     display:flex;
     list-style: none;
@@ -100,24 +92,31 @@ footer {
     margin:0 4px;
     color:#fff;
 }
-
+.footer__sns li a i{
+    color:#fff;
+    transition:all 0.3s;
+}
 .footer__sns li a:hover{
     background: #f9c07f;
     color:#000;
     border:1px solid #f9c07f;
     transition:all 0.3s;
 }
-
+.footer__sns li a:hover i{
+    color:#000;
+    transition:all 0.3s;
+}
 footer p{
 	color:#fff;
 	padding: 33px 0 43px;
-    font-size: 11px;
+    font-size: 11px; 
     text-align: center;
     margin:0;
 }
 
 @media screen and (max-width:768px){
 	footer{
+		position:relative;
 		padding:0 17px;
 	}
 	.footer__menu li{
@@ -125,8 +124,7 @@ footer p{
 	}
 }
 
-
-@media screen and (max-width:330px){
+@media screen and (max-width:400px){
 	.footer__menu li a {
 	    font-size: 13px;
 	}

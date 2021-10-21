@@ -1,6 +1,7 @@
 package dao;
 import dto.Writing;
 import java.util.List;
+import java.util.Map;
 
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
@@ -45,10 +46,9 @@ public class WritingDao {
 	}
 	
 	// 카테고리 번호인자로 해당 카테고리의 글의 리스트를 가져오는 메소드 => 내 전문분야의 글을 가져올 때 사용
-	public List<Writing> selectByCategoryIdx(String idx) {
-		List<Writing> list = null;
+	public List<Writing> selectByCategoryIdx(Map<String, Object> map) {
 		SqlSession mapper = factory.openSession();
-		list = mapper.selectList("writing.selectByCategoryIdx", idx);
+		List<Writing> list = mapper.selectList("writing.selectByCategoryIdx", map);
 		mapper.close();
 		return list;
 	}
@@ -79,6 +79,15 @@ public class WritingDao {
 		mapper.close();
 		return list;
 	}
+	
+	// 글 내용을 인자로 글 목록 리턴
+	public int getCount() {
+		SqlSession mapper = factory.openSession();
+		int result = mapper.selectOne("writing.getCount");
+		mapper.close();
+		return result ;
+	}
+	
 	
 	
 }

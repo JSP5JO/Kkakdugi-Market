@@ -5,33 +5,27 @@ import java.io.IOException;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
-import dao.WritingDao;
-import dto.Writing;
+public class WriteAction implements Action {
 
-public class WriteAction implements Action  {
-	public WriteAction() {}
-	
-	
 	@Override
 	public ActionForward execute(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		
-		request.setCharacterEncoding("UTF-8");
+		HttpSession session = request.getSession();
+		Object user = session.getAttribute("user");
 		
-		Writing dto = new Writing();
-		dto.setCategoryIdx(request.getParameter("categoryIdx"));
-		dto.setUserId(request.getParameter("userId"));
-		dto.setSubject( request.getParameter("subject"));
-		dto.setContent(request.getParameter("content"));
-		
-		WritingDao dao = WritingDao.getInstance();
-		dao.insert(dto);
+		// user session이 없을 때,(로그인 되어있지 않을 때,) 경고 리턴
+		if(user == null) {
+			request.setAttribute("message", "로그인 후 이용 가능 합니다.");
+			request.setAttribute("url", "index.do");
+			return new ActionForward(false, "error/alert.jsp");
+		}
 		
 		ActionForward forward = new ActionForward();
-		forward.setRedirect(true);
-		forward.setUrl("list.do");;
+		forward.setUrl("view/write.jsp");
 		return forward;
 	}
-		
+
 }

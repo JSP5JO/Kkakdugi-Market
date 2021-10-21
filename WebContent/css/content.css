@@ -12,6 +12,7 @@ body{
 	padding-top:30px !important;
 	padding-bottom:50px !important;
 }
+
 section{
 	padding:0 38px;
 	padding-bottom:100px !important;
@@ -29,11 +30,11 @@ section{
 	border-radius:3px;
 	padding:5px 10px;
 	box-sizing:border-box;
-	border: 1px solid black;
+	border: 1px solid #d1d1d1;
 	text-align:center;
 }
 
-@media screen and (max-width:768px){
+@media screen and (max-width:950px){
 	section{
 		padding:0 17px;
 		padding-bottom:100px !important;

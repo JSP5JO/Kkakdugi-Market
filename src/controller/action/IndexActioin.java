@@ -2,7 +2,9 @@ package controller.action;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
@@ -41,7 +43,11 @@ public class IndexActioin implements Action {
 
 			// 내 전문분야의 글 가져오기
 			String myFieldIdx = user.getProIdx(); // user(dto)에서 받기로 수정
-			List<Writing> myFieldList = wdao.selectByCategoryIdx(myFieldIdx);
+			Map<String, Object> map = new HashMap<>();
+			map.put("idx", myFieldIdx);
+			map.put("startNo", 0);
+			map.put("pageSize", 15);
+			List<Writing> myFieldList = wdao.selectByCategoryIdx(map);
 
 			// 요청 넘겨주기
 			session.setAttribute("user", user);

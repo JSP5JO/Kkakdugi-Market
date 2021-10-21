@@ -13,6 +13,7 @@ import controller.action.Action;
 import controller.action.ActionForward;
 import controller.action.IdCheckAction;
 import controller.action.IndexActioin;
+import controller.action.ListAction;
 import controller.action.LogoutAction;
 import controller.action.MyFieldAction;
 import controller.action.MyFieldRegistAction;
@@ -20,6 +21,8 @@ import controller.action.MypageAction;
 import controller.action.RegistAction;
 import controller.action.SearchAction;
 import controller.action.SignInAction;
+import controller.action.WriteAction;
+import controller.action.WriteSaveAction;
 
 /**
  * Servlet implementation class controller
@@ -79,9 +82,14 @@ public class FrontController extends HttpServlet {
 			forward.setRedirect(false);
 			forward.setUrl("view/helpWrite.jsp");
 		}else if (spath.equals("/write.do")) {
-			forward.setRedirect(false);
-			forward.setUrl("view/write.jsp");
+			Action action = new WriteAction();
+			forward = action.execute(request, response);
 		}else if (spath.equals("/save.do")) {
+			Action action = new WriteSaveAction();
+			forward = action.execute(request, response);
+		}else if (spath.equals("/category.do")) {
+			Action action = new ListAction();
+			forward = action.execute(request, response);
 		}
 
 		
