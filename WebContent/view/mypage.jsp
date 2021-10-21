@@ -78,5 +78,6 @@
 		</div>
 	</div>
 <%@ include file="../bottom.jsp"%>
+<script type="text/javascript" src="${pageContext.request.contextPath}/js/mypage.js"></script>
 </body>
 </html>
