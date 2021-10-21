@@ -4,11 +4,10 @@ ul {
 	list-style: none;
 	padding:0;
 }
-a{
+.mlist_con a{
 	text-decoration:none;
 	color:#000;
 }
-
 ul .row {
 		display: flex;
 		flex-direction: row;     /* 기본값 */
@@ -66,5 +65,16 @@ li{
 	.mlist_con div {
 		flex-basis:100%;
 		min-height:110px;
+	}
+	
+}
+
+@media screen and (max-width:500px){
+	.mypage>p{
+		flex-direction:column;
+		text-align:center;
+	}
+	.pronum{
+		margin-top:15px;
 	}
 }
