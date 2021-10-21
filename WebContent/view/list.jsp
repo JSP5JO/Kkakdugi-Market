@@ -70,8 +70,8 @@ a {
 				<hr>
 				<!-- 요청 url은 현재와 같고 parameter만 변경 -->
 				<c:if test="${pageDto.startPage != 1 }">
-					<a class="pagenum" href="?page=1">&lt;&lt;</a>
-					<a class="pagenum" href="?page=${pageDto.startPage-1}">&lt;</a>
+					<a class="pagenum" href="?cate=${list[0].categoryIdx}&page=1">&lt;&lt;</a>
+					<a class="pagenum" href="?cate=${list[0].categoryIdx}&page=${pageDto.startPage-1}">&lt;</a>
 					<!-- 현재 페이지 10페이지 앞 -->
 				</c:if>
 				<c:forEach var="i" begin="${pageDto.startPage }" end="${pageDto.endPage }">
@@ -80,8 +80,8 @@ a {
 						href="?page=${i}">${i}</a>
 				</c:forEach>
 				<c:if test="${pageDto.endPage != pageDto.totalPage}">
-					<a class="pagenum" href="?page=${pageDto.endPage+1}">&gt;</a>
-					<a class="pagenum" href="?page=${pageDto.totalPage}">&gt;&gt;</a>
+					<a class="pagenum" href="?cate=${list[0].categoryIdx}&page=${pageDto.endPage+1}">&gt;</a>
+					<a class="pagenum" href="?cate=${list[0].categoryIdx}&page=${pageDto.totalPage}">&gt;&gt;</a>
 				</c:if>
 			</div>
 		</div>
