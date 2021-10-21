@@ -22,8 +22,9 @@ public class ListAction implements Action {
 
 		// 카테고리 인자 가져오기
 		String categoryIdx = request.getParameter("cate");
-		int pageSize = 10;
 
+		// page 설정
+		int pageSize = 10;
 		int pageNo;
 		if (request.getParameter("page") == null)
 			pageNo = 1;
@@ -41,8 +42,9 @@ public class ListAction implements Action {
 		// 인자로 전달 받은 카테고리 번호로 리스트 리턴
 		List<Writing> list = dao.selectByCategoryIdx(map);
 
-		// 리스트 전달
+		// 리스트 및 페이지 객체 전달
 		request.setAttribute("list", list);
+		request.setAttribute("pageDto", pageDto);
 
 		ActionForward forward = new ActionForward();
 		forward.setUrl("view/list.jsp");
