@@ -89,7 +89,7 @@ public class WritingDao {
 			return result ;
 		}
 	
-	//조회수
+	//조회 수
 	public void readCount(int idx) {
 		SqlSession mapper = factory.openSession();
 		mapper.update("readCount",idx);
