@@ -46,8 +46,13 @@
 				</ul>
 	</ul>
 	<div style="text-align: center;margin-bottom: 10px;">
-		<a class="button" onclick="deleteSet()">삭제</a>
+		<a class="button" onclick="Jjim()">찜하기</a>
 		<a class="button" href="list.do?page=${page}">목록</a>
+		
+		<c:if test="${bean.userId == SessionScope.user.id">
+			<a class="button" onclick="deleteSet()">삭제</a>
+		</c:if>
+		
 	</div>
 	<!-- 메인글 끝 -->
 	<!-- 댓글 시작 -->
@@ -103,6 +108,19 @@
 </section>
 
 <script type="text/javascript">
+
+function deleteSet(){
+	const yn = confirm('글을 삭제하시겠습니까?');
+	if(yn==1){
+		location.href= "DeleteAction.del?num=${writingIdx}";
+	}else{
+		alert('글 삭제가 취소되었습니다.')
+	}
+}
+
+function Jjim(){
+	
+}
 
 // 댓글 삭제
 function deleteCmt(cmtidx,idx,page){
