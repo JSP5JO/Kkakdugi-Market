@@ -48,7 +48,7 @@ public class DetailAction implements Action{
 		request.setAttribute("bean", bean);
 		ActionForward forward = new ActionForward();
 		forward.isRedirect = false;
-		forward.url="community/detail.jsp";
+		forward.setUrl("view/detail.jsp");
 		return forward;
 		
 	}
