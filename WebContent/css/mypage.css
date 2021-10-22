@@ -43,7 +43,7 @@ ul .row {
 	flex-wrap: wrap;
 }
 .mlist_con div {
-	flex-basis: calc(50% - 20px);
+	flex-basis: calc(25% - 20px);
 	margin:10px;
 	border-radius:3px;
 	padding:5px 10px;
@@ -52,7 +52,7 @@ ul .row {
 	text-align:center;
 }
 .mlist_con.ie div {
-	flex-basis: calc(50% - 42px);
+	flex-basis: calc(25% - 42px);
 }
 li{
 	list-style:none;
@@ -61,6 +61,12 @@ li{
 @media screen and (max-width:950px){
 	.mypage{
 		padding:0;
+	}
+	.mlist_con div {
+		flex-basis: calc(50% - 20px);
+	}
+	.mlist_con.ie div {
+		flex-basis: calc(50% - 42px);
 	}
 }
 @media screen and (max-width:750px){
