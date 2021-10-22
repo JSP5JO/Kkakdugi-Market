@@ -29,5 +29,14 @@
 	<select id="selectById" resultType="Comment" parameterType="String">
 		select * from comment where userId=#{userId}
 	</select>
-
+	
+	<update id="updateCountAll" parameterType="int">
+		update comment set commentCount=(
+		select count(*)from board_comment where writingIdx = #{writingIdx}) where idx =#{idx}
+	</update>
+	
+	<update id="updateCommentCnt" parameterType="int">
+		update writing set commentCount=commentCount+1 
+		where idx =#{idx}
+	</update>
 </mapper>
