@@ -45,8 +45,8 @@ section{
 	    padding:0 8px;
 	}
 	.main div {
-		flex-basis:100%;
-		min-height:110px;
+		flex-basis:auto !important;
+		min-height:0;
 	}
 	.mypage{
 		padding:0 10px;
