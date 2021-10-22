@@ -9,7 +9,7 @@
 		select * from Jjim where userId =#{userId} order by idx desc limit #{startNo},#{pageSize}
 	</select>
 	<select id="selectById" resultType="Jjim" parameterType="String">
-		select ji.userId, ji.writingIdx, ji.categoryIdx, wr.subject from Jjim ji right outer join writing wr on ji.writingIdx = wr.idx where ji.userId=#{userId} 
+		select ji.userId, ji.writingIdx, ji.categoryIdx, wr.subject from Jjim ji right outer join Writing wr on ji.writingIdx = wr.idx where ji.userId=#{userId} 
 	</select>
 	<!--  <select id="selectByIdx" resultType="Jjim" parameterType="int">
 		select * from Jjim where idx=#{idx}
