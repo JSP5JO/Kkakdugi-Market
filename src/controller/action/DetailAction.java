@@ -37,7 +37,7 @@ public class DetailAction implements Action{
 				StringBuilder Idx = new StringBuilder("/");
 				session.setAttribute("Idx", Idx);
 			}
-		Writing bean = dao.getOne(idx);
+		Writing bean = dao.selectByIdx(idx);
 		
 		CommentDao cdao = CommentDao.getInstance();
 		cdao.updateCountAll(idx);
