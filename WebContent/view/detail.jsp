@@ -8,7 +8,7 @@
 <title>글 상세보기</title>
 </head>
 <body>
-
+	<%@ include file="../header.jsp"%>
 <section>
 
 	<h3>글 목록</h3>
@@ -104,10 +104,6 @@
 
 <script type="text/javascript">
 
-function deleteSet(){
-	document.getElementById('myModal').style.display='block';		
-}
-
 // 댓글 삭제
 function deleteCmt(cmtidx,idx,page){
 		console.log(cmtidx);console.log(idx);
@@ -119,7 +115,6 @@ function deleteCmt(cmtidx,idx,page){
 		}
 	}
 </script>
-
-
+<%@ include file="../bottom.jsp" %>
 </body>
 </html>

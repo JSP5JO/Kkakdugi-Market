@@ -26,8 +26,8 @@ public class DetailAction implements Action{
 		int pageNo = Integer.parseInt(request.getParameter("page"));
 		
 		WritingDao dao = WritingDao.getInstance();
-		if(session.getAttribute("readIdx")!=null) {
-			StringBuilder Idx = (StringBuilder)session.getAttribute("readIdx");
+		if(session.getAttribute("readCount")!=null) {
+			StringBuilder Idx = (StringBuilder)session.getAttribute("readCount");
 			boolean status = Idx.toString().contains("/"+idx+"/");
 			if(!status) {
 				dao.readCount(idx);
