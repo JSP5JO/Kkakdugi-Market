@@ -22,14 +22,6 @@ public class JjimDao {
 	
 	SqlSessionFactory factory = SqlSessionBean.getSessionFactory();
 
-	public List<Jjim> selectById(String userId) {
-		List<Jjim> list = null;
-		SqlSession mapper = factory.openSession();
-		list = mapper.selectList("jjim.selectById",userId);
-		mapper.close();
-		return list;
-	}
-	
 	public void userJjim(Jjim dto) {
 		SqlSession mapper = factory.openSession();
 		mapper.insert("jjim.userJjim",dto);

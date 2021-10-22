@@ -33,8 +33,8 @@ public class MypageAction implements Action {
 		List<Comment> clist = cdao.selectById(userId);
 		request.setAttribute("clist", clist);
 		
-		JjimDao jdao = JjimDao.getInstance();
-		List<Jjim> jlist = jdao.selectById(userId);
+		WritingDao jdao = WritingDao.getInstance();
+		List<Writing> jlist = jdao.selectById(userId);
 		request.setAttribute("jlist", jlist);
 		
 		UsersDao udao = UsersDao.getInstance();

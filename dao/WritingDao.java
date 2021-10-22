@@ -1,4 +1,5 @@
 package dao;
+import dto.Jjim;
 import dto.Writing;
 import java.util.List;
 
@@ -93,6 +94,14 @@ public class WritingDao {
 		List<Writing> list = null;
 		SqlSession mapper = factory.openSession();
 		list = mapper.selectList("writing.selectHelpById",userId);
+		mapper.close();
+		return list;
+	}
+	
+	public List<Writing> selectByJId(String userId) {
+		List<Writing> list = null;
+		SqlSession mapper = factory.openSession();
+		list = mapper.selectList("writing.selectByJId",userId);
 		mapper.close();
 		return list;
 	}

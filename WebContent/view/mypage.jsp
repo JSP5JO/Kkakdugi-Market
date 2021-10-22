@@ -50,9 +50,9 @@
 					<c:forEach var="jj" items="${jlist}"> 
 						<li>
 							<ul class="row">
-								<li>${jj.writingIdx}
+								<li>${jj.idx}
 							 	</li>
-								<li><a href="detail.do?idx=${jj.writingIdx}&page=${pno}" class="title">${jj.subject}</a>
+								<li><a href="detail.do?idx=${jj.idx}&page=${pno}" class="title">${jj.subject}</a>
 							 	</li>
 							</ul>
 						</li>

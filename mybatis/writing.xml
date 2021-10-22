@@ -43,4 +43,8 @@
 	<select id="selectHelpById" resultType="Writing" parameterType="String">
 		select * from writing where categoryIdx = 'HELP' and userId = #{userId}
 	</select>
+	
+	<select id="selectByJId" resultType="Writing" parameterType="String">
+		select ji.userId, ji.writingIdx, ji.categoryIdx, wr.subject from Jjim ji right outer join Writing wr on ji.writingIdx = wr.idx where ji.userId=#{userId} 
+	</select>
 </mapper>
