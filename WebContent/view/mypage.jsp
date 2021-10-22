@@ -32,14 +32,13 @@
 			 	</ul>
 		 	</div>
 			<div class="myreply mycont">
-			<h3>내가 답변한 글 목록</h3>
+				<h3>내가 답변한 글 목록</h3>
 				<ul>
 					<c:forEach var="cm" items="${clist}"> 
 						<li>
 							<ul class="row">
 								<li>${cm.idx }</li>
 								<li><a href="detail.do?idx=${cm.writingIdx}&page=${pno}" class="title">${cm.content }</a></li>
-							 	</li>	
 							</ul>
 						</li>
 				 	</c:forEach>
@@ -51,7 +50,7 @@
 					<c:forEach var="jj" items="${jlist}"> 
 						<li>
 							<ul class="row">
-								<li>${jj.writingIdx}</a>
+								<li>${jj.writingIdx}
 							 	</li>
 								<li><a href="detail.do?idx=${jj.writingIdx}&page=${pno}" class="title">${jj.subject}</a>
 							 	</li>
