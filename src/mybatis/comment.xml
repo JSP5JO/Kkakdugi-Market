@@ -13,7 +13,7 @@
 		delete from comment where idx = #{idx}
 	</delete>
 
-	<insert id="insert" parameterType="KkakdugiMarket">
+	<insert id="insert" parameterType="Writing">
 		insert into writing (categoryIdx,userId,subject,content)
 		values(#{categoryIdx},#{userId},#{subject},#{content})
 	</insert>
