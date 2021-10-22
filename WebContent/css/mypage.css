@@ -9,8 +9,8 @@ ul {
 	color:#000;
 }
 ul .row {
-		display: flex;
-		flex-direction: row;     /* 기본값 */
+	display: flex;
+	flex-direction: row;     /* 기본값 */
 }
 .row > li{
 	padding: 3px 0px;
