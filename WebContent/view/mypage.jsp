@@ -66,9 +66,11 @@
 					<c:forEach var="hp" items="${hlist}"> 
 						<li>
 							<ul class="row">
-								<li>${hp.idx}</a>
+								<li>
+									${hp.idx}
 							 	</li>
-								<li><a href="detail.do?idx=${hp.idx}&page=${pno}" class="title">${hp.subject}</a>
+								<li>
+									<a href="detail.do?idx=${hp.idx}&page=${pno}" class="title">${hp.subject}</a>
 							 	</li>
 							</ul>
 						</li>
