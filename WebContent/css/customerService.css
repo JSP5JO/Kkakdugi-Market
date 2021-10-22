@@ -1,0 +1,39 @@
+/* 바디 영역 */
+
+
+.CS__main {
+	display: flex;
+	padding:0 28px;
+}
+
+.CS__main div {
+	flex-basis:40%;
+	margin:10px;
+	border-radius:3px;
+	padding:5px 10px;
+	box-sizing:border-box;
+	border: 1px solid black;
+	text-align:center;
+}
+
+.CS__main div {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin: auto;
+	width: 400px; 
+}
+a {
+	text-decoration: none;
+}
+
+@media screen and (max-width:768px){
+	.CS__main {
+	    flex-direction: column;
+	    padding:0 8px;
+	}
+	.CS__main div {
+		flex-basis:100%;
+		min-height:110px;
+	}
+}

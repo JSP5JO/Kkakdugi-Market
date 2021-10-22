@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- sql mapper   -->  
+<mapper namespace="writing"> <!-- namespace : 일종의 식별역할의 변수 -->
+	
+	<select id="selectById" resultType="Writing" parameterType="String">
+		select * from writing where userId = #{userId}
+	</select>
+	<select id="selectByIdx" resultType="Writing" parameterType="int">
+		select * from writing where idx=#{idx}
+	</select>
+	<select id="selectByCategoryIdx" resultType="Writing" parameterType="java.util.Map">
+		select w.idx, userId, subject, content, c.name, w.wdate 
+			from writing w join category c on w.categoryIdx = c.idx 
+				where w.categoryIdx = #{idx} order by idx desc limit #{startNo}, #{pageSize}
+	</select>
+	<select id="searchBySubject" resultType="Writing" parameterType="String">
+		select w.idx, userId, subject, content, c.name 
+			from writing w join category c on w.categoryIdx = c.idx 
+				where w.subject like CONCAT('%', #{subject}, '%')
+	</select>
+	<select id="searchById" resultType="Writing" parameterType="String">
+		select w.idx, userId, subject, content, c.name 
+			from writing w join category c on w.categoryIdx = c.idx 
+				where w.userId like CONCAT('%', #{userId}, '%')
+	</select>
+	
+	<select id="getCount" resultType="int">
+		select count(*) from writing
+	</select>
+	
+	<select id="searchByContent" resultType="Writing" parameterType="String">
+		select w.idx, userId, subject, content, c.name 
+			from writing w join category c on w.categoryIdx = c.idx 
+				where w.content like CONCAT('%', #{content}, '%')
+	</select>
+	<insert id="insert" parameterType="Writing">
+		insert into writing(categoryIdx, userId, subject, content) 
+			values (#{categoryIdx}, #{userId}, #{subject}, #{content})
+	</insert>
+</mapper>

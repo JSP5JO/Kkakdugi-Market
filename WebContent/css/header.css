@@ -1,0 +1,317 @@
+@import url(http://api.mobilis.co.kr/webfonts/css/?fontface=NanumGothicWeb); 
+
+* {
+	font-family: 'NanumGothic', '나눔고딕','NanumGothicWeb', '맑은 고딕', 'Malgun Gothic', Dotum;
+	letter-spacing: -0.025em;	
+}
+
+/* 헤더 영역 */
+header {
+	height: 75px;
+	position: fixed;
+	top: 0;
+	left:0;
+	right:0;
+	z-index:99999;
+}
+header a {
+    text-decoration: none;
+    color: white;
+    transition:color 0.3s; 
+}
+header button {
+	background-color:transparent;  
+	border:0px transparent solid;
+	color: white;
+	cursor: pointer;
+}
+.navbar{
+    background: black;
+    display: flex;
+	justify-content: space-between;
+    align-items: center;
+    padding: 4px 12px;
+}
+.navbar__logo{
+    list-style: none;
+    display: flex;
+    margin-left: 20px;
+    font-size: 20px;
+    padding-left: 0px;
+    color:white;
+}
+.navbar__logo li {
+    padding: 0px 4px;
+}
+.navbar__logo a {
+    line-height:30px;
+    font-weight:700;
+}
+.navbar__menu{
+    display:flex;
+    list-style: none;
+    padding-left: 0px;
+    margin-top: 0.85em;
+}
+.navbar__menu li{
+    padding: 8px 15px;
+    border-radius: 20px;
+    transition:background 0.3s;
+    position:relative;
+}
+ .navbar__menu>li>a{
+ 	z-index:9999999999;
+ 	position:relative;
+ }
+.navbar__menu>li:hover>a{
+	font-weight:500;
+}
+.navbar__menu li:hover{
+    background: #f9c07f;
+    transition:background 0.3s;
+}
+.navbar__menu li:hover a{
+	color:#000;
+	transition:color 0.3s;
+}
+.navbar__submenu{
+	position: absolute;
+    text-align: center;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 0px;
+    padding:0;
+    width: 100px;
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    background: #f9c07f;
+    z-index: 1;
+    height:0;
+    overflow:hidden;
+    transition:height 0.3s;
+    box-sizing:border-box;
+    border-radius:20px;
+    opacity:0;
+}
+.navbar__menu li:hover .navbar__submenu{
+	height: 176px;
+    padding: 35px 0 10px;
+    opacity: 1;
+    transition:height 0.3s;
+}
+.navbar__submenu li{
+    padding: 8px 15px;
+    list-style: none;
+    border-radius: 20px;
+    transition:background 0.3s;
+}
+.navbar__submenu li:hover{
+	font-weight:500;
+	transition:background 0.3s;
+}
+.navbar__icon{
+    margin-right: 23px;
+    color:white;
+    display: flex;
+    padding: 0px;
+}
+.navbar__icon li{
+    list-style: none;
+    padding: 8px 4px;
+}
+.navbar__icon form{
+	display:flex;
+}
+.navbar__icon input[type="text"] {
+	margin-right:3px;
+}
+.fas{
+	color:#fff;
+}
+#searchOption{
+	margin-right:4px;
+}
+
+@media screen and (-webkit-min-device-pixel-ratio:0){ 
+	.navbar__icon li{
+ 	   line-height:22px !important;
+	}
+}
+
+ /* IE10+ */
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+	.navbar__icon li{
+ 	   line-height:25px;
+	}
+}
+ 
+/* IE6,7,9,10 */
+@media screen and (min-width: 640px), screen\9 {
+	 .navbar__icon li{
+	   line-height:25px;
+	 }
+}
+ 
+/* IE6,7 */
+@media screen\9 {
+	.navbar__icon li{
+	  line-height:25px;
+	 }
+}
+ 
+/* IE8 */
+@media \0screen {
+ 	.navbar__icon li{
+	   line-height:25px;
+	 }
+}
+ 
+/* IE6,7,8 */
+@media \0screen\,screen\9 {
+	 .navbar__icon li{
+	   line-height:25px;
+	 }
+}
+ 
+/* IE9,10 */
+@media screen and (min-width:0\0){
+ 	.navbar__icon li{
+	   line-height:25px;
+	 }
+} 
+.navbar__hamburger{
+    position: absolute;
+    list-style: none;
+    color: white;
+    right: 20px;
+    display: none;
+    font-size: 20px;
+    padding: 4px 12px;
+    margin-top: 20px;
+}
+.category {
+	text-align: center;
+}
+.category__list{
+	display: none;
+	list-style: none;
+	text-align: center;
+	padding: 0 0;
+}
+.category__list  li {
+	text-align: center;
+	padding: 10px 0px;
+}
+.navbar__menu > li:hover .category__list {
+	display: block;
+}
+
+@media screen and (max-width: 950px){ /*@media media type and (media rule)*/
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+		justify-content: space-between;
+        height:82.06px;
+        transition:height 0.5s;
+        box-sizing: border-box;
+    }
+	.navbar.active{
+		height:300px;
+		transition:height 0.5s;
+	}
+	.navbar.active.height{
+		height:445px;
+		transition:height 0.3s;
+	}
+    .navbar__menu {
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        display: flex;
+		transition: height 0.3s, opacity 0.3s;
+    	height: 0;
+    	opacity: 0;
+    	margin:0;
+    	padding: 0px 18px;
+		box-sizing: border-box;
+    }
+    .navbar__menu>li {
+        width: 100%;
+        text-align: center;
+        padding:8px 15px;
+    }
+    .navbar__logo{
+	    margin-left:0px;
+	}
+    .navbar__icon {
+		justify-content: center;
+	    width: 100%;
+	    display: flex;
+	    opacity: 0;
+	    transition: opacity 0.015s;
+	    margin: 0;
+	    padding: 20px 6px;
+	    box-sizing: border-box;
+    }
+	.navbar__icon li {
+    	list-style: none;
+    	padding: 8px 0px;
+	}
+	.navbar__icon i{
+		margin-right:1px;
+	}
+    .navbar__hamburger {
+        display: flex;
+        top:7px;
+        right:7px;
+    }
+    .navbar__menu.active {
+        display: flex;
+        opacity: 1;
+        height:300px;
+        transition:height 0.3s, opacity 0.3s;
+    }
+    .navbar__icon.active {
+        display: flex;
+        opacity:1;
+        transition: opacity 2s;
+        height:auto;
+    }
+    .navbar__submenu{
+		position: relative;
+	    text-align: center;
+	    left:0;
+	    transform: translateX(0);
+	    top: 0px;
+	    padding:0;
+	    width:100%;
+	    display: flex;
+	    flex-direction: column;
+	    list-style: none;
+	    background: #f9c07f;
+	    z-index: 1;
+	    height:0;
+	    overflow:hidden;
+	    transition:opacity 0.3s, height 0.3s;
+	    box-sizing:border-box;
+	    border-radius:20px;
+	    background:transparent;
+	}
+	.navbar__submenu li{
+		width:100%;
+		box-sizing:border-box;
+	}
+	.navbar__menu li:hover .navbar__submenu{
+		height:132px;
+	    padding:0;
+	    transition:opacity 0.3s, height 0.3s;
+	    margin:8px 0 0;
+	}
+	.navbar__menu li:focus .navbar__submenu{
+		height:132px;
+	    padding:0;
+	    transition:opacity 0.3s, height 0.3s;
+	    margin:8px 0 0;
+	}
+}

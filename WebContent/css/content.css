@@ -1,0 +1,54 @@
+/* 바디 영역 */
+*{
+	letter-spacing: -0.025em;	
+}
+body{
+	padding-top: 120px;
+	margin:0;
+}
+
+.mypage, .main, section{
+	min-height:400px;
+	padding-top:30px !important;
+	padding-bottom:50px !important;
+}
+
+section{
+	padding:0 38px;
+	padding-bottom:100px !important;
+}
+
+
+.main {
+	display: flex;
+	padding:0 28px;
+}
+
+.main div {
+	flex-basis:33.33%;
+	margin:10px;
+	border-radius:3px;
+	padding:5px 10px;
+	box-sizing:border-box;
+	border: 1px solid #d1d1d1;
+	text-align:center;
+}
+
+@media screen and (max-width:950px){
+	section{
+		padding:0 17px;
+		padding-bottom:100px !important;
+	}
+	
+	.main {
+	    flex-direction: column;
+	    padding:0 8px;
+	}
+	.main div {
+		flex-basis:100%;
+		min-height:110px;
+	}
+	.mypage{
+		padding:0 10px;
+	}
+}

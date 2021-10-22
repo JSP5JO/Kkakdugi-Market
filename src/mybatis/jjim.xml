@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- sql mapper   -->  
+<mapper namespace="jjim"> <!-- namespace : 일종의 식별역할의 변수 -->
+	
+	<select id="getList" resultType="Jjim" parameterType="java.util.Map">
+		select * from Jjim where userId =#{userId} order by idx desc limit #{startNo},#{pageSize}
+	</select>
+	<select id="selectById" resultType="Jjim" parameterType="String">
+		select * from jjim where userId=#{userId}
+	</select>
+	
+	<insert id="userJjimInsert" parameterType="Jjim"> <!-- 유저 찜한 목록 찜 테이블에 삽입 -->
+		insert into jjim values(#{userId},#{writingIdx},#{categoryIdx});
+	</insert>
+	
+</mapper>
+<!-- ${ } : 표현식. 중괄호안에 수식에 대한 연산결과값을 구해서 출력
+     #{ } : 무조건 문자열(' '기호사용)로 중괄호 안의 값을 처리합니다. -->
+
