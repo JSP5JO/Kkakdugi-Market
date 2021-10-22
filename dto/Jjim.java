@@ -11,5 +11,4 @@ public class Jjim {
 	private String userId; //���� ���̵�
 	private int writingIdx; //�� ��ȣ
 	private String categoryIdx; // ī�װ� ��ȣ
-	private String subject; // ī�װ� ��ȣ
 }
