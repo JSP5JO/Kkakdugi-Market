@@ -59,6 +59,7 @@ public class UsersDao {
 		return result;
 	}
 	
+	// 전문가 번호 가져오기
 	public List<Users> proIdxInfo(String userId) {
 		List<Users> list = null;
 		SqlSession mapper = sqlFactory.openSession();
