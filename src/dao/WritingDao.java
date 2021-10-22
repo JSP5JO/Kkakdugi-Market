@@ -97,21 +97,6 @@ public class WritingDao {
 		mapper.close();
 	}
 	
-	//getList
-	public List<Writing> getList(Map<String, Integer>map){
-		List<Writing> list = null;
-		SqlSession mapper = factory.openSession();
-		list = mapper.selectList("getList",map);
-		mapper.close();
-		return list;
-	}
-	//1개 행 조회
-	public Writing getOne(int idx) {
-		SqlSession mapper = factory.openSession();
-		Writing dto = mapper.selectOne("selectByIdx", idx);
-		mapper.close();
-		return dto;
-	}
 	//글 삭제
 	public int delete(Map<String,Object> map) {
 		SqlSession mapper = factory.openSession();
