@@ -22,6 +22,7 @@ public class DetailAction implements Action{
 		
 		HttpSession session = request.getSession();
 		//글 상세
+		Object user = session.getAttribute("user");
 		int idx = Integer.parseInt(request.getParameter("idx"));
 		int pageNo = Integer.parseInt(request.getParameter("page"));
 		
