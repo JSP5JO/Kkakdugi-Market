@@ -5,7 +5,9 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 379px;
+    height: 100vh;
+    padding:18px;
+    box-sizing:border-box;
 }
 body>div{
 	background:#fff;
