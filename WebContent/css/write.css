@@ -1,50 +1,56 @@
 @charset "UTF-8";
 #all{
 	text-align:center;
-	place-content: center;
-	margin-bottom: 20px;
-	margin:0 auto;
+	margin: 4% auto;
+	width: 50%;
+	max-width:70%;
+	box-sizing:border-box;
+	padding:45px;
+	background:#fff;
+	box-shadow: 0 0 15px rgba(0,0,0,0.1);
+	border-radius:30px;
 }
 .btn,.btn2{
-	margin-bottom: 40px;
-	width:70px;
-	height:30px;
-	font-family: noto sans;
-	background: #f39d52;
-	background-size: 200%;
-	color:white;
-	font-weight: bold;
-	border:none;
-	border-radius : 4px;
-	cursor:pointer;
-	display:inline;
+	height: 40px;
+    width: 108px;
+    color: #3a3a3a;
+    border-radius: 30px;
+    box-sizing: border-box;
+    margin-top: 15px;
+    border:1px solid #f9c07f;
+	background:#f9c07f;
+    line-height: 36px;
+    cursor:pointer;
 }
 .btn2{
 	right: auto;
 	margin-left: 30%;
 }
 #Category{
-	text-align: left;
-	border-top: 0px;
-	border-left: 0px;
-	border-right: 0px;
-	font-size: 1.3em;
-	font-family: noto sans;
-	width: 40%;
+	width: 70%;
+	text-align:center !important;
+	height:40px;
+	font-size:13px;
+	border-radius:3px;
+	color:#757575;
+	border:0;
+	border-radius:30px;
+	background:#efefef;
+	box-sizing:border-box;
+	padding:0 20px;
 }
-#subject,#userId{
-	width: 40%;
+#subject,#userId,#category_etc{
+	width: 70%;
 	height:25px;
 	padding: 5px;
   	border:none;
   	border-bottom: 2px solid #d3d3d3;
   	font-size:16px;
-  	font-family: noto sans;
-  	background: none;
+  	background: fff;
   	outline: none;
 }
 #content{
-	width: 40%;
+	width: 70%;
 	padding: 5px;
 	height: 50%;
   	border:none;
@@ -52,11 +58,11 @@
   	font-size:16px;
   	font-family: noto sans;
   	background: none;
+  	outline: none;
 }
 #category_etc{
-	width:40%;
+	width:70%;
 	padding: 5px;
-	position: static;
 }
 
 
