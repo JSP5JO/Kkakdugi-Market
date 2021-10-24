@@ -2,8 +2,12 @@
 
 ul {
 	list-style: none;
+	padding:0;
 }
-
+.mlist_con a{
+	text-decoration:none;
+	color:#000;
+}
 ul .row {
 		display: flex;
 		flex-direction: row;     /* 기본값 */
@@ -12,28 +16,34 @@ ul .row {
 	padding: 3px 0px;
 }
 .row > li:nth-child(1){  /* .row 의 자식태그 중 li 그리고 그 li의 n번째 위치(자식요소)로 select  */
-	flex-basis:10%;
+	flex-basis:15%;
 }	
 .row > li:nth-child(2){
-	flex-basis:35%;
-}
-.row > li:nth-child(3){
-	flex-basis:25%;
-}
-.row > li:nth-child(4){
-	flex-basis:10%;
-}
-.row > li:nth-child(5){
-	flex-basis:20%;
+	flex-basis:85%;
 }
 
 .mypage {
-	display: flex;
 	padding:0 28px;
 }
-
-.mypage div {
-	flex-basis:33.33%;
+.mypage>p{
+	display:flex;
+	justify-content:space-between;
+	padding: 20px;
+    background: #f7f7f7;
+    margin: 0 10px 10px;
+    border-radius: 3px;
+    color: #000;
+}
+.pronum{
+	font-size:14px;
+	line-height:20px;
+}
+.mlist_con {
+	display: flex;
+	flex-wrap: wrap;
+}
+.mlist_con div {
+	flex-basis: calc(25% - 20px);
 	margin:10px;
 	border-radius:3px;
 	padding:5px 10px;
@@ -41,18 +51,38 @@ ul .row {
 	border: 1px solid #d1d1d1;
 	text-align:center;
 }
-
+.mlist_con.ie div {
+	flex-basis: calc(25% - 42px);
+}
 li{
 	list-style:none;
 }
 
-@media screen and (max-width:768px){
-	.mypage {
-	    flex-direction: column;
-	    padding:0;
+@media screen and (max-width:950px){
+	.mypage{
+		padding:0;
 	}
-	.mypage div {
-		flex-basis:100%;
-		min-height:110px;
+	.mlist_con div {
+		flex-basis: calc(50% - 20px);
+	}
+	.mlist_con.ie div {
+		flex-basis: calc(50% - 42px);
+	}
+}
+@media screen and (max-width:750px){
+	.mlist_con {
+	    flex-direction: column;
+	}
+	.mlist_con div {
+		flex-basis:auto !important;
+	}
+}
+@media screen and (max-width:500px){
+	.mypage>p{
+		flex-direction:column;
+		text-align:center;
+	}
+	.pronum{
+		margin-top:15px;
 	}
 }

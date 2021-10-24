@@ -28,4 +28,9 @@
 	<update id="registMyField" parameterType="SessionDto">
 		update users set proIdx = #{proIdx} where id = #{id}
 	</update>
+	
+	<!-- 전문가 번호 가져오기 -->
+	<select id="proIdxInfo" parameterType="String" resultType="Users">
+		select u.proIdx, c.name from users u join category c on u.proIdx = c.idx where id=#{id}
+	</select>
   </mapper>

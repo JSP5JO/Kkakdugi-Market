@@ -11,6 +11,8 @@ import javax.servlet.http.HttpServletResponse;
 
 import controller.action.Action;
 import controller.action.ActionForward;
+import controller.action.CommentAction;
+import controller.action.DetailAction;
 import controller.action.HelpSaveAction;
 import controller.action.HelpWriteAction;
 import controller.action.IdCheckAction;
@@ -94,6 +96,12 @@ public class FrontController extends HttpServlet {
 			forward = action.execute(request, response);
 		} else if (spath.equals("/category.do")) {
 			Action action = new ListAction();
+			forward = action.execute(request, response);
+		} else if (spath.equals("/detail.do")) {
+			Action action = new DetailAction();
+			forward = action.execute(request, response);
+		}else if (spath.equals("/comment.do")) {
+			Action action = new CommentAction();
 			forward = action.execute(request, response);
 		}
 

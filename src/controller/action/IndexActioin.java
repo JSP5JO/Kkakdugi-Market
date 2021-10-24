@@ -11,9 +11,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import dao.JjimDao;
 import dao.WritingDao;
-import dto.Jjim;
 import dto.SessionDto;
 import dto.Writing;
 
@@ -30,14 +28,13 @@ public class IndexActioin implements Action {
 		// 로그인이 되어 session이 not null 일때만 작용
 		if (user != null) {
 			String userId = user.getId();
-			JjimDao jjimDao = JjimDao.getInstance();
 			WritingDao wdao = WritingDao.getInstance();
 
 			// 찜 리스트 전달 로직
-			List<Jjim> jjimList = jjimDao.selectById(userId);
+			List<Writing> jjimList = wdao.selectJjimById(userId);
 			List<Writing> jjimWritingList = new ArrayList<Writing>();
-			for (Jjim jList : jjimList) {
-				int idx = jList.getWritingIdx();
+			for (Writing jList : jjimList) {
+				int idx = jList.getIdx();
 				jjimWritingList.add(wdao.selectByIdx(idx));
 			}
 

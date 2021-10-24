@@ -55,11 +55,11 @@ a {
 				<c:forEach var="vo" items="${list}">
 					<c:set var="content" value='${vo.content}'></c:set>
 					<tr>
-						<td><a href="#">${vo.idx}</a></td>
-						<td><a href="#">${vo.subject}</a></td>
-						<td><a href="#">${fn:substring(content,0,10)}...</a></td>
-						<td><a href="#">${vo.userId}</a></td>
-						<td><a href="#">${vo.wdate}</a></td>
+						<td>${vo.idx}</td>
+						<td><a href="detail.do?idx=${vo.idx}&page=1">${vo.subject}</a></td>
+						<td>${fn:substring(content,0,10)}...</td>
+						<td>${vo.userId}</td>
+						<td>${vo.wdate}</td>
 					</tr>
 				</c:forEach>
 			</table>

@@ -47,12 +47,31 @@ create table comment (
 -- 찜 테이블
 create table jjim(
 	userId varchar(20),
-	writingIdx int,
+	idx int,
 	categoryIdx varchar(20),
 	foreign key(userId) references users(id)
 );
 
 
 
--- -------------- 예시문
+-- -------------- 예시문 예시
+-- 카테고리 생성
+insert into category VALUES('INTE51', '인테리어');
+-- user 생성 (proIdx, KakaId는 선택적으로 삽입)
+insert into users(name, id, pw, email) values('나라', 'nara94', 'pass123!', 'nara94@naver.com');
+-- writing 예시 (카테고리와 userId는 반드시 이미 존재하는 값이 필요)
+insert into writing (categoryIdx, userId, subject, content) values('INTE51', 'nara94', '이거 얼마죠?', '가격이 얼마인지 궁금합니다!!!');
+
+
 select * from writing where userId = 'user1';
+
+alter table jjim change writingIdx idx int;
+
+select * from jjim j right join writing w on j.idx = w.idx where j.userId  = 'user1';
+
+select w.idx, w.categoryIdx, w.userId, w.subject, w.content,w.readCount, w.commentCount, w.wdate, c.name 
+	from writing w left join category c on w.categoryIdx = c.idx where w.idx = 3;
+
+select * from comment;
+
+select name from category where idx = 'CATE12';

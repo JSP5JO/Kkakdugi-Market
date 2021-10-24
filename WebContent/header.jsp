@@ -21,7 +21,7 @@
 		<!-- 네비게이션 항목 -->
 		<ul class="navbar__menu">
 			<li class="cate">
-				<a href="">카테고리</a>
+				<a href="#">카테고리</a>
 				<ul class="navbar__submenu">
 					<li><a href="category.do?cate=CATE12">주방/가전</a></li>
 					<li><a href="category.do?cate=CATE20">IT/전자</a></li>

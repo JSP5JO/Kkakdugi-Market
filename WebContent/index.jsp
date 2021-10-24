@@ -19,7 +19,7 @@
 			<p>이곳에 리스트(hotList)를 삽입</p>
 			<ul>
 				<c:forEach var="vo" items="${hotList}">
-					<li><a href="#">${hotList.subject}</a></li>
+					<li><a href="detail.do">${hotList.subject}</a></li>
 				</c:forEach>
 			</ul>
 		</div>
@@ -29,7 +29,7 @@
 			<c:if test="${sessionScope.user != null}">
 				<ol>
 					<c:forEach var="vo" items="${myFieldList}">
-						<li><a href="#">${vo.subject}</a></li>
+						<li><a href="detail.do?idx=${vo.idx}">${vo.subject}</a></li>
 					</c:forEach>
 				</ol>
 			</c:if>

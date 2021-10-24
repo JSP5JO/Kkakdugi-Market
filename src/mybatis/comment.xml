@@ -2,9 +2,29 @@
 <!DOCTYPE mapper
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<!-- sql mapper   -->  
+<!-- sql mapper -->
 <mapper namespace="comment">
+
+	<insert id="insert" parameterType="Comment">
+		insert into comment (writingIdx,userId,content)
+			values(#{writingIdx},#{userId},#{content})
+	</insert>
+
+	<delete id="delete" parameterType="int">
+		delete from comment where idx = #{idx}
+	</delete>
+
+	<select id="getList" parameterType="int" resultType="Comment">
+		select * from comment where writingIdx =#{writingIdx}
+	</select>
+	
 	<select id="selectById" resultType="Comment" parameterType="String">
 		select * from comment where userId=#{userId}
 	</select>
+	
+	<update id="updateCountAll" parameterType="int">
+		update writing set commentCount = (
+			select count(*) from comment where writingIdx = #{idx}) where idx = #{idx};
+	</update>
+
 </mapper>

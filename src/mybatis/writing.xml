@@ -2,43 +2,83 @@
 <!DOCTYPE mapper
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<!-- sql mapper   -->  
+<!-- sql mapper -->
 <mapper namespace="writing"> <!-- namespace : 일종의 식별역할의 변수 -->
-	
-	<select id="selectById" resultType="Writing" parameterType="String">
+
+	<select id="selectById" resultType="Writing"
+		parameterType="String">
 		select * from writing where userId = #{userId}
 	</select>
-	<select id="selectByIdx" resultType="Writing" parameterType="int">
-		select * from writing where idx=#{idx}
+
+	<select id="selectByIdx" resultType="Writing"
+		parameterType="int">
+		select w.idx, w.categoryIdx, w.userId, w.subject, w.content,w.readCount, w.commentCount, w.wdate, c.name
+		from writing w left join category c on w.categoryIdx = c.idx where w.idx = #{idx}
 	</select>
-	<select id="selectByCategoryIdx" resultType="Writing" parameterType="java.util.Map">
-		select w.idx, userId, subject, content, w.categoryIdx, c.name, w.wdate 
-			from writing w join category c on w.categoryIdx = c.idx 
-				where w.categoryIdx = #{idx} order by idx desc limit #{startNo}, #{pageSize}
+
+	<select id="selectByCategoryIdx" resultType="Writing"
+		parameterType="java.util.Map">
+		select w.idx, userId, subject, content, w.categoryIdx,
+		c.name, w.wdate
+		from writing w join category c on w.categoryIdx = c.idx
+		where w.categoryIdx = #{idx} order by idx desc limit #{startNo},
+		#{pageSize}
 	</select>
-	<select id="searchBySubject" resultType="Writing" parameterType="String">
-		select w.idx, userId, subject, content, c.name 
-			from writing w join category c on w.categoryIdx = c.idx 
-				where w.subject like CONCAT('%', #{subject}, '%')
+
+	<select id="getCategoryName" parameterType="String"
+		resultType="String">
+		select * from category where idx =#{idx}
 	</select>
-	<select id="searchById" resultType="Writing" parameterType="String">
-		select w.idx, userId, subject, content, c.name 
-			from writing w join category c on w.categoryIdx = c.idx 
-				where w.userId like CONCAT('%', #{userId}, '%')
+
+	<select id="searchBySubject" resultType="Writing"
+		parameterType="String">
+		select w.idx, userId, subject, content, c.name
+		from
+		writing w join category c on w.categoryIdx = c.idx
+		where w.subject like
+		CONCAT('%', #{subject}, '%')
 	</select>
-	
+
+	<select id="searchById" resultType="Writing"
+		parameterType="String">
+		select w.idx, userId, subject, content, c.name
+		from
+		writing w join category c on w.categoryIdx = c.idx
+		where w.userId like
+		CONCAT('%', #{userId}, '%')
+	</select>
+
 	<select id="getCount" resultType="int">
 		select count(*) from writing
 	</select>
-	
-	<select id="searchByContent" resultType="Writing" parameterType="String">
-		select w.idx, userId, subject, content, c.name 
-			from writing w join category c on w.categoryIdx = c.idx 
-				where w.content like CONCAT('%', #{content}, '%')
+
+	<select id="searchByContent" resultType="Writing"
+		parameterType="String">
+		select w.idx, userId, subject, content, c.name
+		from
+		writing w join category c on w.categoryIdx = c.idx
+		where w.content like
+		CONCAT('%', #{content}, '%')
 	</select>
+
+	<select id="selectHelpById" resultType="Writing"
+		parameterType="String">
+		select * from writing where categoryIdx = 'HELP' and
+		userId = #{userId}
+	</select>
+
+	<select id="selectJjimById" resultType="Writing"
+		parameterType="String">
+		select * from jjim j right join writing w on j.idx =
+		w.idx where j.userId = #{userId}
+	</select>
+
 	<insert id="insert" parameterType="Writing">
-		insert into writing(categoryIdx, userId, subject, content) 
-			values (#{categoryIdx}, #{userId}, #{subject}, #{content})
+		insert into
+		writing(categoryIdx, userId, subject, content)
+		values (#{categoryIdx},
+		#{userId}, #{subject}, #{content})
 	</insert>
+
 </mapper>
 
