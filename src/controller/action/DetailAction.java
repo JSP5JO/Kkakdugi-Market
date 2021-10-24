@@ -13,44 +13,36 @@ import dao.WritingDao;
 import dto.Comment;
 import dto.Writing;
 
-
-public class DetailAction implements Action{
+public class DetailAction implements Action {
 
 	@Override
 	public ActionForward execute(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		
 		HttpSession session = request.getSession();
-		//글 상세
-		Object user = session.getAttribute("user");
+		// 글 상세
 		int idx = Integer.parseInt(request.getParameter("idx"));
-		int pageNo = Integer.parseInt(request.getParameter("page"));
+		int page = Integer.parseInt(request.getParameter("page"));
 		
 		WritingDao dao = WritingDao.getInstance();
-		if(session.getAttribute("readCount")!=null) {
-			StringBuilder Idx = (StringBuilder)session.getAttribute("readCount");
-			boolean status = Idx.toString().contains("/"+idx+"/");
-			if(!status) {
-				dao.readCount(idx);
-				Idx.append(idx + "/");
-			}
-			}else {
-				StringBuilder Idx = new StringBuilder("/");
-				session.setAttribute("Idx", Idx);
-			}
-		Writing bean = dao.selectByIdx(idx);
+		
+		// 글 가져오기
+		Writing bean = dao.getOne(idx);
 		
 		CommentDao cdao = CommentDao.getInstance();
-		cdao.updateCountAll(idx);
-		List<Comment> cmts = cdao.getList(idx);
-		request.setAttribute("cmtlist", cmts);
-		request.setAttribute("page", pageNo);
 		
+		// 댓글 리스트 가져오기
+		List<Comment> cmts = cdao.getList(idx);
+
+		// 요청 전달
+		request.setAttribute("cmtlist", cmts);
 		request.setAttribute("bean", bean);
+		request.setAttribute("page", page);
+		
 		ActionForward forward = new ActionForward();
 		forward.isRedirect = false;
-		forward.setUrl("view/detail.jsp");
+		forward.url = "view/detail.jsp";
 		return forward;
-		
+
 	}
 }

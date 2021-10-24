@@ -23,7 +23,7 @@ public class DeleteAction implements Action{
 		
 		int idx = Integer.parseInt(request.getParameter("idx"));
 		int pageNo = Integer.parseInt(request.getParameter("page"));
-
+		
 		WritingDao dao = WritingDao.getInstance();
 		Map<String,Object> map = new HashMap<>();
 		map.put("idx", idx);
