@@ -5,6 +5,7 @@
 <html>
 <head>
 <title>Kkakdigu-Market__nav</title>
+<link rel="stylesheet" href="css/content.css?v=3">
 
 </head>
 
