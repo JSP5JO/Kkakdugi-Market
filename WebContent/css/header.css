@@ -81,7 +81,7 @@ header button {
     transform: translateX(-50%);
     top: 0px;
     padding:0;
-    width: 100px;
+    width: 110px;
     display: flex;
     flex-direction: column;
     list-style: none;
@@ -95,13 +95,13 @@ header button {
     opacity:0;
 }
 .navbar__menu li:hover .navbar__submenu{
-	height: 176px;
+	height: 247px;
     padding: 35px 0 10px;
     opacity: 1;
     transition:height 0.3s;
 }
 .navbar__submenu li{
-    padding: 8px 15px;
+    padding: 8px;
     list-style: none;
     border-radius: 20px;
     transition:background 0.3s;
@@ -221,7 +221,7 @@ header button {
 		transition:height 0.5s;
 	}
 	.navbar.active.height{
-		height:445px;
+		height:510px;
 		transition:height 0.3s;
 	}
     .navbar__menu {
@@ -269,7 +269,7 @@ header button {
     .navbar__menu.active {
         display: flex;
         opacity: 1;
-        height:300px;
+        height:400px;
         transition:height 0.3s, opacity 0.3s;
     }
     .navbar__icon.active {
@@ -303,7 +303,7 @@ header button {
 		box-sizing:border-box;
 	}
 	.navbar__menu li:hover .navbar__submenu{
-		height:132px;
+		height:202px;
 	    padding:0;
 	    transition:opacity 0.3s, height 0.3s;
 	    margin:8px 0 0;
