@@ -39,14 +39,13 @@ ul .row {
 	line-height:20px;
 }
 .mycont-div{
-	max-height:500px;
+	max-height:400px;
 	overflow-y:auto;
-	margin-bottom:15px;
+	margin-bottom:1em;
 }
-.mycont>div>ul{
-	margin-top:15px;
-	min-height:450px;
-	margin-top:0;
+.mycont-div>ul{
+	min-height:400px;
+	margin:0;
 }
 .mycont-div::-webkit-scrollbar-track
 {
@@ -70,7 +69,7 @@ ul .row {
 	display: flex;
 	flex-wrap: wrap;
 }
-.mlist_con>div {
+.mycont {
 	flex-basis: calc(25% - 20px);
 	margin:10px;
 	border-radius:3px;
@@ -90,21 +89,24 @@ li{
 	.mypage{
 		padding:0;
 	}
-	.mlist_con>div {
+	.mycont {
 		flex-basis: calc(50% - 20px);
 	}
 	.mlist_con.ie>div {
 		flex-basis: calc(50% - 42px);
 	}
-	.mycont>div>ul{
-		max-height:300px;
+	.mycont-div{
+		max-height:350px;
+	}
+	.mycont-div>ul {
+	    min-height: 350px;
 	}
 }
 @media screen and (max-width:750px){
 	.mlist_con {
 	    flex-direction: column;
 	}
-	.mlist_con>div {
+	.mycont {
 		flex-basis:auto !important;
 	}
 }
