@@ -79,7 +79,7 @@ ul .row {
 	border: 1px solid #d1d1d1;
 	text-align:center;
 }
-.mlist_con.ie div {
+.mlist_con.ie>div {
 	flex-basis: calc(25% - 42px);
 }
 li{

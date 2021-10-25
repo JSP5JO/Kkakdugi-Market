@@ -19,7 +19,7 @@
 		<div class="mlist_con">
 			<div class="mywriting mycont">
 				<h3>내가 작성한 글 목록</h3>
-				<div class="mycont-div" id="style-4">
+				<div class="mycont-div">
 					<ul>
 						<c:forEach var="vo" items="${wlist}"> 
 							<li>
