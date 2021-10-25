@@ -13,6 +13,8 @@ import controller.action.Action;
 import controller.action.ActionForward;
 import controller.action.CommentAction;
 import controller.action.DetailAction;
+import controller.action.FindIdAction;
+import controller.action.FindPwAction;
 import controller.action.HelpSaveAction;
 import controller.action.HelpWriteAction;
 import controller.action.IdCheckAction;
@@ -102,6 +104,12 @@ public class FrontController extends HttpServlet {
 			forward = action.execute(request, response);
 		}else if (spath.equals("/comment.do")) {
 			Action action = new CommentAction();
+			forward = action.execute(request, response);
+		}else if (spath.equals("/findId.do")) {
+			Action action = new FindIdAction();
+			forward = action.execute(request, response);
+		}else if (spath.equals("/findPw.do")) {
+			Action action = new FindPwAction();
 			forward = action.execute(request, response);
 		}
 

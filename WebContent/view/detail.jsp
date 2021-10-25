@@ -44,7 +44,7 @@ p {
 					<ul class="row">
 						<li>제목</li>
 						<li>${bean.subject}</li>
-						<li>사용자id</li>
+						<li>작성자</li>
 						<li>${bean.userId}</li>
 					</ul>
 				</li>

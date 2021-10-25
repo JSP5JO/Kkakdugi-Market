@@ -1,0 +1,93 @@
+@charset "UTF-8";
+body{
+	background:#484848;
+	margin:0;
+}
+body > div{
+	background:#fff;
+	max-width:400px;
+	width:100%;
+	padding:30px;
+	box-sizing:border-box;
+	margin:0 auto;
+	position:absolute;
+	top:50%;
+	left:50%;
+	transform:translate(-50%,-50%);
+	border-radius: 15px;
+	box-shadow: 0 0 15px rgb(0 0 0 0.1);
+}
+h3{
+	margin:0 0 20px;
+}
+input {
+	margin-top : 8px;
+    width:calc(100% - 98px);
+    height: 40px;
+    text-align: center;
+    box-sizing: border-box;
+    font-size: 13px;
+    border: 0;
+    border-radius: 30px;
+}
+input[type=text],[type=email]{
+	border-bottom: 2px solid #adadad;
+	border-radius: 0;
+}
+
+input[type=text],[type=email]:focus {
+	border: 0;
+    border-bottom: 2px solid #adadad;
+    outline: none;
+} 
+
+input[type=submit] {
+	width: 95px;
+    color: #adadad;
+    border: 2px solid #adadad;
+    border-radius: 30px;
+    transition: all 0.3s;
+    line-height: 36px;
+    box-sizing: border-box;
+    font-weight: 700;
+    background: #fff;
+    cursor:pointer;
+}
+input[type=button] {
+	width: 95px;
+    color: #adadad;
+    border: 2px solid #adadad;
+    border-radius: 30px;
+    transition: all 0.3s;
+    line-height: 36px;
+    box-sizing: border-box;
+    font-weight: 700;
+    background: #fff;
+    cursor:pointer;
+}
+
+/* input[type=button] {
+	width:200px;
+    background: linear-gradient(
+125deg,#ffce81,#f39d52,#ffce81);
+    background-position: left;
+    background-size: 200%;
+    color: #fff;
+    border-radius: 30px;
+    transition: all 0.3s;
+    line-height: 36px;
+    box-sizing: border-box;
+    font-weight:700;
+    display:block;
+    margin:20px auto 0;
+} */
+/* 
+input[type=button]:hover {
+	cursor:pointer;
+    background: linear-gradient(
+125deg,#ffce81,#f39d52,#ffce81);
+	background-position: right;
+    background-size: 200%;
+    transition: all 0.3s;
+    background-position: right;
+} */

@@ -65,4 +65,22 @@ public class UsersDao {
 		mapper.close();
 		return dto;
 	}
+	
+	// 아이디 찾기
+	public String findId(Map<String, String> map) { 
+		SqlSession mapper = sqlFactory.openSession();
+		String id = mapper.selectOne("users.findId", map);
+		mapper.commit();
+		mapper.close();
+		return id;
+	}
+	
+	// 비밀번호 찾기
+	public String findPw(Map<String, String> map) { 
+		SqlSession mapper = sqlFactory.openSession();
+		String pw = mapper.selectOne("users.findPw", map);
+		mapper.commit();
+		mapper.close();
+		return pw;
+	}
 }
