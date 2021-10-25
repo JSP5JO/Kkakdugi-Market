@@ -39,11 +39,14 @@ create table comment (
 	writingIdx int,					-- 글 번호
 	userId varchar(20),				-- 사용자 아이디
 	content varchar(50),			-- 댓글 내용
+	pro tinyint default 0,		-- 전문가 여부
 	primary key(idx),
 	foreign key(writingIdx) references writing(idx),
 	foreign key(userId) references users(id)
 );
 
+alter table comment add pro boolean default false;
+select * from comment;
 -- 찜 테이블
 create table jjim(
 	userId varchar(20),
@@ -66,21 +69,33 @@ insert into users(name, id, pw, email) values('나라', 'nara94', 'pass123!', 'n
 -- writing 예시 (카테고리와 userId는 반드시 이미 존재하는 값이 필요)
 insert into writing (categoryIdx, userId, subject, content) values('INTE51', 'nara94', '이거 얼마죠?', '가격이 얼마인지 궁금합니다!!!');
 
+select * from comment c left join users u on c.userId = u.id;
 
-select * from writing where userId = 'user1';
+-- 데이터 삽입 예시
+insert into category VALUES('1', '의류/악세서리');
+insert into category VALUES('2', '스포츠/레저');
+insert into category VALUES('3', '음악/미술');
+insert into category VALUES('4', '가구/인테리어');
+insert into category VALUES('5', '디지털/가전');
+insert into category VALUES('6', '뷰티/미용');
 
-alter table jjim change writingIdx idx int;
+insert into users(name, id, pw, email) values('김민수', 'm9768', 'alstn12!@', 'minsu9768@naver.com');
+insert into users(name, id, pw, email) values('최준혁', 'jun1888', 'wnsgur12!@', 'jun1988@naver.com');
+insert into users(name, id, pw, email) values('박준호', 'h1313', 'wnsgh12!@', 'as3216@nate.com');
+insert into users(name, id, pw, email) values('이지은', 'iU123', 'wldms12!@', 'iu665@naver.com');
+insert into users(name, id, pw, email) values('최자현', 'jj3458', 'wkgus12!@', 'jj1254@gmail.com');
+insert into users(name, id, pw, email) values('박수빈', 'su993', 'tnqls12!@', 'su1684@naver.com');
+insert into users(name, id, pw, email) values('이영호', 'ho1263', 'dudgh12!@', 'ho02@naver.com');
+insert into users(name, id, pw, email) values('유현준', 'uhj9494', 'guswns12!@', 'hyunjun123@nate.com');
+insert into users(name, id, pw, email) values('홍진호', 'kong222', 'wlsgh12!@', 'bunker3@gmail.com');
+insert into users(name, id, pw, email) values('심은지', 'eunji88', 'dmswl12!@', 'eun99@naver.com');
+insert into users(name, id, pw, email, proIdx) values('최명호', 'fashion98', 'fpro!@', 'myeong5@naver.com', '1');
 
-select * from jjim j right join writing w on j.idx = w.idx where j.userId  = 'user1';
+insert into writing(categoryIdx, userId,subject,content) values('1', 'm9768', '첫 글', '첫 글 작성합니다.');
+select * from writing where userId = 'm9768';
+insert into comment (writingIdx, userId, content) values('164', 'jun1888', '첫 댓글');
 
-select w.idx, w.categoryIdx, w.userId, w.subject, w.content,w.readCount, w.commentCount, w.wdate, c.name 
-	from writing w left join category c on w.categoryIdx = c.idx where w.idx = 3;
+select * from users where id = 'jun1888';
+select u.proIdx, c.name from users u join category c on u.proIdx = c.idx where id='fashion98';
 
 select * from comment;
-
-select name from category where idx = 'CATE12';
-
-select * from gallery;
-
-
-insert into writing(categoryIdx, userId, subject, content) values('CATE12', 'user1', '글 예시', ' 예시 내용ㅁㄴㅇㅁㄴㅇㅁㄴㅇ');

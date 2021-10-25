@@ -77,7 +77,8 @@ p {
 			<c:if test="${sessionScope.user != null}">
 				<form action="comment.do?page=${page}" method="post" name="frmCmt">
 					<input type="hidden" name="writingIdx" value="${bean.idx}">
-					<input type="hidden" name="userId" value="${bean.userId}">
+					<input type="hidden" name="userId" value="${sessionScope.user.id}">
+					<input type="hidden" name="categoryIdx" value="${bean.categoryIdx}">
 
 					<hr class="line">
 					<ul id="main">
@@ -115,12 +116,15 @@ p {
 						<li>
 							<ul>
 								<li>${cmt.userId}</li>
+								<c:if test="${cmt.pro == 1}">
+									<li><span>이 분야의 전문가!</span></li>
+								</c:if>
+								<!-- 댓글 작성자만 수정, 삭제가 가능하도록 --> 
+								<c:if test="${cmt.userId eq sessionScope.user.id}">
 								<li>
-									<!-- 댓글 작성자만 수정, 삭제가 가능하도록 --> 
-									<c:if test="${cmt.userId eq sessionScope.user.id}">
 										<a onclick="deleteCmt(${cmt.idx}, ${bean.idx}, ${page})">삭제</a>
-									</c:if>
 								</li>
+									</c:if>
 							</ul>
 						</li>
 						<li><pre>${cmt.content}</pre></li>

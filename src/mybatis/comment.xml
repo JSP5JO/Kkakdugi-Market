@@ -6,8 +6,8 @@
 <mapper namespace="comment">
 
 	<insert id="insert" parameterType="Comment">
-		insert into comment (writingIdx,userId,content)
-			values(#{writingIdx},#{userId},#{content})
+		insert into comment (writingIdx,userId,content, pro)
+			values(#{writingIdx},#{userId},#{content},#{pro})
 	</insert>
 
 	<delete id="delete" parameterType="int">

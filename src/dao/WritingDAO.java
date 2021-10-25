@@ -83,10 +83,18 @@ public class WritingDao {
 		return list;
 	}
 
-	// 글 내용을 인자로 글 목록 리턴
+	// 글 전체 개수 리턴
 	public int getCount() {
 		SqlSession mapper = factory.openSession();
 		int result = mapper.selectOne("writing.getCount");
+		mapper.close();
+		return result;
+	}
+	
+	// 카테고리별 글 전체 개수 리턴
+	public int getCountByCategory(String idx) {
+		SqlSession mapper = factory.openSession();
+		int result = mapper.selectOne("writing.getCountByCategory", idx);
 		mapper.close();
 		return result;
 	}

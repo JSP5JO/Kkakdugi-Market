@@ -18,7 +18,7 @@ public class PageDto {
 	private int startNo;
 	
 
-	public PageDto(int currentPage, int totalCount, int pageSize) { // 외부(비지니스로직)에서 결정되는 값.
+	public PageDto(int currentPage, int totalCount, int pageSize) {
 		this.totalCount = totalCount;
 		this.pageSize = pageSize;
 

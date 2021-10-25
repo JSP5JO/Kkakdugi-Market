@@ -51,6 +51,10 @@
 	<select id="getCount" resultType="int">
 		select count(*) from writing
 	</select>
+	
+	<select id="getCountByCategory" resultType="int" parameterType="String">
+		select count(*) from writing where categoryIdx = #{idx}
+	</select>
 
 	<select id="searchByContent" resultType="Writing"
 		parameterType="String">
