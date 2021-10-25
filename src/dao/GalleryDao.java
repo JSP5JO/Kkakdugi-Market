@@ -19,17 +19,17 @@ public class GalleryDao {
 		public static GalleryDao getInstance() {
 				return dao;
 		}
-		public List<Gallery> getList(){
+		public List<Gallery> getList(int idx){
 			List<Gallery> list=null;
 			SqlSession mapper = factory.openSession();
-			list = mapper.selectList("gallery.getAll");
+			list = mapper.selectList("gallery.getAll", idx);
 			mapper.close();
 			return list;
 		}
 			
-		public void insert(Gallery g) {
+		public void insert(Gallery gdto) {
 			SqlSession mapper = factory.openSession();
-			mapper.insert("comment.gallery",g);
+			mapper.insert("gallery.insert", gdto);
 			mapper.commit();
 			mapper.close();
 		}

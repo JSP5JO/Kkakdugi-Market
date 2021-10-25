@@ -13,6 +13,7 @@
   	<typeAlias type="dto.Comment" alias = "Comment"/>
   	<typeAlias type="dto.Users" alias = "Users"/>
   	<typeAlias type="dto.SessionDto" alias = "SessionDto"/>
+  	<typeAlias type="dto.Gallery" alias = "Gallery"/>
   </typeAliases>
   
   <!--  db 연결정보 -->
@@ -32,6 +33,7 @@
     <mapper resource="mybatis/writing.xml"/>
     <mapper resource="mybatis/comment.xml"/>
     <mapper resource="mybatis/users.xml"/>
+    <mapper resource="mybatis/gallery.xml"/>
   </mappers>
 </configuration>
 

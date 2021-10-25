@@ -42,7 +42,7 @@ a {
 	<!-- 본문 content -->
 	<section class="main">
 		<div style='flex-basis: 80%; margin: auto;'>
-			<h3>${list[0].name}분야의 글 목록</h3>
+			<h3>${list[0].name} 분야의 글 목록</h3>
 
 			<table class="list">
 				<tr>
@@ -70,18 +70,18 @@ a {
 				<hr>
 				<!-- 요청 url은 현재와 같고 parameter만 변경 -->
 				<c:if test="${pageDto.startPage != 1 }">
-					<a class="pagenum" href="?cate=${list[0].categoryIdx}&page=1">⏪</a>
-					<a class="pagenum" href="?cate=${list[0].categoryIdx}&page=${pageDto.startPage-1}">◀</a>
+					<a class="pagenum" href="?cate=${categoryIdx}&page=1">⏪</a>
+					<a class="pagenum" href="?cate=${categoryIdx}&page=${pageDto.startPage-1}">◀</a>
 					<!-- 현재 페이지 10페이지 앞 -->
 				</c:if>
-				<c:forEach var="i" begin="${pageDto.startPage }" end="${pageDto.endPage }">
+				<c:forEach var="i" begin="${pageDto.startPage }" end="${pageDto.endPage - 1}">
 					<a class="pagenum"
 						<c:if test = "${pageDto.currentPage == i}">current</c:if>
-						href="?cate=${list[0].categoryIdx}&page=${i}">${i}</a>
+						href="?cate=${categoryIdx}&page=${i}">${i}</a>
 				</c:forEach>
 				<c:if test="${pageDto.endPage != pageDto.totalPage}">
-					<a class="pagenum" href="?cate=${list[0].categoryIdx}&page=${pageDto.endPage+1}">▶</a>
-					<a class="pagenum" href="?cate=${list[0].categoryIdx}&page=${pageDto.totalPage}">⏩</a>
+					<a class="pagenum" href="?cate=${categoryIdx}&page=${pageDto.endPage+1}">▶</a>
+					<a class="pagenum" href="?cate=${categoryIdx}&page=${pageDto.totalPage}">⏩</a>
 				</c:if>
 			</div>
 		</div>

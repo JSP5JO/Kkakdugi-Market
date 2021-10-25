@@ -107,10 +107,10 @@ public class WritingDao {
 		return jjimList;
 	}
 
-	// 조회수 조회
+	// 조회수 증가
 	public void readCount(int idx) {
 		SqlSession mapper = factory.openSession();
-		mapper.update("readCount", idx);
+		mapper.update("writing.readCount", idx);
 		mapper.commit();
 		mapper.close();
 	}

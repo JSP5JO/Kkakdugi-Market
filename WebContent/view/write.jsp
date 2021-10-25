@@ -47,7 +47,7 @@
 				</div>
 
 				<div class="fileName_c">
-					<input type="file" name="fileName" accept="image/*">
+					<input type="file" name="fileName" accept="image/*" multiple>
 				</div>
 
 				<div class="button">

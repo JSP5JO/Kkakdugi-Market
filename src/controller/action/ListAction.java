@@ -30,9 +30,10 @@ public class ListAction implements Action {
 			pageNo = 1;
 		else
 			pageNo = Integer.parseInt(request.getParameter("page")); // page = 1, 2, 3, 4 ...
+		
 		PageDto pageDto = new PageDto(pageNo, dao.getCount(), pageSize); // 페이지 처리에 필요한 객체
 		int startNo = pageDto.getStartNo();
-
+		
 		// 인자 map에 추가
 		Map<String, Object> map = new HashMap<>();
 		map.put("idx", categoryIdx);
@@ -45,6 +46,7 @@ public class ListAction implements Action {
 		// 리스트 및 페이지 객체 전달
 		request.setAttribute("list", list);
 		request.setAttribute("pageDto", pageDto);
+		request.setAttribute("categoryIdx", categoryIdx);
 
 		ActionForward forward = new ActionForward();
 		forward.setUrl("view/list.jsp");

@@ -9,6 +9,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public class Gallery {
 	private int pno;
-	private String title;
-	private String filename;
+	private int idx;
+	private String fileName;
+	
 }

@@ -52,7 +52,11 @@ create table jjim(
 	foreign key(userId) references users(id)
 );
 
-
+create table gallery (
+	pno int,				-- 갤러리 파일 번호
+	idx int,				-- 해당 글 번호
+	fileName varchar(50)	-- 파일 이름
+);
 
 -- -------------- 예시문 예시
 -- 카테고리 생성
@@ -75,3 +79,8 @@ select w.idx, w.categoryIdx, w.userId, w.subject, w.content,w.readCount, w.comme
 select * from comment;
 
 select name from category where idx = 'CATE12';
+
+select * from gallery;
+
+
+insert into writing(categoryIdx, userId, subject, content) values('CATE12', 'user1', '글 예시', ' 예시 내용ㅁㄴㅇㅁㄴㅇㅁㄴㅇ');

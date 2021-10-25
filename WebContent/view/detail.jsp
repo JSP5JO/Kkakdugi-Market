@@ -20,6 +20,10 @@ li {
 p {
 	text-align: right;
 }
+.gallery{
+	width: 100%;
+	height: 100%;
+}
 </style>
 </head>
 <body>
@@ -44,6 +48,13 @@ p {
 						<li>${bean.userId}</li>
 					</ul>
 				</li>
+				<li>
+					<ul>
+						<c:forEach var="item" items="${gList}">
+								<img class="gallery "alt="gallery" src="/upload/${item.fileName }">
+						</c:forEach>
+					</ul>
+				<li>
 
 				<li id="content">
 					<ul>
@@ -100,7 +111,7 @@ p {
 			</div>
 			<div>
 				<ul>
-					<c:forEach var="cmt" items="${cmtlist}">
+					<c:forEach var="cmt" items="${cmtList}">
 						<li>
 							<ul>
 								<li>${cmt.userId}</li>
@@ -125,7 +136,6 @@ p {
 		function deleteSet() {
 			alert('삭제 클릭');
 		}
-
 		// 댓글 삭제
 		function deleteCmt(cmtIdx, writingIdx, page) {
 			const yn = confirm('댓글을 삭제하시겠습니까?');
@@ -136,6 +146,7 @@ p {
 				alert('댓글 삭제 취소합니다.');
 			}
 		}
+
 	</script>
 	<%@ include file="../bottom.jsp"%>
 </body>

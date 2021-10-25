@@ -72,12 +72,14 @@
 		select * from jjim j right join writing w on j.idx =
 		w.idx where j.userId = #{userId}
 	</select>
+	
+	<update id="readCount" parameterType="int">
+		update writing set readCount = readCount + 1 where idx = #{idx}
+	</update>
 
-	<insert id="insert" parameterType="Writing">
-		insert into
-		writing(categoryIdx, userId, subject, content)
-		values (#{categoryIdx},
-		#{userId}, #{subject}, #{content})
+	<insert id="insert" parameterType="Writing" useGeneratedKeys="true" keyColumn="idx" keyProperty="idx">
+		insert into writing(categoryIdx, userId, subject, content)
+			values (#{categoryIdx}, #{userId}, #{subject}, #{content})
 	</insert>
 
 </mapper>
