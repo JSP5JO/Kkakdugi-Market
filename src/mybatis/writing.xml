@@ -84,6 +84,9 @@
 		delete from writing where idx=#{idx}
 	</delete>
 	
+	<update id="readCount" parameterType="int">
+		update writing set readCount = readCount+1 where idx = #{idx}
+	</update>
 	
 
 </mapper>

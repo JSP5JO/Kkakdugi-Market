@@ -29,6 +29,19 @@ public class DetailAction implements Action {
 		// 글 가져오기
 		Writing bean = dao.getOne(idx);
 		
+		if(session.getAttribute("readCount") != null) {
+			StringBuilder readCount = (StringBuilder)session.getAttribute("readCount");
+			boolean status = readCount.toString().contains("/"+idx+"/");
+			if(!status) {
+				dao.readCount(idx);  
+				readCount.append(idx + "/");
+			}
+		}else {
+			StringBuilder readCount=new StringBuilder("/");
+			session.setAttribute("readCount", readCount);
+		}
+		
+		
 		CommentDao cdao = CommentDao.getInstance();
 		
 		// 댓글 리스트 가져오기
