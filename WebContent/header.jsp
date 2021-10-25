@@ -21,10 +21,12 @@
 			<li class="cate">
 				<a href="${pageContext.request.contextPath}/category.do">카테고리</a>
 				<ul class="navbar__submenu">
-					<li><a href="#">주방/가전</a></li>
-					<li><a href="#">IT/전자</a></li>
-					<li><a href="#">패션/의류</a></li>
-					<li><a href="#">세면/욕실</a></li>
+					<li><a href="category.do?cate=1">의류/악세서리</a></li>
+					<li><a href="category.do?cate=2">스포츠/레저</a></li>
+					<li><a href="category.do?cate=3">음악/미술</a></li>
+					<li><a href="category.do?cate=4">가구/인테리어</a></li>
+					<li><a href="category.do?cate=5">디지털/가전</a></li>
+					<li><a href="category.do?cate=6">뷰티/미용</a></li>
 				</ul>
 			</li>
 			<li><a href="">전문분야 등록</a></li>
