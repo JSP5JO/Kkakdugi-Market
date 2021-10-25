@@ -2,6 +2,7 @@ package dao;
 import dto.Jjim;
 import dto.Writing;
 import java.util.List;
+import java.util.Map;
 
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
@@ -17,6 +18,7 @@ public class WritingDao {
 	private static WritingDao dao = new WritingDao();
 	
 	SqlSessionFactory factory = SqlSessionBean.getSessionFactory();
+	
 	
 	//글 저장
 	public void insert(Writing dto) {
@@ -55,28 +57,28 @@ public class WritingDao {
 	}
 	
 	// 글 제목을 인자로 글 목록 리턴
-	public List<Writing> searchBySubject(String subject) {
+	public List<Writing> searchBySubject(Map<String, Object> map) {
 		List<Writing> list = null;
 		SqlSession mapper = factory.openSession();
-		list = mapper.selectList("writing.searchBySubject",subject);
+		list = mapper.selectList("writing.searchBySubject",map);
 		mapper.close();
 		return list;
 	}
 
 	// 글쓴이를 인자로 글 목록 리턴
-	public List<Writing> searchById(String userId) {
+	public List<Writing> searchById(Map<String, Object> map) {
 		List<Writing> list = null;
 		SqlSession mapper = factory.openSession();
-		list = mapper.selectList("writing.searchById",userId);
+		list = mapper.selectList("writing.searchById",map);
 		mapper.close();
 		return list;
 	}
 	
 	// 글 내용을 인자로 글 목록 리턴
-	public List<Writing> searchByContent(String content) {
+	public List<Writing> searchByContent(Map<String, Object> map) {
 		List<Writing> list = null;
 		SqlSession mapper = factory.openSession();
-		list = mapper.selectList("writing.searchByContent",content);
+		list = mapper.selectList("writing.searchByContent",map);
 		mapper.close();
 		return list;
 	}
@@ -104,6 +106,10 @@ public class WritingDao {
 		list = mapper.selectList("writing.selectByJId",userId);
 		mapper.close();
 		return list;
+	}
+	public List<Writing> getList(Map<String, Integer> map) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 	
 }

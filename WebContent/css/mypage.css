@@ -38,11 +38,39 @@ ul .row {
 	font-size:14px;
 	line-height:20px;
 }
+.mycont-div{
+	max-height:500px;
+	overflow-y:auto;
+	margin-bottom:15px;
+}
+.mycont>div>ul{
+	margin-top:15px;
+	min-height:450px;
+	margin-top:0;
+}
+.mycont-div::-webkit-scrollbar-track
+{
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+	background-color: #F5F5F5;
+}
+
+.mycont-div::-webkit-scrollbar
+{
+	width: 10px;
+	background-color: #F5F5F5;
+}
+
+.mycont-div::-webkit-scrollbar-thumb
+{
+	background-color: #000000;
+	border: 2px solid #555555;
+}
+
 .mlist_con {
 	display: flex;
 	flex-wrap: wrap;
 }
-.mlist_con div {
+.mlist_con>div {
 	flex-basis: calc(25% - 20px);
 	margin:10px;
 	border-radius:3px;
@@ -62,18 +90,21 @@ li{
 	.mypage{
 		padding:0;
 	}
-	.mlist_con div {
+	.mlist_con>div {
 		flex-basis: calc(50% - 20px);
 	}
-	.mlist_con.ie div {
+	.mlist_con.ie>div {
 		flex-basis: calc(50% - 42px);
+	}
+	.mycont>div>ul{
+		max-height:300px;
 	}
 }
 @media screen and (max-width:750px){
 	.mlist_con {
 	    flex-direction: column;
 	}
-	.mlist_con div {
+	.mlist_con>div {
 		flex-basis:auto !important;
 	}
 }

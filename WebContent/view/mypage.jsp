@@ -19,62 +19,71 @@
 		<div class="mlist_con">
 			<div class="mywriting mycont">
 				<h3>내가 작성한 글 목록</h3>
-				<ul>
-					<c:forEach var="vo" items="${wlist}"> 
-						<li>
-							<ul class="row">
-								<li>${vo.idx }</li>
-								<li><a href="detail.do?idx=${vo.idx}&page=${pno}" class="title">${vo.subject }</a>
-							 	</li>
-							</ul>
-						</li>
-				 	</c:forEach>
-			 	</ul>
+				<div class="mycont-div" id="style-4">
+					<ul>
+						<c:forEach var="vo" items="${wlist}"> 
+							<li>
+								<ul class="row">
+									<li>${vo.idx }</li>
+									<li><a href="detail.do?idx=${vo.idx}&page=${pno}" class="title">${vo.subject }</a>
+								 	</li>
+								</ul>
+							</li>
+					 	</c:forEach>
+					 	
+				 	</ul>
+			 	</div>
 		 	</div>
 			<div class="myreply mycont">
 				<h3>내가 답변한 글 목록</h3>
-				<ul>
-					<c:forEach var="cm" items="${clist}"> 
-						<li>
-							<ul class="row">
-								<li>${cm.idx }</li>
-								<li><a href="detail.do?idx=${cm.writingIdx}&page=${pno}" class="title">${cm.content }</a></li>
-							</ul>
-						</li>
-				 	</c:forEach>
-				 </ul>
+				<div class="mycont-div">
+					<ul>
+						<c:forEach var="cm" items="${clist}"> 
+							<li>
+								<ul class="row">
+									<li>${cm.idx }</li>
+									<li><a href="detail.do?idx=${cm.writingIdx}&page=${pno}" class="title">${cm.content }</a></li>
+								</ul>
+							</li>
+					 	</c:forEach>
+					 </ul>
+				</div>
 			</div>
 			<div class="myjjim mycont">
 				<h3>내가 찜한 상품 목록</h3>
-				<ul>
-					<c:forEach var="jj" items="${jlist}"> 
-						<li>
-							<ul class="row">
-								<li>${jj.idx}
-							 	</li>
-								<li><a href="detail.do?idx=${jj.idx}&page=${pno}" class="title">${jj.subject}</a>
-							 	</li>
-							</ul>
-						</li>
-				 	</c:forEach>
-			 	</ul>
+				<div class="mycont-div">
+					<ul>
+						<c:forEach var="jj" items="${jlist}"> 
+							<li>
+								<ul class="row">
+									<li>${jj.idx}
+								 	</li>
+									<li><a href="detail.do?idx=${jj.idx}&page=${pno}" class="title">${jj.subject}</a>
+								 	</li>
+								</ul>
+							</li>
+					 	</c:forEach>
+				 	</ul>
+				 </div>
 			</div>
 			<div class="myhelp mycont">
 				<h3>나의 1:1 의견 목록</h3>
-				<ul>
-					<c:forEach var="hp" items="${hlist}"> 
-						<li>
-							<ul class="row">
-								<li>
-									${hp.idx}
-							 	</li>
-								<li>
-									<a href="detail.do?idx=${hp.idx}&page=${pno}" class="title">${hp.subject}</a>
-							 	</li>
-							</ul>
-						</li>
-				 	</c:forEach>
-			 	</ul>
+				<div class="mycont-div">
+					<ul>
+						<c:forEach var="hp" items="${hlist}"> 
+							<li>
+								<ul class="row">
+									<li>
+										${hp.idx}
+								 	</li>
+									<li>
+										<a href="detail.do?idx=${hp.idx}&page=${pno}" class="title">${hp.subject}</a>
+								 	</li>
+								</ul>
+							</li>
+					 	</c:forEach>
+				 	</ul>
+			 	</div>
 			</div>
 		</div>
 	</div>

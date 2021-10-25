@@ -19,21 +19,21 @@
 			from writing w join category c on w.categoryIdx = c.idx 
 				where w.categoryIdx = #{idx} order by idx desc limit #{startNo}, #{pageSize}
 	</select>
-	<select id="searchBySubject" resultType="Writing" parameterType="String">
+	<select id="searchBySubject" resultType="Writing" parameterType="java.util.Map">
 		select w.idx, userId, subject, content, c.name, w.commentCount, w.wdate, w.readCount
 			from writing w join category c on w.categoryIdx = c.idx
-				where w.subject like CONCAT('%', #{subject}, '%')
+				where w.subject like CONCAT('%', #{subject}, '%') order by w.idx desc limit #{startNo},#{pageSize}
 	</select>
-	<select id="searchById" resultType="Writing" parameterType="String">
+	<select id="searchById" resultType="Writing" parameterType="java.util.Map">
 		select w.idx, userId, subject, content, c.name, w.commentCount, w.wdate, w.readCount
 			from writing w join category c on w.categoryIdx = c.idx 
-				where w.userId like CONCAT('%', #{userId}, '%')
+				where w.userId like CONCAT('%', #{userId}, '%') order by w.idx desc limit #{startNo},#{pageSize}
 	</select>
 	
-	<select id="searchByContent" resultType="Writing" parameterType="String">
+	<select id="searchByContent" resultType="Writing" parameterType="java.util.Map">
 		select w.idx, userId, subject, content, c.name, w.commentCount, w.wdate, w.readCount
 			from writing w join category c on w.categoryIdx = c.idx 
-				where w.content like CONCAT('%', #{content}, '%')
+				where w.content like CONCAT('%', #{content}, '%') order by w.idx desc limit #{startNo},#{pageSize}
 	</select>
 	
 	<select id="getCount" resultType="int">
