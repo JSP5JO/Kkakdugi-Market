@@ -11,7 +11,7 @@ footer {
 	 display: block;
 	 padding:0 38px;
 	 box-sizing:border-box;
-     margin-top:50px;
+     margin-top:150px;
 }
 .footer__logo{
     list-style: none;
@@ -118,6 +118,7 @@ footer p{
 	footer{
 		position:relative;
 		padding:0 17px;
+		margin-top:0;
 	}
 	.footer__menu li{
 	    padding: 8px;
