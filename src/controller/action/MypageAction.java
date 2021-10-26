@@ -50,8 +50,12 @@ public class MypageAction implements Action {
 			// user 전문가 등록 정보 가져오기
 			UsersDao udao = UsersDao.getInstance();
 			Users udto = new Users();
-			udto = udao.proIdxInfo(userId);
-			udto.setId(userId);
+			
+			// pro 정보가 존재할 경우
+			if(udao.proIdxInfo(userId) != null) {
+				udto = udao.proIdxInfo(userId);
+				udto.setId(userId);
+			}
 			request.setAttribute("userProInfo", udto);
 
 			// 내가 쓴 1:1상담 글 가져오기

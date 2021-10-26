@@ -19,6 +19,7 @@ import controller.action.HelpSaveAction;
 import controller.action.HelpWriteAction;
 import controller.action.IdCheckAction;
 import controller.action.IndexActioin;
+import controller.action.JjimAction;
 import controller.action.ListAction;
 import controller.action.LogoutAction;
 import controller.action.MyFieldAction;
@@ -110,6 +111,9 @@ public class FrontController extends HttpServlet {
 			forward = action.execute(request, response);
 		}else if (spath.equals("/findPw.do")) {
 			Action action = new FindPwAction();
+			forward = action.execute(request, response);
+		} else if (spath.equals("/jjim.do")) {
+			Action action = new JjimAction();
 			forward = action.execute(request, response);
 		}
 

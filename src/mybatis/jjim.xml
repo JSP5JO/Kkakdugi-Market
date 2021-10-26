@@ -4,7 +4,26 @@
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <!-- sql mapper   -->  
 <mapper namespace="jjim"> <!-- namespace : 일종의 식별역할의 변수 -->
+
+	<select id="getList" resultType="Jjim" parameterType="java.util.Map">
+		select * from Jjim where userId =#{userId} order by idx desc limit #{startNo},#{pageSize}
+	</select>
+
+	<select id="selectById" resultType="Jjim" parameterType="String">
+		select * from jjim where userId=#{userId}
+	</select>
 	
+	<select id="selectByIdAndIdx" resultType="Jjim" parameterType="java.util.Map">
+		select * from jjim where userId = #{userId} and idx = #{idx}
+	</select>
+	
+	<insert id="insert" parameterType="Jjim"> <!-- 유저 찜한 목록 찜 테이블에 삽입 -->
+		insert into jjim values(#{userId},#{writingIdx},#{categoryIdx})
+	</insert>
+	
+	<delete id="delete" parameterType="Jjim"> <!-- 유저 찜한 목록 찜 테이블에 삽입 -->
+		delete from jjim where idx = #{writingIdx}
+	</delete>
 	
 </mapper>
 <!-- ${ } : 표현식. 중괄호안에 수식에 대한 연산결과값을 구해서 출력

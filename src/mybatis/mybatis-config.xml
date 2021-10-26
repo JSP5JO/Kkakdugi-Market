@@ -9,6 +9,7 @@
   <properties resource="mybatis/db.properties"/>
   
   <typeAliases>
+  	<typeAlias type="dto.Jjim" alias = "Jjim"/>
   	<typeAlias type="dto.Writing" alias = "Writing"/>
   	<typeAlias type="dto.Comment" alias = "Comment"/>
   	<typeAlias type="dto.Users" alias = "Users"/>

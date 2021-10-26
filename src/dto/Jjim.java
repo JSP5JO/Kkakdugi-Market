@@ -5,10 +5,10 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Data
-@NoArgsConstructor
 @AllArgsConstructor
-public class Gallery {
-	private int pno;
-	private int idx;
-	private String fileName;
+@NoArgsConstructor
+public class Jjim {
+	private String userId; 
+	private int writingIdx; 
+	private String categoryIdx;
 }

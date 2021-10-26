@@ -42,7 +42,12 @@ a {
 	<!-- 본문 content -->
 	<section class="main">
 		<div style='flex-basis: 80%; margin: auto;'>
+		<c:if test="${list[0].name != null}">
 			<h3>${list[0].name} 분야의 글 목록</h3>
+		</c:if>
+		<c:if test="${list[0].name == null}">
+			<h3>전체 글 목록</h3>
+		</c:if>
 
 			<table class="list">
 				<tr>

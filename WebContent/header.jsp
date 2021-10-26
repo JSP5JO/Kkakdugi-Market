@@ -21,7 +21,7 @@
 		<!-- 네비게이션 항목 -->
 		<ul class="navbar__menu">
 			<li class="cate">
-				<a href="#">카테고리</a>
+				<a href="category.do?cate=all&page=1">카테고리</a>
 				<ul class="navbar__submenu">
 					<li><a href="category.do?cate=1">의류/악세서리</a></li>
 					<li><a href="category.do?cate=2">스포츠/레저</a></li>

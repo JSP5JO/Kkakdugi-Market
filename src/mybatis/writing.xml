@@ -5,6 +5,10 @@
 <!-- sql mapper -->
 <mapper namespace="writing"> <!-- namespace : 일종의 식별역할의 변수 -->
 
+	<select id="selectAll" resultType="Writing" parameterType="java.util.Map">
+		select * from writing order by idx desc limit #{startNo}, #{pageSize}
+	</select>
+	
 	<select id="selectById" resultType="Writing"
 		parameterType="String">
 		select * from writing where userId = #{userId}
@@ -16,8 +20,7 @@
 		from writing w left join category c on w.categoryIdx = c.idx where w.idx = #{idx}
 	</select>
 
-	<select id="selectByCategoryIdx" resultType="Writing"
-		parameterType="java.util.Map">
+	<select id="selectByCategoryIdx" resultType="Writing" parameterType="java.util.Map">
 		select w.idx, userId, subject, content, w.categoryIdx,
 		c.name, w.wdate
 		from writing w join category c on w.categoryIdx = c.idx
