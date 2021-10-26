@@ -84,7 +84,15 @@ ul .row {
 li{
 	list-style:none;
 }
-
+.no-result{
+	display:flex;
+	justify-content:center;
+	align-items: center;
+	height:362px;
+}
+.no-result h4{
+	color:#888;
+}
 @media screen and (max-width:950px){
 	.mypage{
 		padding:0;
@@ -100,6 +108,12 @@ li{
 	}
 	.mycont-div>ul {
 	    min-height: 350px;
+	}
+	.no-result{
+		display:flex;
+		justify-content:center;
+		align-items: center;
+		height:312px;
 	}
 }
 @media screen and (max-width:750px){

@@ -34,7 +34,7 @@ section{
 	text-align:center;
 }
 
-@media screen and (max-width:950px){
+@media screen and (max-width:1245px){
 	section{
 		padding:0 17px;
 		padding-bottom:100px !important;

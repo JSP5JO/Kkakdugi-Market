@@ -1,0 +1,53 @@
+/* 바디 영역 */
+
+
+.CS__main {
+	display: flex;
+    padding: 0 28px;
+    justify-content: center;
+    align-items: center;
+    max-width: 800px;
+    margin: auto;
+}
+
+.CS__main div {
+	flex-basis:40%;
+	margin:10px;
+	padding:5px 10px;
+	box-sizing:border-box;
+	text-align:center;
+	border-radius:30px;
+	box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin: auto;
+	width: 400px; 
+}
+.CS__main div:nth-child(1){
+	margin-right:15px;
+}
+.CS__main div:nth-child(2){
+	margin-left:15px;
+}
+a {
+	text-decoration: none;
+	color:#000;
+}
+
+@media screen and (max-width:768px){
+	.CS__main {
+	    flex-direction: column;
+	    padding:0 8px;
+	}
+	.CS__main div {
+		flex-basis:100%;
+		margin: 10px auto !important;
+	}
+	.CS__main div:nth-child(1){
+		margin-right:0;
+	}
+	.CS__main div:nth-child(2){
+		margin-left:0;
+	}
+}
