@@ -47,12 +47,12 @@ public class MypageAction implements Action {
 			List<Writing> jlist = wdao.selectJjimById(userId);
 			request.setAttribute("jlist", jlist);
 
-			// user 정보 가져오기
+			// user 전문가 등록 정보 가져오기
 			UsersDao udao = UsersDao.getInstance();
 			Users udto = new Users();
 			udto = udao.proIdxInfo(userId);
 			udto.setId(userId);
-			request.setAttribute("user", udto);
+			request.setAttribute("userProInfo", udto);
 
 			// 내가 쓴 1:1상담 글 가져오기
 			WritingDao hdao = WritingDao.getInstance();

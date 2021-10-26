@@ -9,8 +9,8 @@ ul {
 	color:#000;
 }
 ul .row {
-		display: flex;
-		flex-direction: row;     /* 기본값 */
+	display: flex;
+	flex-direction: row;     /* 기본값 */
 }
 .row > li{
 	padding: 3px 0px;
@@ -38,11 +38,38 @@ ul .row {
 	font-size:14px;
 	line-height:20px;
 }
+.mycont-div{
+	max-height:400px;
+	overflow-y:auto;
+	margin-bottom:1em;
+}
+.mycont-div>ul{
+	min-height:400px;
+	margin:0;
+}
+.mycont-div::-webkit-scrollbar-track
+{
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+	background-color: #F5F5F5;
+}
+
+.mycont-div::-webkit-scrollbar
+{
+	width: 10px;
+	background-color: #F5F5F5;
+}
+
+.mycont-div::-webkit-scrollbar-thumb
+{
+	background-color: #000000;
+	border: 2px solid #555555;
+}
+
 .mlist_con {
 	display: flex;
 	flex-wrap: wrap;
 }
-.mlist_con div {
+.mycont {
 	flex-basis: calc(25% - 20px);
 	margin:10px;
 	border-radius:3px;
@@ -51,7 +78,7 @@ ul .row {
 	border: 1px solid #d1d1d1;
 	text-align:center;
 }
-.mlist_con.ie div {
+.mlist_con.ie>div {
 	flex-basis: calc(25% - 42px);
 }
 li{
@@ -62,18 +89,24 @@ li{
 	.mypage{
 		padding:0;
 	}
-	.mlist_con div {
+	.mycont {
 		flex-basis: calc(50% - 20px);
 	}
-	.mlist_con.ie div {
+	.mlist_con.ie>div {
 		flex-basis: calc(50% - 42px);
+	}
+	.mycont-div{
+		max-height:350px;
+	}
+	.mycont-div>ul {
+	    min-height: 350px;
 	}
 }
 @media screen and (max-width:750px){
 	.mlist_con {
 	    flex-direction: column;
 	}
-	.mlist_con div {
+	.mycont {
 		flex-basis:auto !important;
 	}
 }

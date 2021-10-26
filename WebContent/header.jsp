@@ -60,7 +60,7 @@
 			
 			<!-- 로그인 상태 -->
 			<c:if test="${sessionScope.user != null}">
-				<li>${user.name}(${user.email})님
+				<li>${sessionScope.user.name}(${sessionScope.user.email})님
 				<li>
 				<li id="mypage"><a href="mypage.do">마이페이지</a></li>
 				<li><a href="logout.do"><i class="fas fa-sign-out-alt"></i></a></li>
