@@ -186,7 +186,6 @@ p {
 				img.src = 'img/heart_r.png';
 			} else {
 				img.src = 'img/heart.png';
-				alert('찜 했습니다.');
 			}
   	        location.href='jjim.do?idx='+ idx + '&categoryIdx='+categoryIdx + '&jjim='+jjim;
 		}		

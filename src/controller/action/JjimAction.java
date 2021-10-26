@@ -38,12 +38,9 @@ public class JjimAction implements Action {
 			
 			// 여부부에 따른 찜 변경
 			if (jjim.equals("false")) {
-				System.out.println("jjim : " + jjim);
-				System.out.println(dto);
 				dao.insert(dto);
 				request.setAttribute("jjim", true);
 			} else {
-				System.out.println("jjim : " + jjim);
 				dao.delete(dto);
 				request.setAttribute("jjim", false);
 			}
