@@ -1,0 +1,58 @@
+@charset "UTF-8";
+#all{
+	margin: auto;
+	width: 100%;
+	max-width:100%;
+	box-sizing:border-box;
+	padding:5%;
+	background:#fff;
+	box-shadow: 0 0 15px rgba(0,0,0,0.1);
+	border-radius:30px;
+}
+.button{
+	height: 40px;
+    width: 80px;
+    color: #000;
+    border-radius: 30px;
+    box-sizing: border-box;
+    margin-top: 15px;
+    border:1px solid #000;
+	background: #fff;
+    line-height: 36px;
+    cursor:pointer;
+    font-style: #fff;
+}
+.time{
+	text-align: right;
+}
+.id{
+	text-align: left;
+}
+#readcount{
+	text-align: center;
+}
+#content{
+	margin: auto;
+	width: 100%;
+	height:200px;
+}
+.jjim{
+	font-size: 20px;
+}
+.input1,.input2{
+	margin-top: 10px;
+}
+#img {
+  	width: 150px;
+  	height: 174px;
+  	background-image: url("img/heart_r.png");
+}
+#img:checked {
+  	background-color: red;
+  	background-image: url("img/heart.png");
+  	animation-fill-mode: forwards;
+}
+  
+  
+  
+  
