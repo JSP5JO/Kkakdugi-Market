@@ -35,7 +35,6 @@ function deleteCmt(cmtidx, idx, page) {
 
 function jjimOn(){
 	$("#heart").toggleClass("on");
-    img.src='img/heart.png';
     if($("#heart").hasClass("on")){
     	 img.src='img/heart.png';
     }else{
