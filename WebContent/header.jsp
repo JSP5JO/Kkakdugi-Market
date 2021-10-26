@@ -9,7 +9,7 @@
 <script src="https://kit.fontawesome.com/a9b46edd75.js" crossorigin="anonymous"></script>
 <header>
 	<!-- 메인 로고 -->
-	<nav class="navbar">
+	<nav class="navbar <c:if test="${sessionScope.user != null}">login</c:if>">
 		<ul class="navbar__logo">
 			<!-- <li><i class="fab fa-apple"></i></li> -->
 			<li><img src="${pageContext.request.contextPath}/img/logo.png" alt="logo" width="30px"></li>
@@ -56,8 +56,7 @@
 			</c:if>
 			<c:if test="${sessionScope.user != null}">
 				<!-- 로그인 상태 -->
-				<li>${user.name}(${user.email})님
-				<li>
+				<li>${user.name}(${user.email})님</li>
 				<li id="mypage"><a href="${pageContext.request.contextPath}/mypage.do">마이페이지</a></li>
 				<li><a href="logout.do"><i class="fas fa-sign-out-alt"></i></a></li>
 			</c:if>
