@@ -7,7 +7,7 @@
     box-sizing: border-box;
     padding: 45px;
     background: #fff;
-    box-shadow: 0 0 15px rgb(0 0 0 / 10%);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
     border-radius: 30px;
 }
 .btn,.btn2{
