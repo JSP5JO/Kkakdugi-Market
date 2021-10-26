@@ -42,16 +42,7 @@
 .input1,.input2{
 	margin-top: 10px;
 }
-#img {
-  	width: 150px;
-  	height: 174px;
-  	background-image: url("img/heart_r.png");
-}
-#img:checked {
-  	background-color: red;
-  	background-image: url("img/heart.png");
-  	animation-fill-mode: forwards;
-}
+
   
   
   
