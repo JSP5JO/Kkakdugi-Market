@@ -45,8 +45,7 @@ create table comment (
 	foreign key(userId) references users(id)
 );
 
-alter table comment add pro boolean default false;
-select * from comment;
+
 -- 찜 테이블
 create table jjim(
 	userId varchar(20),
@@ -90,12 +89,3 @@ insert into users(name, id, pw, email) values('유현준', 'uhj9494', 'guswns12!
 insert into users(name, id, pw, email) values('홍진호', 'kong222', 'wlsgh12!@', 'bunker3@gmail.com');
 insert into users(name, id, pw, email) values('심은지', 'eunji88', 'dmswl12!@', 'eun99@naver.com');
 insert into users(name, id, pw, email, proIdx) values('최명호', 'fashion98', 'fpro!@', 'myeong5@naver.com', '1');
-
-insert into writing(categoryIdx, userId,subject,content) values('1', 'm9768', '첫 글', '첫 글 작성합니다.');
-select * from writing where userId = 'm9768';
-insert into comment (writingIdx, userId, content) values('164', 'jun1888', '첫 댓글');
-
-select * from users where id = 'jun1888';
-select u.proIdx, c.name from users u join category c on u.proIdx = c.idx where id='fashion98';
-
-select * from comment;
