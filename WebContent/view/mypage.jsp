@@ -15,7 +15,7 @@
 <body>
 <%@ include file="../header.jsp"%>
 	<div class="mypage">
-		<p><span><i class="far fa-user"></i>&nbsp;<strong>${user.name}(${user.email})</strong> 님의 Mypage</span><span class="pronum"><c:if test="${pro.proIdx != null}"><strong>나의 전문가번호</strong> : ${pro.proIdx}(${pro.name})</c:if></span></p>
+		<p><span><i class="far fa-user"></i>&nbsp;<strong>${sessionScope.user.name}(${sessionScope.user.email})</strong> 님의 Mypage</span><span class="pronum"><c:if test="${pro.proIdx != null}"><strong>나의 전문가번호</strong> : ${pro.proIdx}(${pro.name})</c:if></span></p>
 		<div class="mlist_con">
 			<div class="mywriting mycont">
 				<h3>내가 작성한 글 목록</h3>
