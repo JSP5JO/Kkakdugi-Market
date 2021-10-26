@@ -30,6 +30,15 @@ public class WritingDao {
 		mapper.close();
 	}
 
+	// 모든 글 리스트 가져오기
+	public List<Writing> selectAll(Map<String, Object> map) {
+		List<Writing> list = null;
+		SqlSession mapper = factory.openSession();
+		list = mapper.selectList("writing.selectAll", map);
+		mapper.close();
+		return list;
+	}
+	
 	// user id를 인자로 user가 쓴 글 목록을 가져오는 메소드
 	public List<Writing> selectById(String userId) {
 		List<Writing> list = null;
@@ -82,6 +91,7 @@ public class WritingDao {
 		mapper.close();
 		return list;
 	}
+
 	// 글 전체 개수 리턴
 	public int getCount() {
 		SqlSession mapper = factory.openSession();
@@ -127,6 +137,14 @@ public class WritingDao {
 		List<Writing> list = null;
 		SqlSession mapper = factory.openSession();
 		list = mapper.selectList("getList", map);
+		mapper.close();
+		return list;
+	}
+	// 인기 글 리스트
+	public List<Writing> getHotList(int count) {
+		List<Writing> list = null;
+		SqlSession mapper = factory.openSession();
+		list = mapper.selectList("writing.getHotList", count);
 		mapper.close();
 		return list;
 	}

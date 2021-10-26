@@ -5,6 +5,10 @@
 <!-- sql mapper -->
 <mapper namespace="writing"> <!-- namespace : 일종의 식별역할의 변수 -->
 
+	<select id="selectAll" resultType="Writing" parameterType="java.util.Map">
+		select * from writing order by idx desc limit #{startNo}, #{pageSize}
+	</select>
+	
 	<select id="selectById" resultType="Writing"
 		parameterType="String">
 		select * from writing where userId = #{userId}
@@ -16,8 +20,7 @@
 		from writing w left join category c on w.categoryIdx = c.idx where w.idx = #{idx}
 	</select>
 
-	<select id="selectByCategoryIdx" resultType="Writing"
-		parameterType="java.util.Map">
+	<select id="selectByCategoryIdx" resultType="Writing" parameterType="java.util.Map">
 		select w.idx, userId, subject, content, w.categoryIdx,
 		c.name, w.wdate
 		from writing w join category c on w.categoryIdx = c.idx
@@ -40,12 +43,6 @@
 			from writing w join category c on w.categoryIdx = c.idx 
 				where w.userId like CONCAT('%', #{userId}, '%') order by w.idx desc limit #{startNo},#{pageSize}
 	</select>
-	
-	<select id="searchByContent" resultType="Writing" parameterType="java.util.Map">
-		select w.idx, userId, subject, content, c.name, w.commentCount, w.wdate, w.readCount
-			from writing w join category c on w.categoryIdx = c.idx 
-				where w.content like CONCAT('%', #{content}, '%') order by w.idx desc limit #{startNo},#{pageSize}
-	</select>
 
 	<select id="getCount" resultType="int">
 		select count(*) from writing
@@ -53,6 +50,12 @@
 	
 	<select id="getCountByCategory" resultType="int" parameterType="String">
 		select count(*) from writing where categoryIdx = #{idx}
+	</select>
+
+	<select id="searchByContent" resultType="Writing" parameterType="java.util.Map">
+		select w.idx, userId, subject, content, c.name, w.commentCount, w.wdate, w.readCount
+			from writing w join category c on w.categoryIdx = c.idx 
+				where w.content like CONCAT('%', #{content}, '%') order by w.idx desc limit #{startNo},#{pageSize}
 	</select>
 
 	<select id="selectHelpById" resultType="Writing"
@@ -65,6 +68,10 @@
 		parameterType="String">
 		select * from jjim j right join writing w on j.writingIdx =
 		w.idx where j.userId = #{userId}
+	</select>
+	
+	<select id="getHotList" resultType="Writing" parameterType="int">
+		select * from writing order by readCount desc limit #{count}
 	</select>
 	
 	<update id="readCount" parameterType="int">

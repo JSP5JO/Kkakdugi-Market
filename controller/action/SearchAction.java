@@ -36,7 +36,7 @@ public class SearchAction implements Action {
 		if ((subject==null || subject.equals("")) && 
 				(userId==null || userId.equals("")) &&
 				(content==null || content.equals(""))) {
-			request.setAttribute("message", "검색어를 입력해주세요.");
+			request.setAttribute("message", "검색창을 입력해주세요.");
 			request.setAttribute("url", request.getHeader("REFERER"));
 			ActionForward foward = new ActionForward();
 			foward.isRedirect = false;
