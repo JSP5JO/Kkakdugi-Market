@@ -19,19 +19,19 @@
 		<!-- 네비게이션 항목 -->
 		<ul class="navbar__menu">
 			<li class="cate">
-				<a href="${pageContext.request.contextPath}/category.do">카테고리</a>
+				<a href="#">카테고리</a>
 				<ul class="navbar__submenu">
-					<li><a href="category.do?cate=1">의류/악세서리</a></li>
-					<li><a href="category.do?cate=2">스포츠/레저</a></li>
-					<li><a href="category.do?cate=3">음악/미술</a></li>
-					<li><a href="category.do?cate=4">가구/인테리어</a></li>
-					<li><a href="category.do?cate=5">디지털/가전</a></li>
-					<li><a href="category.do?cate=6">뷰티/미용</a></li>
+					<li><a href="${pageContext.request.contextPath}/category.do?cate=1">의류/악세서리</a></li>
+					<li><a href="${pageContext.request.contextPath}/category.do?cate=2">스포츠/레저</a></li>
+					<li><a href="${pageContext.request.contextPath}/category.do?cate=3">음악/미술</a></li>
+					<li><a href="${pageContext.request.contextPath}/category.do?cate=4">가구/인테리어</a></li>
+					<li><a href="${pageContext.request.contextPath}/category.do?cate=5">디지털/가전</a></li>
+					<li><a href="${pageContext.request.contextPath}/category.do?cate=6">뷰티/미용</a></li>
 				</ul>
 			</li>
-			<li><a href="">전문분야 등록</a></li>
-			<li><a href="write.do">글쓰기</a></li>
-			<li><a href="">고객센터</a></li>
+			<li><a href="${pageContext.request.contextPath}/myField.do">전문분야 등록</a></li>
+			<li><a href="${pageContext.request.contextPath}/write.do">글쓰기</a></li>
+			<li><a href="${pageContext.request.contextPath}/help.do">고객센터</a></li>
 
 		</ul>
 
