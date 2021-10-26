@@ -38,9 +38,7 @@ p{
 				<li>			
 					<ul class="row">
 						<div class="container" style="float: right;">
-    							<a class="jjim" onclick="jjim()" >
-    								<img class="img" src="img/heart_r.png" alt="찜하기" >
-    							</a>
+							<img src="img/heart_r.png" alt="light" style="width:22px; cursor:pointer;" id="heart" onclick="jjimOn()">	
 						</div>
 						
 						<h2>${bean.subject}</h2>  
@@ -157,6 +155,22 @@ p{
 			}
 		
 		}	
+		 	const state=1;
+		    const img = document.getElementById('heart');
+		    const onoff = document.getElementById('state');
+		    function jjim(){
+		        if(state==1){
+		            jjimOff();
+		            state=0;
+		        }else{    
+		            jjim();
+		            state=1;
+		        }
+		    }
+		
+		function jjimOn(){
+	        img.src='img/heart.png';
+	    }
 		
 	</script>
 	<%@ include file="../bottom.jsp"%>
