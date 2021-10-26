@@ -101,7 +101,7 @@ p{
 			<!-- 작성된 댓글 목록 -->
 			<hr class="line">
 			<div>
-				<span>댓글</span> <span>[${bean.commentCount}]</span> 
+				<span>댓글 수</span> <span>[${bean.commentCount}]</span> 
 				<c:if test="${sessionScope.user == null}">
 					<br><span>댓글 작성은 로그인 후 이용 가능 합니다.</span>
 				</c:if>
