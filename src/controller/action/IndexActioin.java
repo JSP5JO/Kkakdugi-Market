@@ -24,11 +24,17 @@ public class IndexActioin implements Action {
 
 		HttpSession session = request.getSession();
 		SessionDto user = (SessionDto) session.getAttribute("user");
+		WritingDao wdao = WritingDao.getInstance();
 
+		// 인기글(hotList) 전달
+		int count = 10;	// 보여줄 리스트 개수(최상위부터 ~ count개 까지 보여줌)
+		List<Writing> hotList = wdao.getHotList(count);
+		System.out.println(hotList);
+		request.setAttribute("hotList", hotList);
+		
 		// 로그인이 되어 session이 not null 일때만 작용
 		if (user != null) {
 			String userId = user.getId();
-			WritingDao wdao = WritingDao.getInstance();
 
 			// 찜 리스트 전달 로직
 			List<Writing> jjimList = wdao.selectJjimById(userId);

@@ -77,6 +77,10 @@
 		w.idx where j.userId = #{userId}
 	</select>
 	
+	<select id="getHotList" resultType="Writing" parameterType="int">
+		select * from writing order by readCount desc limit #{count}
+	</select>
+	
 	<update id="readCount" parameterType="int">
 		update writing set readCount = readCount + 1 where idx = #{idx}
 	</update>

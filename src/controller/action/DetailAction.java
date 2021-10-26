@@ -23,7 +23,14 @@ public class DetailAction implements Action {
 
 		HttpSession session = request.getSession();
 		int idx = Integer.parseInt(request.getParameter("idx"));
-		int page = Integer.parseInt(request.getParameter("page"));
+		int page;
+		
+		// 페이지가 null 인 경우,
+		if(request.getParameter("page").equals("")) {
+			page = 1;
+		} else {
+			page = Integer.parseInt(request.getParameter("page"));
+		}
 		
 		WritingDao dao = WritingDao.getInstance();
 		CommentDao cdao = CommentDao.getInstance();

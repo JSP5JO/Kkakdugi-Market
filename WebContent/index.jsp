@@ -5,8 +5,6 @@
 <html>
 <head>
 <title>Kkakdigu-Market__nav</title>
-<link rel="stylesheet" href="css/content.css?v=3">
-
 </head>
 
 <body>
@@ -17,12 +15,15 @@
 	<section class="main">
 		<div>
 			<h3>실시간 인기 상품</h3>
-			<p>이곳에 리스트(hotList)를 삽입</p>
-			<ul>
+			<ol>
 				<c:forEach var="vo" items="${hotList}">
-					<li><a href="detail.do?page=1">${hotList.subject}</a></li>
+					<li>
+						<p>
+							<a href="detail.do?idx=${vo.idx}&page=1">${vo.subject}(${vo.readCount})</a>
+						</p>
+					</li>
 				</c:forEach>
-			</ul>
+			</ol>
 		</div>
 
 		<div>
@@ -30,7 +31,11 @@
 			<c:if test="${sessionScope.user != null}">
 				<ol>
 					<c:forEach var="vo" items="${myFieldList}">
-						<li><a href="detail.do?page=1&idx=${vo.idx}">${vo.subject}</a></li>
+						<li>
+							<p>
+								<a href="detail.do?page=1&idx=${vo.idx}">${vo.subject}</a>
+							</p>
+						</li>
 					</c:forEach>
 				</ol>
 			</c:if>
@@ -46,7 +51,11 @@
 			<c:if test="${sessionScope.user != null}">
 				<ol>
 					<c:forEach var="vo" items="${jjimWritingList}">
-						<li><a href="#">${vo.subject}</a></li>
+						<li>
+							<p>
+								<a href="#">${vo.subject}</a>
+							</p>
+						</li>
 					</c:forEach>
 				</ol>
 			</c:if>

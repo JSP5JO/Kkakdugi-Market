@@ -131,6 +131,14 @@ public class WritingDao {
 		mapper.close();
 		return list;
 	}
+	// 인기 글 리스트
+	public List<Writing> getHotList(int count) {
+		List<Writing> list = null;
+		SqlSession mapper = factory.openSession();
+		list = mapper.selectList("writing.getHotList", count);
+		mapper.close();
+		return list;
+	}
 	
 	// 1개 행 조회
 	public Writing getOne(int idx) {

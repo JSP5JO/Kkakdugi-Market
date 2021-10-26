@@ -6,7 +6,6 @@
 <meta charset="UTF-8">
 <title>MyField</title>
 <link rel="stylesheet" href="css/myField.css?v=3">
-<link rel="stylesheet" href="css/content.css?v=3">
 <script src="https://kit.fontawesome.com/a9b46edd75.js" crossorigin="anonymous"></script>
 <script src="main.js" defer></script>
 <script src="js/myField.js" defer></script>

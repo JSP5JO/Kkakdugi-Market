@@ -38,7 +38,7 @@ public class MypageAction implements Action {
 			List<Writing> wlist = wdao.selectById(userId);
 			request.setAttribute("wlist", wlist);
 
-			// 내가 쓴 댓글 리스트 가졍괴
+			// 내가 쓴 댓글 리스트 가져오기
 			CommentDao cdao = CommentDao.getInstance();
 			List<Comment> clist = cdao.selectById(userId);
 			request.setAttribute("clist", clist);
