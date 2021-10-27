@@ -8,6 +8,7 @@
 <title>글쓰기</title>
 </head>
 <link rel="stylesheet" href="css/write.css?v=3">
+<script type="text/javascript" src="js/write.js" defer></script>
 <body>
 	<%@ include file="../header.jsp"%>
 	<section>
@@ -18,11 +19,13 @@
 			<div id="all">
 
 				<div id="category">
-					<select name="Category" id="select">
-						<option value="CATE20">주방/가전</option>
-						<option value="CATE12">IT/전자</option>
-						<option value="패션/의류">패션/의류</option>
-						<option value="세면/욕실">세면/욕실</option>
+					<select name="Category" id="select"><li><a href="${pageContext.request.contextPath}/category.do?cate=1">의류/악세서리</a></li>
+						<option value="1">의류/악세서리</option>
+						<option value="2">스포츠/레저</option>
+						<option value="3">음악/미술</option>
+						<option value="4">가구/인테리어</option>
+						<option value="5">디지털/가전</option>
+						<option value="6">뷰티/미용</option>
 						<option value="기타" selected>기타</option>
 					</select>
 					 <span> 
@@ -58,19 +61,6 @@
 	</section>
 	<%@ include file="../bottom.jsp"%>
 </body>
-
-<script type="text/javascript">
-	document.getElementById("Category").addEventListener("change", function() {
-		if (this.value == "기타") {
-			document.getElementById("category_etc").style.display = "inline-block"; //화면에 보임
-			document.category_etc.disabled = false;
-		} else {
-			document.getElementById("category_etc").style.display = "none"; //화면에 안보임
-			document.category_etc.disabled = true;
-			}
-
-		});
-</script>
 </html>
 
 
