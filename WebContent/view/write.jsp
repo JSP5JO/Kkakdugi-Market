@@ -29,7 +29,7 @@
 						<option value="기타" selected>기타</option>
 					</select>
 					 <span> 
-					 	<input type="text" id="category_etc" name="category_etc" disabled="disabled" placeholder="원하시는 분류 항목을 입력해주세요.">
+					 	<input type="text" id="category_etc" name="category_etc" placeholder="원하시는 분류 항목을 입력해주세요.">
 					</span>
 				</div>
 
