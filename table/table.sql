@@ -69,6 +69,14 @@ insert into users(name, id, pw, email) values('나라', 'nara94', 'pass123!', 'n
 insert into writing (categoryIdx, userId, subject, content) values('INTE51', 'nara94', '이거 얼마죠?', '가격이 얼마인지 궁금합니다!!!');
 
 select * from comment c left join users u on c.userId = u.id;
+select * from writing where categoryIdx != 'help' 
+			order by idx desc limit 10, 15;
+		
+select * from category;
+insert into category values ('etc', '기타');
+select * from writing order by idx desc;
+insert into writing(categoryIdx, userId, subject, content)
+			values ('1', 'user1', '1번 카테고리 예시', '테스트 내용 삽입 사진 없음');
 
 -- 데이터 삽입 예시
 insert into category VALUES('1', '의류/악세서리');
@@ -77,6 +85,8 @@ insert into category VALUES('3', '음악/미술');
 insert into category VALUES('4', '가구/인테리어');
 insert into category VALUES('5', '디지털/가전');
 insert into category VALUES('6', '뷰티/미용');
+insert into category VALUES('etc', '기타');
+insert into category VALUES('HELP', '고객문의');
 
 insert into users(name, id, pw, email) values('김민수', 'm9768', 'alstn12!@', 'minsu9768@naver.com');
 insert into users(name, id, pw, email) values('최준혁', 'jun1888', 'wnsgur12!@', 'jun1988@naver.com');
@@ -89,3 +99,12 @@ insert into users(name, id, pw, email) values('유현준', 'uhj9494', 'guswns12!
 insert into users(name, id, pw, email) values('홍진호', 'kong222', 'wlsgh12!@', 'bunker3@gmail.com');
 insert into users(name, id, pw, email) values('심은지', 'eunji88', 'dmswl12!@', 'eun99@naver.com');
 insert into users(name, id, pw, email, proIdx) values('최명호', 'fashion98', 'fpro!@', 'myeong5@naver.com', '1');
+
+
+-- 글 삽입
+insert into writing (categoryIdx, userId, subject, content)
+	values('1', 'm9768', '[시세]가격 좀 봐주세요(재업).', '작년에 구매한 조던 정품 신발인데 얼마정가 적당할까요?');
+-- 갤러리 사진 삽입
+insert into gallery (idx, fileName)
+	values((select idx from writing order by idx desc limit 1), '나이키조던신발');
+

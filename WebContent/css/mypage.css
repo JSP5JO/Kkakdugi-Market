@@ -75,8 +75,10 @@ ul .row {
 	border-radius:3px;
 	padding:5px 10px;
 	box-sizing:border-box;
-	border: 1px solid #d1d1d1;
+	border: 0;
 	text-align:center;
+	border-radius:30px;
+	box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
 }
 .mlist_con.ie>div {
 	flex-basis: calc(25% - 42px);
@@ -84,7 +86,15 @@ ul .row {
 li{
 	list-style:none;
 }
-
+.no-result{
+	display:flex;
+	justify-content:center;
+	align-items: center;
+	height:362px;
+}
+.no-result h4{
+	color:#888;
+}
 @media screen and (max-width:950px){
 	.mypage{
 		padding:0;
@@ -100,6 +110,12 @@ li{
 	}
 	.mycont-div>ul {
 	    min-height: 350px;
+	}
+	.no-result{
+		display:flex;
+		justify-content:center;
+		align-items: center;
+		height:312px;
 	}
 }
 @media screen and (max-width:750px){
