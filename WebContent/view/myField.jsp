@@ -27,17 +27,21 @@
 								<!-- option 태그 안에 문자열 : 화면, value : 서버 전송 값 -->
 								<!-- selected 옵션은 기본선택 -->
 								<option value="" selected>분야 선택</option>
-								<option value="CATE20">주방/가전</option>
-								<option value="예시2">예시2</option>
-								<option value="기타">기타</option>
+								<option value="1">의류/악세서리</option>
+								<option value="2">스포츠/레저</option>
+								<option value="3">음악/미술</option>
+								<option value="4">가구/인테리어</option>
+								<option value="5">디지털/가전</option>
+								<option value="6">뷰티/미용</option>
+<!-- 								<option value="etc">기타</option> -->
 						</select></td>
 					</tr>
 	
-					<tr>
-						<!-- 기타 선택 -->
-						<td><input type="text" class="etc" name="etc"
-							placeholder="기타 입력" disabled></td>
-					</tr>
+<!-- 					<tr> -->
+<!-- 						기타 선택 -->
+<!-- 						<td><input type="text" class="etc" name="etc" -->
+<!-- 							placeholder="기타 입력" disabled></td> -->
+<!-- 					</tr> -->
 				</table>
 	
 				<table>

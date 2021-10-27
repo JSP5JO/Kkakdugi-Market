@@ -47,7 +47,7 @@ public class MyFieldRegistAction implements Action {
 		
 		// update 성공 시, index로 이동
 		forward.setRedirect(false);
-		forward.setUrl("/index.do");
+		forward.setUrl("/mypage.do");
 		return forward;
 	}
 
