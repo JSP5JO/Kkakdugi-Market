@@ -1,34 +1,41 @@
 @charset "UTF-8";
 #all{
-	text-align:center;
-	margin: 4% auto;
-	width: 50%;
-	max-width:70%;
-	box-sizing:border-box;
-	padding:45px;
-	background:#fff;
-	box-shadow: 0 0 15px rgba(0,0,0,0.1);
-	border-radius:30px;
+	text-align: center;
+    margin: 4% auto;
+    width: 100%;
+    max-width: 500px;
+    box-sizing: border-box;
+    padding: 45px;
+    background: #fff;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    border-radius: 30px;
 }
 .btn,.btn2{
 	height: 40px;
     width: 108px;
+    border: 1px solid #3a3a3a;
+    background: #fff;
     color: #3a3a3a;
     border-radius: 30px;
     box-sizing: border-box;
-    margin-top: 15px;
-    border:1px solid #f9c07f;
-	background:#f9c07f;
+    font-size: 15px;
+    font-weight: 500;
+    transition: all 0.3s;
     line-height: 36px;
-    cursor:pointer;
+}
+.btn:hover,.btn2:hover{
+	background: #f9c07f;
+    border: 1px solid #f9c07f;
+    transition: all 0.3s;
 }
 .btn2{
 	right: auto;
-	margin-left: 30%;
+	margin-left:10px;
 }
-#Category{
-	width: 70%;
-	text-align:center !important;
+#select{
+	text-align: left;
+	width: 100%;
+	text-align:left !important;
 	height:40px;
 	font-size:13px;
 	border-radius:3px;
@@ -39,30 +46,49 @@
 	box-sizing:border-box;
 	padding:0 20px;
 }
-#subject,#userId,#category_etc{
-	width: 70%;
-	height:25px;
-	padding: 5px;
-  	border:none;
-  	border-bottom: 2px solid #d3d3d3;
-  	font-size:16px;
-  	background: fff;
-  	outline: none;
+.subject_c,.userId_c,.content_c{
+	font-family: noto sans;
+}
+#subject,#userId{
+	text-align: left;
+	width: 100%;
+	text-align:left !important;
+	height:40px;
+	font-size:13px;
+	border-radius:3px;
+	color:#757575;
+	border:0;
+	border-radius:30px;
+	background:#efefef;
+	box-sizing:border-box;
+	padding:0 20px;
+	margin-top:17px;
 }
 #content{
-	width: 70%;
-	padding: 5px;
-	height: 50%;
-  	border:none;
-  	border-bottom: 2px solid #d3d3d3;
-  	font-size:16px;
-  	font-family: noto sans;
-  	background: none;
-  	outline: none;
+	width: 100%;
+    border-radius: 30px;
+    padding: 18px;
+    box-sizing: border-box;
+    margin-top:17px;
 }
 #category_etc{
-	width:70%;
-	padding: 5px;
+	width:100%;
+	padding: 0 20px;
+	margin:5px 0;
+    box-sizing: border-box;
+    border:0;
+    border-radius:30px;
+    background:#efefef;
+    height:40px;
 }
-
-
+.fileName_c{
+	margin:15px 0 0;
+}
+input[type=file]{
+	width:100%;
+}
+.button{
+	margin-top:27px;
+	display:flex;
+	justify-content: center;
+}
