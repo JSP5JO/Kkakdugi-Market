@@ -7,7 +7,11 @@
 }
 
 body {
-  background-color: #ffabc7;
+  background-color: #484848;
+}
+
+.kakaoLogo{
+	margin-top: 20px;
 }
 
 .loginForm {
@@ -67,12 +71,13 @@ body {
   margin-bottom: 40px;
   width:80%;
   height:40px;
-  background: linear-gradient(125deg,#81ecec,#6c5ce7,#81ecec);
+  background: linear-gradient(125deg,#ffce81,#f39d52,#ffce81);
   background-position: left;
   background-size: 200%;
   color:white;
   font-weight: bold;
   border:none;
+  border-radius : 4px;
   cursor:pointer;
   transition: 0.4s;
   display:inline;
@@ -84,11 +89,34 @@ body {
 
 .bottomText {
   text-align: center;
+  color: grey;
 }
-#btnText{
-	clear: both;
-    height: 42px;
-    line-height: 47px;
-    font-size: 12px;
-    text-align: center;
+.bottomText > a{ /*회원가입 아이디찾기 비밀번호 찾기*/
+	color: grey;
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  position: relative;
+  overflow: hidden;
+}
+.bottomText > a:before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  left: 0;
+  right: 100%;
+  bottom: 0;
+  background: #ffb56d;
+  height: 2px;
+  -webkit-transition-property: right;
+  transition-property: right;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-timing-function: ease-out;
+  transition-timing-function: ease-out;
+}
+.bottomText > a:hover:before, .bottomText > a:focus:before, .bottomText > a:active:before {
+  right: 0;
 }

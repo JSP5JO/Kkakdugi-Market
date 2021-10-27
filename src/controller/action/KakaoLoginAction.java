@@ -37,7 +37,7 @@ public class KakaoLoginAction implements Action {
 			request.setAttribute("message", "회원정보가 없으므로 회원가입 페이지로 이동합니다.");
 			request.setAttribute("url", "regist.do");//테스트 후 index.do로 수정  
 			forward.setRedirect(false);
-			forward.setUrl("/util/alert.jsp");
+			forward.setUrl("/error/alert.jsp");
 		} else {// 이미 가입한 아이디가 있는경우 (바로 로그인) 세션값 추가
 			UsersDao uDao = UsersDao.getInstance();
 			Map<String,String> map = new HashMap<>();

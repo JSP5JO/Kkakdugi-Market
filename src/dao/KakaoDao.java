@@ -87,7 +87,7 @@ public class KakaoDao {
 	}
 		
 		String client_id = "d2b3ba824e744e5c470824907863b20b"; //Rest api방식 키
-		String redirect_uri = "http://localhost:8087/backup/kakaoLogin.do"; //리다이렉트할 주소 등록해야함
+		String redirect_uri = "http://localhost:8089/Kkakdugi_Market/kakaoLogin.do"; //리다이렉트할 주소 등록해야함
 		String code = authorize_code;
 
 		StringBuilder sb = new StringBuilder();

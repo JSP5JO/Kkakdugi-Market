@@ -27,7 +27,7 @@
       </div>
 	      <!-- 카카오 로그인 -->
 	  <div class="kakaoLogo">
-	      <a href="https://kauth.kakao.com/oauth/authorize?client_id=d2b3ba824e744e5c470824907863b20b&redirect_uri=http://localhost:8087/backup/kakaoLogin.do&response_type=code">
+	      <a href="https://kauth.kakao.com/oauth/authorize?client_id=d2b3ba824e744e5c470824907863b20b&redirect_uri=http://localhost:8089/Kkakdugi_Market/kakaoLogin.do&response_type=code">
 	      <img src="./img/login_btn_ka.png" alt="카카오톡" >
 	      </a>
 	  </div>

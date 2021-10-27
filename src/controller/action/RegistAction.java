@@ -14,9 +14,12 @@ public class RegistAction implements Action {
 	@Override
 	public ActionForward execute(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		
 			request.setCharacterEncoding("UTF-8");
-			response.setCharacterEncoding("UTF-8");
+			long kakaoId = 0;
+			System.out.println(request.getParameter("kakaoId"));
+			if(!request.getParameter("kakaoId").equals("")) {//카카오 로그인인경우 포함
+				kakaoId = Long.parseLong(request.getParameter("kakaoId"));
+			}
 			
 			String name = request.getParameter("name");
 			String id = request.getParameter("id");
@@ -24,6 +27,7 @@ public class RegistAction implements Action {
 			String email = request.getParameter("email");
 			
 			Users dto = new Users(name,id,pw,email);
+			dto.setKakaoId(kakaoId);//카카오 회원가입아니면 0 
 			UsersDao dao = UsersDao.getInstance();
 			dao.regist(dto);
 			

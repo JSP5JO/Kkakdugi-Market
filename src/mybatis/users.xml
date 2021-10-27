@@ -9,10 +9,10 @@
 		select * from users where id=#{id} and pw=#{pw}	
 	</select>
 	
-	<!-- 회원가입 -->
-	<insert id="regist" parameterType="Users"> 
-		insert into users(name,id,pw,email) 
-			values (#{name},#{id},#{pw},#{email})
+	 <!-- 회원가입 카카오 로그인 추가--> 
+	<insert id="regist" parameterType="dto.Users">
+		insert into users(name,id,pw,email,kakaoId) 
+		values (#{name},#{id},#{pw},#{email},#{kakaoId})
 	</insert>
 	
 	<!-- 회원가입시 아이디 중복체크 -->
@@ -43,4 +43,9 @@
 	<select id="findPw" parameterType="java.util.Map" resultType="String">
 		select pw from users where id =#{id} and name=#{name} and email=#{email}
 	</select>
+	
+	<!-- 카카오 매핑 -->
+	<select id="findKakaoId" parameterType = "Long" resultType="Users"> <!-- 카카오 회원인지 찾기 -->
+      select * from users where kakaoId = #{kakaoId}
+   </select>
   </mapper>

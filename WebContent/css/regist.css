@@ -8,7 +8,7 @@
 }
 
 body {
-  background-color:#8994f5;
+  background-color: #484848;
 }
 
 .joinForm {
@@ -22,6 +22,7 @@ body {
   left:50%;
   transform: translate(-50%,-50%);
   border-radius: 15px;
+  box-shadow: 0 0 15px rgb(0 0 0 0.1);
 }
 
 .joinForm h2 {
@@ -103,12 +104,13 @@ body {
   margin-bottom: 40px;
   width:80%;
   height:40px;
-  background: linear-gradient(125deg,#81ecec,#6c5ce7,#81ecec);
+  background: linear-gradient(125deg,#ffce81,#f39d52,#ffce81);
   background-position: left;
   background-size: 200%;
   color:white;
   font-weight: bold;
   border:none;
+  border-radius: 4px;
   cursor:pointer;
   transition: 0.4s;
   display:inline;
@@ -122,4 +124,35 @@ body {
 	font-size: 9px;
 	color: grey;
 	text-align: left;
+}
+
+div > a{
+  color: grey;
+  font-size: 14px;
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  position: relative;
+  overflow: hidden;
+}
+div > a:before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  left: 0;
+  right: 100%;
+  bottom: 0;
+  background: #ffb56d;
+  height: 2px;
+  -webkit-transition-property: right;
+  transition-property: right;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-timing-function: ease-out;
+  transition-timing-function: ease-out;
+}
+div > a:hover:before, div > a:focus:before, div > a:active:before {
+  right: 0;
 }
