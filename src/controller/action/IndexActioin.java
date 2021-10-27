@@ -29,7 +29,6 @@ public class IndexActioin implements Action {
 		// 인기글(hotList) 전달
 		int count = 10;	// 보여줄 리스트 개수(최상위부터 ~ count개 까지 보여줌)
 		List<Writing> hotList = wdao.getHotList(count);
-		System.out.println(hotList);
 		request.setAttribute("hotList", hotList);
 		
 		// 로그인이 되어 session이 not null 일때만 작용

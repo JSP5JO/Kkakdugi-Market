@@ -46,7 +46,7 @@
 					
 					<ul>
 						<c:forEach var="item" items="${gList}">
-								<img class="gallery "alt="gallery" src="/upload/${item.fileName }">
+							<img class="gallery" alt="gallery" src="/upload/${item.fileName }" onerror="this.style.display='none'">
 						</c:forEach>
 					</ul>
 					
@@ -54,9 +54,13 @@
 			
 			<p class="time-count"><time class="time">작성날짜 : <fmt:formatDate value="${bean.wdate}" type="both" /></time>&nbsp;&nbsp;&nbsp;조회수 : ${bean.readCount}</p>
 			<div class="btn-div">
-				<a class="button" onclick="deleteSet(1)">삭제</a>
+			
+			<!-- 글쓴이와 로그인 아이디가 일치시 삭제 버튼 보이기 -->
+			<c:if test="${sessionScope.user.id eq bean.userId }">
+				<a class="button" onclick="deleteSet('${bean.idx}', '${bean.categoryIdx}', '${page}')">삭제</a>
+			</c:if>	
 				<a class="button"
-					href="list.do?cate=${bean.categoryIdx}page=${page}" >목록</a>
+					href="category.do?cate=${bean.categoryIdx}&page=${page}" >목록</a>
 			</div>
 			
 			<!-- 메인글 끝 -->
@@ -116,6 +120,7 @@
 								</li>
 							</ul>
 						</li>
+						<hr>
 					</c:forEach>
 				</ul>
 			</div>

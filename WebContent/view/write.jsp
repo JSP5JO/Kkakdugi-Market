@@ -12,24 +12,21 @@
 	<%@ include file="../header.jsp"%>
 	<section>
 
-		<h3>글 쓰기</h3>
-		<hr>
 
 		<form name="frm1" action="save.do" method="post" enctype="multipart/form-data">
 
 			<div id="all">
 
 				<div id="category">
-					<select name="Category" id="Category">
-						<option value="CATE20">주방/가전</option>
-						<option value="CATE12">IT/전자</option>
-						<option value="패션/의류">패션/의류</option>
-						<option value="세면/욕실">세면/욕실</option>
-						<option value="기타" selected>기타</option>
+					<select name="category" id="select">
+						<option value="1">의류/악세서리</option>
+						<option value="2">스포츠/레저</option>
+						<option value="3">음악/미술</option>
+						<option value="4">가구/인테리어</option>
+						<option value="5">디지털/가전</option>
+						<option value="6">뷰티/미용</option>
+						<option value="etc" selected>기타</option>
 					</select>
-					 <span> 
-					 	<input type="text" id="category_etc" name="category_etc" disabled="disabled" placeholder="원하시는 분류 항목을 입력해주세요.">
-					</span>
 				</div>
 
 				<div class="subject_c">
@@ -61,18 +58,4 @@
 	<%@ include file="../bottom.jsp"%>
 </body>
 
-<script type="text/javascript">
-	document.getElementById("Category").addEventListener("change", function() {
-		if (this.value == "기타") {
-			document.getElementById("category_etc").style.display = "inline-block"; //화면에 보임
-			document.category_etc.disabled = false;
-		} else {
-			document.getElementById("category_etc").style.display = "none"; //화면에 안보임
-			document.category_etc.disabled = true;
-			}
-
-		});
-</script>
 </html>
-
-

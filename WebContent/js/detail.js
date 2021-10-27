@@ -1,9 +1,8 @@
 //글 삭제
-function deleteSet(idx, page) {
-	console.log(idx);
-	const n = confirm("게시글을 삭제하시겠습니까?");
-	if (n == 1) {
-		location.href = 'delete.do?=&idx' + idx + "&page=" + page;
+function deleteSet(idx, categoryIdx, page) {
+	const yn = confirm("게시글을 삭제하시겠습니까?");
+	if (yn) {
+		location.href = 'delete.do?&idx=' + idx + '&cate='+ categoryIdx +  "&page=" + page;
 	} else {
 		alert('게시글 삭제를 취소하셨습니다.');
 	}

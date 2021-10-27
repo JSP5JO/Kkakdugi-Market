@@ -12,6 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 import controller.action.Action;
 import controller.action.ActionForward;
 import controller.action.CommentAction;
+import controller.action.DeleteAction;
 import controller.action.DetailAction;
 import controller.action.FindIdAction;
 import controller.action.FindPwAction;
@@ -114,6 +115,9 @@ public class FrontController extends HttpServlet {
 			forward = action.execute(request, response);
 		} else if (spath.equals("/jjim.do")) {
 			Action action = new JjimAction();
+			forward = action.execute(request, response);
+		} else if (spath.equals("/delete.do")) {
+			Action action = new DeleteAction();
 			forward = action.execute(request, response);
 		}
 

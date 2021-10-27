@@ -158,9 +158,9 @@ public class WritingDao {
 	}
 
 	// 글 삭제
-	public int delete(Map<String, Object> map) {
+	public int delete(int idx) {
 		SqlSession mapper = factory.openSession();
-		int n = mapper.delete("writing.delete", map);
+		int n = mapper.delete("writing.delete", idx);
 		mapper.commit();
 		mapper.close();
 		return n;

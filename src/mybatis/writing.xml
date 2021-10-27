@@ -6,7 +6,8 @@
 <mapper namespace="writing"> <!-- namespace : 일종의 식별역할의 변수 -->
 
 	<select id="selectAll" resultType="Writing" parameterType="java.util.Map">
-		select * from writing order by idx desc limit #{startNo}, #{pageSize}
+		select * from writing where categoryIdx != 'help' 
+			order by idx desc limit #{startNo}, #{pageSize}
 	</select>
 	
 	<select id="selectById" resultType="Writing"
@@ -92,6 +93,10 @@
 		insert into writing(categoryIdx, userId, subject, content)
 			values (#{categoryIdx}, #{userId}, #{subject}, #{content})
 	</insert>
+	
+	<delete id="delete" parameterType="int">
+		delete from writing where idx = #{idx}
+	</delete>
 
 </mapper>
 
