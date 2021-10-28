@@ -265,6 +265,9 @@ header button {
 	.navbar__icon li {
     	list-style: none;
     	padding: 8px 0px;
+    	width: 100%;
+	    display: flex;
+	    justify-content: center;
 	}
 	.navbar__icon li#mypage{
 		padding:0 0 8px;
