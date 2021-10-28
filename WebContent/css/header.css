@@ -271,6 +271,7 @@ header button {
     	width: 100%;
 	    display: flex;
 	    justify-content: center;
+	    flex-basis: 100%;
 	}
 	.navbar__icon li#mypage{
 		padding:0 0 8px;
