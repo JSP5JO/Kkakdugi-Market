@@ -14,6 +14,9 @@ table {
 	border-collapse: collapse;
 }
 
+td {
+	padding: 10px 0;
+}
 .list td:last-child {
 	width: 30%
 }

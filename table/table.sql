@@ -179,6 +179,92 @@ insert into comment (writingIdx, userId,content)
 -- 갤러리 사진 삽입
 insert into gallery (idx, fileName)
 	values((select idx from writing order by idx desc limit 1), '108_수채화도구.jpg');
+-- 글 삽입
+insert into writing (categoryIdx, userId, subject, content, readCount, commentCount)
+	values('1', 'eunji88', '[질문]이 코트 정품 맞나요?', '얼마전에 구매했는데 정품 맞는지 모르갰네요 전문가분들 봐주실 수 있나요', 7, 0);
+-- 갤러리 사진 삽입
+insert into gallery (idx, fileName)
+	values((select idx from writing order by idx desc limit 1), '109_코트.jpg');
+-- 글 삽입
+insert into writing (categoryIdx, userId, subject, content, readCount, commentCount)
+	values('5', 'kong222', '[판매]무선 키보드 팝니다.', '대만 명품 더키 60%배열
+갈축 조용함
+올 1월쯤 구매한걸로 알아용
+직거래 6.5
+택배 7
+', 3, 0);
+-- 갤러리 사진 삽입
+insert into gallery (idx, fileName)
+	values((select idx from writing order by idx desc limit 1), '110_무선키보드.jpg');
+
+-- 글 삽입
+insert into writing (categoryIdx, userId, subject, content, readCount)
+	values('5', 'm9768', '[시세]컴퓨터 얼마정도 할까요?', '삼성 컴퓨터 이 모델 얼마정도하요?', 11);
+-- 갤러리 사진 삽입
+insert into gallery (idx, fileName)
+	values((select idx from writing order by idx desc limit 1), '111_삼성컴퓨터.jpg');
+-- 글 삽입
+insert into writing (categoryIdx, userId, subject, content, readCount)
+	values('5', 'iU123', '[구매]에어팟 삽니다', '에어팟 프로 상태좋은거 10만원에 사고 싶어요', 7);
+-- 갤러리 사진 삽입
+insert into gallery (idx, fileName)
+	values((select idx from writing order by idx desc limit 1), '112_에어팟.jpg');
+-- 글 삽입
+insert into writing (categoryIdx, userId, subject, content)
+	values('2', 'jj3458', '[판매]농구공 새제품 팝니다', '한번도 사용안한 농구공 입니다. 3만원에 판매해요. 직거래는 일산에서만하고 택배시 착불 입니다.');
+-- 갤러리 사진 삽입
+insert into gallery (idx, fileName)
+	values((select idx from writing order by idx desc limit 1), '113_농구공.jpg');
+-- 글 삽입
+insert into writing (categoryIdx, userId, subject, content)
+	values('3', 'uhj9494', '[시세/질문] 드럼 세트 얼마?', '드럼세트 스틱까지 통으로 사면 얼마나 하나요? 초보용으로요');
+-- 갤러리 사진 삽입
+insert into gallery (idx, fileName)
+	values((select idx from writing order by idx desc limit 1), '114_드럼.jpg');
+-- 글 삽입
+insert into writing (categoryIdx, userId, subject, content, commentCount)
+	values('4', 'ho1263', '[판매] 조립식 신발장 팝니다.', '조립식 신발장 팝니다. 낱개로는 안팔고 통으로 팔아요 3만원에 판매합니다.', 3);
+-- 갤러리 사진 삽입
+insert into gallery (idx, fileName)
+	values((select idx from writing order by idx desc limit 1), '115_조립식신발장.jpg');
+-- 댓글 삽입
+insert into comment (writingIdx, userId,content)
+	values (115, 'iU123', '만원에 할인 안되나요');
+insert into comment (writingIdx, userId,content,pro)
+	values (115, 'm9768', '수요가없는 매물입니다. 가구점에서는 입찰안할 듯 해요', 1);
+insert into comment (writingIdx, userId,content)
+	values (115, 'jj3458', '만오천원에 안되나요?');
+-- 글 삽입
+insert into writing (categoryIdx, userId, subject, content, readCount)
+	values('etc', 'kong222', '점심메뉴 추천좀요', '오늘 점심 메뉴 추천해주세요 다들 뭐 드실건가요?', 2);
+-- 글 삽입
+insert into writing (categoryIdx, userId, subject, content, readCount)
+	values('3', 'h1313', '[구매]붓 세트 삽니다', '수필용 붓 세트 사요 낱개도 구매 합니다.', 11);
+-- 갤러리 사진 삽입
+insert into gallery (idx, fileName)
+	values((select idx from writing order by idx desc limit 1), '117_붓.jpg');
+-- 글 삽입
+insert into writing (categoryIdx, userId, subject, content, readCount, commentCount)
+	values('3', 'su993', '[판매]붓 세트 판매', '서예용 붓은 아닌데 붓 세트 판매 합니다', 5, 1);
+-- 댓글 삽입
+insert into comment (writingIdx, userId,content)
+	values (108, 'h1313', '얼마에 파실건가요?');
+-- 갤러리 사진 삽입
+insert into gallery (idx, fileName)
+	values((select idx from writing order by idx desc limit 1), '118_붓세트.jpg');
+-- 글 삽입
+insert into writing (categoryIdx, userId, subject, content, readCount, commentCount)
+	values('1', 'eunji88', '[질문]나이키 신발 올리셨던 분 판매됐나요', '얼마전에 나이키 신발 올리셨던 분 계셨는데 혹시 판매 됐는지 궁금해요', 7, 0);
+-- 갤러리 사진 삽입
+insert into gallery (idx, fileName)
+	values((select idx from writing order by idx desc limit 1), '119_나이키신발.jpg');
+-- 글 삽입
+insert into writing (categoryIdx, userId, subject, content, readCount, commentCount)
+	values('5', 'kong222', '[판매]마우스 팝니다', '로지텍 정품 만원에 팔아요 직거래만 합니다.', 3, 0);
+-- 갤러리 사진 삽입
+insert into gallery (idx, fileName)
+	values((select idx from writing order by idx desc limit 1), '120_마우스.jpg');
+
 
 insert into users(name, id, pw, email, proIdx) values('김민수', 'm9768', 'alstn12!@', 'minsu9768@naver.com', '4');
 insert into users(name, id, pw, email) values('최준혁', 'jun1888', 'wnsgur12!@', 'jun1988@naver.com');

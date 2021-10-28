@@ -5,6 +5,24 @@
 <!-- sql mapper -->
 <mapper namespace="writing"> <!-- namespace : 일종의 식별역할의 변수 -->
 
+	<select id="searchBySubjectMap" resultType="Writing" parameterType="java.util.Map">
+		select w.idx, userId, subject, content, c.name, w.commentCount, w.wdate, w.readCount
+			from writing w join category c on w.categoryIdx = c.idx
+				where w.subject like CONCAT('%', #{subject}, '%') order by w.idx desc limit #{startNo},#{pageSize}
+	</select>
+	
+	<select id="searchByIdMap" resultType="Writing" parameterType="java.util.Map">
+		select w.idx, userId, subject, content, c.name, w.commentCount, w.wdate, w.readCount
+			from writing w join category c on w.categoryIdx = c.idx 
+				where w.userId like CONCAT('%', #{userId}, '%') order by w.idx desc limit #{startNo},#{pageSize}
+	</select>
+
+	<select id="searchByContentMap" resultType="Writing" parameterType="java.util.Map">
+		select w.idx, userId, subject, content, c.name, w.commentCount, w.wdate, w.readCount
+			from writing w join category c on w.categoryIdx = c.idx 
+				where w.content like CONCAT('%', #{content}, '%') order by w.idx desc limit #{startNo},#{pageSize}
+	</select>
+
 	<select id="selectAll" resultType="Writing" parameterType="java.util.Map">
 		select * from writing where categoryIdx != 'help' 
 			order by idx desc limit #{startNo}, #{pageSize}

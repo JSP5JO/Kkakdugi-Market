@@ -36,12 +36,6 @@ public class WriteSaveAction implements Action {
 			String userId = multi_request.getParameter("userId");
 			String content = multi_request.getParameter("content");
 			
-			// 테스트 문장
-			System.out.println("categoryIdx : " + categoryIdx);
-			System.out.println("subject : " + subject);
-			System.out.println("userId : " + userId);
-			System.out.println("content : " + content);
-			
 			WritingDao wdao = WritingDao.getInstance();
 			Writing wdto = new Writing();
 
@@ -50,18 +44,11 @@ public class WriteSaveAction implements Action {
 			wdto.setSubject(subject);
 			wdto.setUserId(userId);
 			wdto.setContent(content);
-			
-			System.out.println("글 삽입 전");
 			wdao.insert(wdto);
-			System.out.println("글 삽입 후");
 
 
 			// 파일 이름 변경
 			int idx = wdto.getIdx();
-			
-			// 테스트 문장
-			System.out.println(idx);
-			
 			String fileName = multi_request.getFilesystemName("fileName");
 			String newFileName = idx + "_" + fileName;
 			

@@ -38,7 +38,7 @@ public class WritingDao {
 		mapper.close();
 		return list;
 	}
-	
+
 	// user id를 인자로 user가 쓴 글 목록을 가져오는 메소드
 	public List<Writing> selectById(String userId) {
 		List<Writing> list = null;
@@ -99,7 +99,7 @@ public class WritingDao {
 		mapper.close();
 		return result;
 	}
-	
+
 	// 카테고리별 글 전체 개수 리턴
 	public int getCountByCategory(String idx) {
 		SqlSession mapper = factory.openSession();
@@ -140,6 +140,7 @@ public class WritingDao {
 		mapper.close();
 		return list;
 	}
+
 	// 인기 글 리스트
 	public List<Writing> getHotList(int count) {
 		List<Writing> list = null;
@@ -148,7 +149,7 @@ public class WritingDao {
 		mapper.close();
 		return list;
 	}
-	
+
 	// 1개 행 조회
 	public Writing getOne(int idx) {
 		SqlSession mapper = factory.openSession();
@@ -165,12 +166,39 @@ public class WritingDao {
 		mapper.close();
 		return n;
 	}
-	
+
 	// 카테고리 이름 가져오기
 	public String getCategoryName(String idx) {
 		SqlSession mapper = factory.openSession();
 		String name = mapper.selectOne("writing.getCategoryName", idx);
 		mapper.close();
 		return name;
+	}
+
+	// 글 제목을 인자로 글 목록 리턴
+	public List<Writing> searchBySubject(Map<String, Object> map) {
+		List<Writing> list = null;
+		SqlSession mapper = factory.openSession();
+		list = mapper.selectList("writing.searchBySubjectMap", map);
+		mapper.close();
+		return list;
+	}
+
+	// 글쓴이를 인자로 글 목록 리턴
+	public List<Writing> searchById(Map<String, Object> map) {
+		List<Writing> list = null;
+		SqlSession mapper = factory.openSession();
+		list = mapper.selectList("writing.searchByIdMap", map);
+		mapper.close();
+		return list;
+	}
+
+	// 글 내용을 인자로 글 목록 리턴
+	public List<Writing> searchByContent(Map<String, Object> map) {
+		List<Writing> list = null;
+		SqlSession mapper = factory.openSession();
+		list = mapper.selectList("writing.searchByContentMap", map);
+		mapper.close();
+		return list;
 	}
 }
