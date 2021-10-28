@@ -24,6 +24,8 @@ header button {
 	border:0px transparent solid;
 	color: white;
 	cursor: pointer;
+	position:relative;
+	z-index:99999999999;
 }
 .navbar{
     background: black;
@@ -123,8 +125,15 @@ header button {
 .navbar__icon form{
 	display:flex;
 }
+.navbar__icon select{
+	height:21px;
+	display:block;
+}
 .navbar__icon input[type="text"] {
 	margin-right:3px;
+	height:21px;
+	display:block;
+	box-sizing:border-box;
 }
 .fas{
 	color:#fff;
@@ -211,7 +220,7 @@ header button {
     .navbar {
         flex-direction: column;
         align-items: flex-start;
-		justify-content: start;
+		justify-content: flex-start;
         height:82.06px;
         transition:height 0.5s;
         box-sizing: border-box;
@@ -227,6 +236,18 @@ header button {
 	}
 	.navbar.login.active.height{
 		height:616px;
+	}
+	.ie.navbar.active{
+		height:307px;
+	}
+	.ie.navbar.active.height{
+		height:507px;
+	}
+	.ie.navbar.login.active{
+		height:407px;
+	}
+	.ie.navbar.login.active.height{
+		height:607px;
 	}
 	.navbar.login.active .navbar__icon.active{
 		flex-direction: column;
@@ -272,12 +293,51 @@ header button {
 	    display: flex;
 	    justify-content: center;
 	    flex-basis: 100%;
+		height: 38px;
+    	box-sizing: border-box;
 	}
 	.navbar__icon li#mypage{
 		padding:0 0 8px;
 	}
+	.ie .navbar__icon form{
+		position:relative;
+	}
+	.ie .navbar__icon.navbar__icon .search_button {
+		position:relative;
+		left:0;
+		top:-2px;
+	}
+	.ie.login .navbar__icon.navbar__icon .search_button {
+		position:absolute;
+		left:203px;
+		top:-2px;
+		z-index: 2147483647;
+	}
+	.ie.login .navbar__icon>li:nth-child(1) {
+		margin-top:5px;
+		padding:0 0 35px;
+	}
+	.ie.login .navbar__icon>li:nth-child(2) {
+		padding:0 0 35px;
+	}
+	.ie.login .navbar__icon>li:nth-child(3) {
+		padding:0 0 70px;
+	}
+	.ie.login .navbar__icon>li:nth-child(4) {
+		margin-top:20px;
+	}
+	.navbar__icon li a{
+		display:block;
+	}
+	.navbar__icon 
 	.navbar__icon i{
 		margin-right:1px;
+		position:relative;
+		z-index:999999999999;
+	}
+	.ie .navbar__icon li:nth-child(2) i{
+		display:block;
+		margin-top:4px;
 	}
     .navbar__hamburger {
         display: flex;
