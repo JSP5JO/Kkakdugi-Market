@@ -43,13 +43,21 @@ public class SearchAction implements Action {
 			foward.url = "error/alert.jsp";
 			return foward;
 		} else {
+			
 			int pageNo;
-			if(request.getParameter("page")==null) pageNo=1;
-			else pageNo = Integer.parseInt(request.getParameter("page"));   //page=1,2,3,4,.....
-			int pageSize =15;		//ui로 변경하도록 구현할 수 있습니다.
-//			int startNo=(pageNo-1)*pageSize;
+			int pageSize =15;
+			int totalCount;
+			
+			if(request.getParameter("page")==null) 
+				pageNo=1;
+			else 
+				pageNo = Integer.parseInt(request.getParameter("page"));   //page=1,2,3,4,.....
+			
 			wdao = WritingDao.getInstance();
-			dto.PageDto pageDto = new dto.PageDto(pageNo,wdao.getCount(),pageSize);  //페이지처리에 필요한객체(값) 생성
+			totalCount = 0;
+			
+			PageDto pageDto = new PageDto(pageNo,totalCount,pageSize);  //페이지처리에 필요한객체(값) 생성
+			
 			Map<String,Object> map = new HashMap<>();
 			map.put("pageSize",(Object)pageSize);
 			map.put("startNo",(Object)pageDto.getStartNo());
@@ -72,7 +80,10 @@ public class SearchAction implements Action {
 
 			}
 			
-			request.setAttribute("pageDto", pageDto); 
+			totalCount = list.size();
+			PageDto page = new PageDto(pageNo,totalCount,pageSize);
+			
+			request.setAttribute("page", page); 
 			request.setAttribute("list", list);
 		}
 		
