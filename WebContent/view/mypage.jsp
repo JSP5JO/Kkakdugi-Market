@@ -11,7 +11,7 @@
 <link rel="stylesheet" href="css/content.css?v=3"></link>
 
 
-<title>Mypage</title>
+<title>마이페이지</title>
 
 </head>
 <body>

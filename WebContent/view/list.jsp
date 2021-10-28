@@ -5,7 +5,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Kkakdigu-Market__category</title>
+<title>카테고리</title>
 
 <style type="text/css">
 table {

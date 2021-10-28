@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>helpWrite</title>
+<title>1:1의견 남기기</title>
 <link rel="stylesheet" href="css/helpWrite.css?v=3">
 <script src="js/helpWrite.js" defer>
 	

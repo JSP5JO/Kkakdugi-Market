@@ -331,4 +331,8 @@ header button {
 	    transition:opacity 0.3s, height 0.3s;
 	    margin:8px 0 0;
 	}
+	#mypage > a {
+		line-height: 35px;
+		padding: 0 10px;
+	}
 }

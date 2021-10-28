@@ -4,7 +4,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Kkakdigu-Market__nav</title>
+<title>Kkakdigu-Market</title>
 </head>
 
 <body>
