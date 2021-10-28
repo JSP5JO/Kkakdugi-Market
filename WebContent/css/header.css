@@ -265,6 +265,9 @@ header button {
 	.navbar__icon li {
     	list-style: none;
     	padding: 8px 0px;
+	}
+	
+	.login .navbar__icon li {
     	width: 100%;
 	    display: flex;
 	    justify-content: center;
