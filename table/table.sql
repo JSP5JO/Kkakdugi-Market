@@ -66,6 +66,9 @@ create table gallery (
 truncate gallery ;
 drop table comment ;
 truncate writing ;
+
+select * from users where name = '이우진';
+delete from users where name = '이우진';
 		
 -- 데이터 삽입 예시
 insert into category VALUES('1', '의류/악세서리');
@@ -98,7 +101,7 @@ insert into users(name, id, pw, email) values('유상욱','uk519', 'tkddnr12!@',
 insert into users(name, id, pw, email) values('이혁주','lee6213', 'gurwn12!@', 'gurwn87@naver.com');
 
 update users set proIdx = '4' where id = 'm9768';
-update users set proIdx = '7' where id = 'ho1263';
+update users set proIdx = '1' where id = 'ho1263';
 
 
 
@@ -443,6 +446,131 @@ insert into writing (categoryIdx, userId, subject, content)
 insert into gallery (idx, fileName)
    values((select idx from writing order by idx desc limit 1), '20_코웨이 모션프레임.jpg');
    
+  
+  
+  
+alter table writing auto_increment 30;
+-- 레거시 데이터
+insert into writing (categoryIdx, userId, subject, content, readCount)
+	values('2', 'm9768', '[시세]이런것도 판매할 수 있나요?', '이거 팔리긴할까요?', 1);
+insert into writing (categoryIdx, userId, subject, content, readCount)
+	values('3', 'm9768', '[자유]이거 뭐죠', '이상한거 발견', 1);
+insert into writing (categoryIdx, userId, subject, content, readCount)
+	values('4', 'm9768', '[시세]이런것도 판매할 수 있나요?', '이거 팔리긴할까요?', 1);
+insert into writing (categoryIdx, userId, subject, content, readCount)
+	values('5', 'm9768', '[시세]이런것도 판매할 수 있나요?', '이거 팔리긴할까요?', 1);
+insert into writing (categoryIdx, userId, subject, content, readCount)
+	values('6', 'm9768', '[시세]이런것도 판매할 수 있나요?', '이거 팔리긴할까요?', 1);
+insert into writing (categoryIdx, userId, subject, content, readCount)
+	values('2', 'm9768', '[시세]이런것도 판매할 수 있나요?', '이거 팔리긴할까요?', 1);
+insert into writing (categoryIdx, userId, subject, content, readCount)
+	values('3', 'm9768', '[시세]이런것도 판매할 수 있나요?', '이거 팔리긴할까요?', 1);
+insert into writing (categoryIdx, userId, subject, content, readCount)
+	values('4', 'm9768', '[시세]이런것도 판매할 수 있나요?', '이거 팔리긴할까요?', 1);
+insert into writing (categoryIdx, userId, subject, content, readCount)
+	values('5', 'm9768', '[시세]이런것도 판매할 수 있나요?', '이거 팔리긴할까요?', 1);
+insert into writing (categoryIdx, userId, subject, content, readCount)
+	values('6', 'm9768', '[시세]이런것도 판매할 수 있나요?', '이거 팔리긴할까요?', 1);
+insert into writing (categoryIdx, userId, subject, content, readCount)
+	values('2', 'm9768', '[시세]이런것도 판매할 수 있나요?', '이거 팔리긴할까요?', 1);
+insert into writing (categoryIdx, userId, subject, content, readCount)
+	values('3', 'm9768', '[자유]이거 뭐죠', '이상한거 발견', 1);
+insert into writing (categoryIdx, userId, subject, content, readCount)
+	values('4', 'm9768', '[시세]이런것도 판매할 수 있나요?', '이거 팔리긴할까요?', 1);
+insert into writing (categoryIdx, userId, subject, content, readCount)
+	values('5', 'm9768', '[시세]이런것도 판매할 수 있나요?', '이거 팔리긴할까요?', 1);
+insert into writing (categoryIdx, userId, subject, content, readCount)
+	values('6', 'm9768', '[시세]이런것도 판매할 수 있나요?', '이거 팔리긴할까요?', 1);
+insert into writing (categoryIdx, userId, subject, content, readCount)
+	values('2', 'm9768', '[시세]이런것도 판매할 수 있나요?', '이거 팔리긴할까요?', 1);
+insert into writing (categoryIdx, userId, subject, content, readCount)
+	values('3', 'm9768', '[시세]이런것도 판매할 수 있나요?', '이거 팔리긴할까요?', 1);
+insert into writing (categoryIdx, userId, subject, content, readCount)
+	values('4', 'm9768', '[시세]이런것도 판매할 수 있나요?', '이거 팔리긴할까요?', 1);
+insert into writing (categoryIdx, userId, subject, content, readCount)
+	values('5', 'm9768', '[시세]이런것도 판매할 수 있나요?', '이거 팔리긴할까요?', 1);
+insert into writing (categoryIdx, userId, subject, content, readCount)
+	values('6', 'm9768', '[시세]이런것도 판매할 수 있나요?', '이거 팔리긴할까요?', 1);
+insert into writing (categoryIdx, userId, subject, content, readCount)
+	values('2', 'm9768', '[시세]이런것도 판매할 수 있나요?', '이거 팔리긴할까요?', 1);
+insert into writing (categoryIdx, userId, subject, content, readCount)
+	values('3', 'm9768', '[자유]이거 뭐죠', '이상한거 발견', 1);
+insert into writing (categoryIdx, userId, subject, content, readCount)
+	values('4', 'm9768', '[시세]이런것도 판매할 수 있나요?', '이거 팔리긴할까요?', 1);
+insert into writing (categoryIdx, userId, subject, content, readCount)
+	values('5', 'm9768', '[시세]이런것도 판매할 수 있나요?', '이거 팔리긴할까요?', 1);
+insert into writing (categoryIdx, userId, subject, content, readCount)
+	values('6', 'm9768', '[시세]이런것도 판매할 수 있나요?', '이거 팔리긴할까요?', 1);
+insert into writing (categoryIdx, userId, subject, content, readCount)
+	values('2', 'm9768', '[시세]이런것도 판매할 수 있나요?', '이거 팔리긴할까요?', 1);
+insert into writing (categoryIdx, userId, subject, content, readCount)
+	values('3', 'm9768', '[시세]이런것도 판매할 수 있나요?', '이거 팔리긴할까요?', 1);
+insert into writing (categoryIdx, userId, subject, content, readCount)
+	values('4', 'm9768', '[시세]이런것도 판매할 수 있나요?', '이거 팔리긴할까요?', 1);
+insert into writing (categoryIdx, userId, subject, content, readCount)
+	values('5', 'm9768', '[시세]이런것도 판매할 수 있나요?', '이거 팔리긴할까요?', 1);
+insert into writing (categoryIdx, userId, subject, content, readCount)
+	values('6', 'm9768', '[시세]이런것도 판매할 수 있나요?', '이거 팔리긴할까요?', 1);
+insert into writing (categoryIdx, userId, subject, content, readCount)
+	values('2', 'm9768', '[시세]이런것도 판매할 수 있나요?', '이거 팔리긴할까요?', 1);
+insert into writing (categoryIdx, userId, subject, content, readCount)
+	values('3', 'm9768', '[자유]이거 뭐죠', '이상한거 발견', 1);
+insert into writing (categoryIdx, userId, subject, content, readCount)
+	values('4', 'm9768', '[시세]이런것도 판매할 수 있나요?', '이거 팔리긴할까요?', 1);
+insert into writing (categoryIdx, userId, subject, content, readCount)
+	values('5', 'm9768', '[시세]이런것도 판매할 수 있나요?', '이거 팔리긴할까요?', 1);
+insert into writing (categoryIdx, userId, subject, content, readCount)
+	values('6', 'm9768', '[시세]이런것도 판매할 수 있나요?', '이거 팔리긴할까요?', 1);
+insert into writing (categoryIdx, userId, subject, content, readCount)
+	values('2', 'm9768', '[시세]이런것도 판매할 수 있나요?', '이거 팔리긴할까요?', 1);
+insert into writing (categoryIdx, userId, subject, content, readCount)
+	values('3', 'm9768', '[시세]이런것도 판매할 수 있나요?', '이거 팔리긴할까요?', 1);
+insert into writing (categoryIdx, userId, subject, content, readCount)
+	values('4', 'm9768', '[시세]이런것도 판매할 수 있나요?', '이거 팔리긴할까요?', 1);
+insert into writing (categoryIdx, userId, subject, content, readCount)
+	values('5', 'm9768', '[시세]이런것도 판매할 수 있나요?', '이거 팔리긴할까요?', 1);
+insert into writing (categoryIdx, userId, subject, content, readCount)
+	values('6', 'm9768', '[시세]이런것도 판매할 수 있나요?', '이거 팔리긴할까요?', 1);
+insert into writing (categoryIdx, userId, subject, content, readCount)
+	values('2', 'm9768', '[시세]이런것도 판매할 수 있나요?', '이거 팔리긴할까요?', 1);
+insert into writing (categoryIdx, userId, subject, content, readCount)
+	values('3', 'm9768', '[자유]이거 뭐죠', '이상한거 발견', 1);
+insert into writing (categoryIdx, userId, subject, content, readCount)
+	values('4', 'm9768', '[시세]이런것도 판매할 수 있나요?', '이거 팔리긴할까요?', 1);
+insert into writing (categoryIdx, userId, subject, content, readCount)
+	values('5', 'm9768', '[시세]이런것도 판매할 수 있나요?', '이거 팔리긴할까요?', 1);
+insert into writing (categoryIdx, userId, subject, content, readCount)
+	values('6', 'm9768', '[시세]이런것도 판매할 수 있나요?', '이거 팔리긴할까요?', 1);
+insert into writing (categoryIdx, userId, subject, content, readCount)
+	values('2', 'm9768', '[시세]이런것도 판매할 수 있나요?', '이거 팔리긴할까요?', 1);
+insert into writing (categoryIdx, userId, subject, content, readCount)
+	values('3', 'm9768', '[시세]이런것도 판매할 수 있나요?', '이거 팔리긴할까요?', 1);
+insert into writing (categoryIdx, userId, subject, content, readCount)
+	values('4', 'm9768', '[시세]이런것도 판매할 수 있나요?', '이거 팔리긴할까요?', 1);
+insert into writing (categoryIdx, userId, subject, content, readCount)
+	values('5', 'm9768', '[시세]이런것도 판매할 수 있나요?', '이거 팔리긴할까요?', 1);
+insert into writing (categoryIdx, userId, subject, content, readCount)
+	values('6', 'm9768', '[시세]이런것도 판매할 수 있나요?', '이거 팔리긴할까요?', 1);
+insert into writing (categoryIdx, userId, subject, content, readCount)
+	values('2', 'm9768', '[시세]이런것도 판매할 수 있나요?', '이거 팔리긴할까요?', 1);
+insert into writing (categoryIdx, userId, subject, content, readCount)
+	values('3', 'm9768', '[자유]이거 뭐죠', '이상한거 발견', 1);
+insert into writing (categoryIdx, userId, subject, content, readCount)
+	values('4', 'm9768', '[시세]이런것도 판매할 수 있나요?', '이거 팔리긴할까요?', 1);
+insert into writing (categoryIdx, userId, subject, content, readCount)
+	values('5', 'm9768', '[시세]이런것도 판매할 수 있나요?', '이거 팔리긴할까요?', 1);
+insert into writing (categoryIdx, userId, subject, content, readCount)
+	values('6', 'm9768', '[시세]이런것도 판매할 수 있나요?', '이거 팔리긴할까요?', 1);
+insert into writing (categoryIdx, userId, subject, content, readCount)
+	values('2', 'm9768', '[시세]이런것도 판매할 수 있나요?', '이거 팔리긴할까요?', 1);
+insert into writing (categoryIdx, userId, subject, content, readCount)
+	values('3', 'm9768', '[시세]이런것도 판매할 수 있나요?', '이거 팔리긴할까요?', 1);
+insert into writing (categoryIdx, userId, subject, content, readCount)
+	values('4', 'm9768', '[시세]이런것도 판매할 수 있나요?', '이거 팔리긴할까요?', 1);
+insert into writing (categoryIdx, userId, subject, content, readCount)
+	values('5', 'm9768', '[시세]이런것도 판매할 수 있나요?', '이거 팔리긴할까요?', 1);
+insert into writing (categoryIdx, userId, subject, content, readCount)
+	values('6', 'm9768', '[시세]이런것도 판매할 수 있나요?', '이거 팔리긴할까요?', 1);
 
 
 alter table writing auto_increment 100;

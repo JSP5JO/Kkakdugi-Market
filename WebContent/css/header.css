@@ -101,7 +101,7 @@ header button {
     transition:height 0.3s;
 }
 .navbar__submenu li{
-    padding: 8px;
+    padding: 7px;
     list-style: none;
     border-radius: 20px;
     transition:background 0.3s;

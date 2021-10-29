@@ -22,12 +22,12 @@
 			<li class="cate">
 				<a href="category.do?cate=all&page=1">카테고리</a>
 				<ul class="navbar__submenu">
-					<li><a href="category.do?cate=1">의류/악세서리</a></li>
-					<li><a href="category.do?cate=2">스포츠/레저</a></li>
-					<li><a href="category.do?cate=3">음악/미술</a></li>
-					<li><a href="category.do?cate=4">가구/인테리어</a></li>
-					<li><a href="category.do?cate=5">디지털/가전</a></li>
-					<li><a href="category.do?cate=6">뷰티/미용</a></li>
+					<li><a class="cate__sub" href="category.do?cate=1">의류/악세서리</a></li>
+					<li><a class="cate__sub" href="category.do?cate=2">스포츠/레저</a></li>
+					<li><a class="cate__sub" href="category.do?cate=3">음악/미술</a></li>
+					<li><a class="cate__sub" href="category.do?cate=4">가구/인테리어</a></li>
+					<li><a class="cate__sub" href="category.do?cate=5">디지털/가전</a></li>
+					<li><a class="cate__sub" href="category.do?cate=6">뷰티/미용</a></li>
 				</ul>
 			</li>
 			<li><a href="myField.do">전문분야 등록</a></li>

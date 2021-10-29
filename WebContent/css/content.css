@@ -20,7 +20,9 @@ section{
 	padding:0 38px;
 	padding-bottom:100px !important;
 }
-
+.cate__sub {
+	font-size: 0.8em;
+}
 
 .main {
 	display: flex;

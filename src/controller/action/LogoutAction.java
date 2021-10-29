@@ -15,7 +15,7 @@ public class LogoutAction implements Action {
 		ActionForward forward = new ActionForward();
 		HttpSession session = request.getSession();
 		
-		request.setAttribute("message", "로그인아웃 되었습니다.");
+		request.setAttribute("message", "로그아웃 되었습니다.");
 		request.setAttribute("url", "./");
 		
 	    // 세션 끊기
